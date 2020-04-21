@@ -8,8 +8,8 @@ namespace ConsoleApplication
         {
             string name = "Coleen Hull";
             string location = "Sterling Va";
-            Console.WriteLine("My name is " + name);
-            Console.WriteLine("I live in  " + location);
+            Console.WriteLine($"My name is {name}");
+            Console.WriteLine($"I live in {location}");
         }
     }
 }
