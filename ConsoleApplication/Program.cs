@@ -59,6 +59,7 @@ namespace ConsoleApplication
         {
             myInfo();
             Console.WriteLine("\n");
+            // I didn't know which one you wanted so I did both
             myInfo2();
             Console.WriteLine("\n");
             date();
