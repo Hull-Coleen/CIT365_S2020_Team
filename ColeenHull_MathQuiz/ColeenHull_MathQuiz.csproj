@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D296A5A7-892B-44EC-B800-C686FCC3D1DE}</ProjectGuid>
+    <ProjectGuid>{D59C7121-056A-43E6-B28B-954C296C4CC9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MathQuiz</RootNamespace>
-    <AssemblyName>MathQuiz</AssemblyName>
+    <RootNamespace>ColeenHull_MathQuiz</RootNamespace>
+    <AssemblyName>ColeenHull_MathQuiz</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

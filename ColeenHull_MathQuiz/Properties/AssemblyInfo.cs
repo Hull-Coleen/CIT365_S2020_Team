@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MathQuiz")]
+[assembly: AssemblyTitle("ColeenHull_MathQuiz")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MathQuiz")]
+[assembly: AssemblyProduct("ColeenHull_MathQuiz")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d296a5a7-892b-44ec-b800-c686fcc3d1de")]
+[assembly: Guid("d59c7121-056a-43e6-b28b-954c296c4cc9")]
 
 // Version information for an assembly consists of the following four values:
 //
