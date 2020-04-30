@@ -39,7 +39,7 @@ namespace ColeenHull_MathQuiz
         int timeLeft;
         public void StartTheQuiz()
         {
-            date.Text = currentTime.ToString(" dd MMMM  yyyy");
+            //date.Text = currentTime.ToString(" dd MMMM  yyyy");
             // Fill in the addition problem.
             // Generate two random numbers to add.
             // Store the values in the variables 'addend1' and 'addend2'.
@@ -156,19 +156,9 @@ namespace ColeenHull_MathQuiz
             }
         }
 
-        private void dividedLeftLabel_Click(object sender, EventArgs e)
+        private void load(object sender, EventArgs e)
         {
-
-        }
-
-        private void dividedRightLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void minusRightLabel_Click(object sender, EventArgs e)
-        {
-
+            date.Text = currentTime.ToString(" dd MMMM  yyyy");
         }
     }
 }
