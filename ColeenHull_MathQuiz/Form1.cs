@@ -39,7 +39,7 @@ namespace ColeenHull_MathQuiz
         int timeLeft;
         public void StartTheQuiz()
         {
-            //date.Text = currentTime.ToString(" dd MMMM  yyyy");
+            timeLabel.BackColor = Color.White;
             // Fill in the addition problem.
             // Generate two random numbers to add.
             // Store the values in the variables 'addend1' and 'addend2'.
@@ -86,11 +86,6 @@ namespace ColeenHull_MathQuiz
             InitializeComponent();
         }
 
-        /*private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }*/
-
         private void startButton_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
@@ -127,7 +122,11 @@ namespace ColeenHull_MathQuiz
                 // Display the new time left
                 // by updating the Time Left label.
                 timeLeft = timeLeft - 1;
-                timeLabel.Text = timeLeft + " seconds";
+                timeLabel.Text = timeLeft + " seconds";  
+                if (timeLeft < 6)
+                { 
+                    timeLabel.BackColor = Color.Red; 
+                }
             }
             else
             {
@@ -159,6 +158,38 @@ namespace ColeenHull_MathQuiz
         private void load(object sender, EventArgs e)
         {
             date.Text = currentTime.ToString(" dd MMMM  yyyy");
+        }
+
+        private void Sum(object sender, EventArgs e)
+        {
+            if (sum.Value == addend1 + addend2)
+            {
+                sum.ForeColor = Color.Green;
+            }
+        }
+
+        private void difference_ValueChanged(object sender, EventArgs e)
+        {
+            if (difference.Value == minuend - subtrahend)
+            {
+                difference.ForeColor = Color.Green;
+            }
+        }
+
+        private void product_ValueChanged(object sender, EventArgs e)
+        {
+            if (product.Value == multiplicand * multiplier)
+            {
+                product.ForeColor = Color.Green;
+            }
+        }
+
+        private void quotient_ValueChanged(object sender, EventArgs e)
+        {
+            if (quotient.Value == dividend / divisor)
+            {
+                quotient.ForeColor = Color.Green;
+            }
         }
     }
 }

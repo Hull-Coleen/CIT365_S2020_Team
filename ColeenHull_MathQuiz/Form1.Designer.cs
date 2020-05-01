@@ -84,7 +84,7 @@
             // 
             this.plusLeftLabel.BackColor = System.Drawing.Color.White;
             this.plusLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.plusLeftLabel.Location = new System.Drawing.Point(199, 83);
+            this.plusLeftLabel.Location = new System.Drawing.Point(199, 107);
             this.plusLeftLabel.Name = "plusLeftLabel";
             this.plusLeftLabel.Size = new System.Drawing.Size(80, 34);
             this.plusLeftLabel.TabIndex = 2;
@@ -93,7 +93,7 @@
             // 
             this.dividedLeftLabel.BackColor = System.Drawing.Color.White;
             this.dividedLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dividedLeftLabel.Location = new System.Drawing.Point(199, 225);
+            this.dividedLeftLabel.Location = new System.Drawing.Point(199, 252);
             this.dividedLeftLabel.Name = "dividedLeftLabel";
             this.dividedLeftLabel.Size = new System.Drawing.Size(80, 34);
             this.dividedLeftLabel.TabIndex = 3;
@@ -102,7 +102,7 @@
             // 
             this.timesLeftLabel.BackColor = System.Drawing.Color.White;
             this.timesLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timesLeftLabel.Location = new System.Drawing.Point(199, 179);
+            this.timesLeftLabel.Location = new System.Drawing.Point(199, 204);
             this.timesLeftLabel.Name = "timesLeftLabel";
             this.timesLeftLabel.Size = new System.Drawing.Size(80, 34);
             this.timesLeftLabel.TabIndex = 4;
@@ -111,15 +111,15 @@
             // 
             this.minusLeftLabel.BackColor = System.Drawing.Color.White;
             this.minusLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.minusLeftLabel.Location = new System.Drawing.Point(199, 130);
+            this.minusLeftLabel.Location = new System.Drawing.Point(199, 155);
             this.minusLeftLabel.Name = "minusLeftLabel";
             this.minusLeftLabel.Size = new System.Drawing.Size(80, 34);
             this.minusLeftLabel.TabIndex = 5;
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(296, 83);
+            this.label5.Font = new System.Drawing.Font("Niagara Solid", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(296, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 24);
             this.label5.TabIndex = 6;
@@ -127,7 +127,7 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(285, 227);
+            this.label6.Location = new System.Drawing.Point(285, 251);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 24);
             this.label6.TabIndex = 7;
@@ -135,8 +135,8 @@
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(296, 179);
+            this.label7.Font = new System.Drawing.Font("Niagara Solid", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(296, 203);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 24);
             this.label7.TabIndex = 8;
@@ -144,8 +144,8 @@
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(296, 130);
+            this.label8.Font = new System.Drawing.Font("Niagara Solid", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(296, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 24);
             this.label8.TabIndex = 9;
@@ -155,7 +155,7 @@
             // 
             this.plusRightLabel.BackColor = System.Drawing.Color.White;
             this.plusRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.plusRightLabel.Location = new System.Drawing.Point(340, 83);
+            this.plusRightLabel.Location = new System.Drawing.Point(340, 107);
             this.plusRightLabel.Name = "plusRightLabel";
             this.plusRightLabel.Size = new System.Drawing.Size(80, 34);
             this.plusRightLabel.TabIndex = 10;
@@ -164,7 +164,7 @@
             // 
             this.timesRightLabel.BackColor = System.Drawing.Color.White;
             this.timesRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timesRightLabel.Location = new System.Drawing.Point(340, 179);
+            this.timesRightLabel.Location = new System.Drawing.Point(340, 203);
             this.timesRightLabel.Name = "timesRightLabel";
             this.timesRightLabel.Size = new System.Drawing.Size(80, 34);
             this.timesRightLabel.TabIndex = 11;
@@ -173,7 +173,7 @@
             // 
             this.dividedRightLabel.BackColor = System.Drawing.Color.White;
             this.dividedRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dividedRightLabel.Location = new System.Drawing.Point(340, 225);
+            this.dividedRightLabel.Location = new System.Drawing.Point(340, 251);
             this.dividedRightLabel.Name = "dividedRightLabel";
             this.dividedRightLabel.Size = new System.Drawing.Size(80, 34);
             this.dividedRightLabel.TabIndex = 12;
@@ -182,7 +182,7 @@
             // 
             this.minusRightLabel.BackColor = System.Drawing.Color.White;
             this.minusRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.minusRightLabel.Location = new System.Drawing.Point(340, 130);
+            this.minusRightLabel.Location = new System.Drawing.Point(340, 154);
             this.minusRightLabel.Name = "minusRightLabel";
             this.minusRightLabel.Size = new System.Drawing.Size(80, 34);
             this.minusRightLabel.TabIndex = 13;
@@ -190,7 +190,7 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(438, 83);
+            this.label12.Location = new System.Drawing.Point(438, 107);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 24);
             this.label12.TabIndex = 14;
@@ -199,7 +199,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(438, 226);
+            this.label13.Location = new System.Drawing.Point(438, 251);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 24);
             this.label13.TabIndex = 15;
@@ -208,7 +208,7 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(438, 179);
+            this.label14.Location = new System.Drawing.Point(438, 203);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 24);
             this.label14.TabIndex = 16;
@@ -217,7 +217,7 @@
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(438, 130);
+            this.label15.Location = new System.Drawing.Point(438, 154);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 24);
             this.label15.TabIndex = 17;
@@ -225,45 +225,52 @@
             // 
             // sum
             // 
-            this.sum.Location = new System.Drawing.Point(488, 83);
+            this.sum.Location = new System.Drawing.Point(488, 107);
             this.sum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(112, 34);
             this.sum.TabIndex = 2;
+            this.sum.ValueChanged += new System.EventHandler(this.Sum);
             this.sum.Enter += new System.EventHandler(this.answer_enter);
             // 
             // difference
             // 
-            this.difference.Location = new System.Drawing.Point(488, 129);
+            this.difference.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.difference.Location = new System.Drawing.Point(488, 154);
             this.difference.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(112, 34);
             this.difference.TabIndex = 3;
+            this.difference.ValueChanged += new System.EventHandler(this.difference_ValueChanged);
             this.difference.Enter += new System.EventHandler(this.answer_enter);
             // 
             // product
             // 
-            this.product.Location = new System.Drawing.Point(488, 179);
+            this.product.Location = new System.Drawing.Point(488, 203);
             this.product.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(112, 34);
             this.product.TabIndex = 4;
+            this.product.ValueChanged += new System.EventHandler(this.product_ValueChanged);
             this.product.Enter += new System.EventHandler(this.answer_enter);
             // 
             // quotient
             // 
-            this.quotient.Location = new System.Drawing.Point(488, 225);
+            this.quotient.Location = new System.Drawing.Point(488, 251);
             this.quotient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(112, 34);
             this.quotient.TabIndex = 5;
+            this.quotient.ValueChanged += new System.EventHandler(this.quotient_ValueChanged);
             this.quotient.Enter += new System.EventHandler(this.answer_enter);
             // 
             // startButton
             // 
             this.startButton.AutoSize = true;
             this.startButton.BackColor = System.Drawing.Color.White;
-            this.startButton.Location = new System.Drawing.Point(212, 302);
+            this.startButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.startButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
+            this.startButton.Location = new System.Drawing.Point(212, 326);
             this.startButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startButton.Name = "startButton";
             this.startButton.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
@@ -290,7 +297,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(632, 361);
+            this.ClientSize = new System.Drawing.Size(632, 390);
             this.Controls.Add(this.date);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.quotient);
