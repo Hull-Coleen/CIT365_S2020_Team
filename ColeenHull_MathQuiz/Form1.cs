@@ -13,59 +13,61 @@ namespace ColeenHull_MathQuiz
 {
     public partial class Form1 : Form
     {
-        DateTime currentTime = DateTime.Now; //"1/9/2016 10:22:45 AM" 
-        //date.Text = currentTime.ToString(" dd MMMM  yyyy");
+        // get today's date
+        DateTime currentTime = DateTime.Now; 
         // Create a Random object called randomizer 
         // to generate random numbers.
         Random randomizer = new Random();
-        // These integer variables store the numbers 
-        // for the addition problem. 
+        // These integer variables store the numbers for the addition problem. 
         int addend1;
         int addend2;
-        // These integer variables store the numbers 
+   
         // for the subtraction problem. 
         int minuend;
         int subtrahend;
-        // These integer variables store the numbers 
+        
         // for the multiplication problem. 
         int multiplicand;
         int multiplier;
-
-        // These integer variables store the numbers 
+ 
         // for the division problem. 
         int dividend;
         int divisor;
-        // This integer variable keeps track of the 
-        // remaining time.
+        // This integer variable keeps track of the remaining time.
         int timeLeft;
+        //method to set  
         public void StartTheQuiz()
         {
+            //reset colors
             timeLabel.BackColor = Color.White;
+            sum.ForeColor = Color.Black;
+            difference.ForeColor = Color.Black;
+            quotient.ForeColor = Color.Black;
+            product.ForeColor = Color.Black;
+
             // Fill in the addition problem.
             // Generate two random numbers to add.
-            // Store the values in the variables 'addend1' and 'addend2'.
             addend1 = randomizer.Next(51);
             addend2 = randomizer.Next(51);
 
-            // Convert the two randomly generated numbers
-            // into strings so that they can be displayed
-            // in the label controls.
+            // assign add variables to additions labels
             plusLeftLabel.Text = addend1.ToString();
             plusRightLabel.Text = addend2.ToString();
-
-            // 'sum' is the name of the NumericUpDown control.
-            // This step makes sure its value is zero before
-            // adding any values to it.
+            
+            // set sum to zero
             sum.Value = 0;
-            // Fill in the subtraction problem.
+
+            // get random nubmers for subatration problem
             minuend = randomizer.Next(1, 101);
             subtrahend = randomizer.Next(1, minuend);
+            // assign subtration values to subtraction labels
             minusLeftLabel.Text = minuend.ToString();
             minusRightLabel.Text = subtrahend.ToString();
             difference.Value = 0;
-            // Fill in the multiplication problem.
+            // get between 2 and 11
             multiplicand = randomizer.Next(2, 11);
             multiplier = randomizer.Next(2, 11);
+            // assign multiplication values to multiplication labels
             timesLeftLabel.Text = multiplicand.ToString();
             timesRightLabel.Text = multiplier.ToString();
             product.Value = 0;
@@ -92,12 +94,13 @@ namespace ColeenHull_MathQuiz
             StartTheQuiz();
             startButton.Enabled = false;
         }
-        /// <summary>
+        /*
         /// Check the answer to see if the user got everything right.
-        /// </summary>
         /// <returns>True if the answer's correct, false otherwise.</returns>
+        */
         private bool CheckTheAnswer()
         {
+            //checks the vairables against the number entered into the different input labels
             if ((addend1 + addend2 == sum.Value)
                 && (minuend - subtrahend == difference.Value)
                 && (multiplicand * multiplier == product.Value)
@@ -111,8 +114,7 @@ namespace ColeenHull_MathQuiz
             if (CheckTheAnswer())
             {
                 // If CheckTheAnswer() returns true, then the user 
-                // got the answer right. Stop the timer  
-                // and show a MessageBox.
+                // stop times and give message
                 timer1.Stop();
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
@@ -123,7 +125,8 @@ namespace ColeenHull_MathQuiz
                 // Display the new time left
                 // by updating the Time Left label.
                 timeLeft = timeLeft - 1;
-                timeLabel.Text = timeLeft + " seconds";  
+                timeLabel.Text = timeLeft + " seconds";
+                // if timer is 5 or under change teh background to red
                 if (timeLeft < 6)
                 { 
                     timeLabel.BackColor = Color.Red; 
@@ -133,13 +136,14 @@ namespace ColeenHull_MathQuiz
             {
                 // If the user ran out of time, stop the timer, show
                 // a MessageBox, and fill in the answers.
-                timer1.Stop();
-                timeLabel.Text = "Time's up!";
-                MessageBox.Show("You didn't finish in time.", "Sorry!");
+                timer1.Stop(); 
                 sum.Value = addend1 + addend2;
                 difference.Value = minuend - subtrahend;
                 product.Value = multiplicand * multiplier;
                 quotient.Value = dividend / divisor;
+                timeLabel.Text = "Time's up!";
+                MessageBox.Show("You didn't finish in time.", "Sorry!");
+               
                 startButton.Enabled = true;
             }
         }
@@ -155,14 +159,15 @@ namespace ColeenHull_MathQuiz
                 answerBox.Select(0, lengthOfAnswer);
             }
         }
-
+        // show the date on loading
         private void load(object sender, EventArgs e)
         {
-            date.Text = currentTime.ToString(" dd MMMM  yyyy");
+            date.Text = currentTime.ToString(" dd MMMM  yyyy");      
         }
-
+        // when value in sum is changed check the answer
         private void Sum(object sender, EventArgs e)
         {
+            // if answer is correct change text color and make a sound
             if (sum.Value == addend1 + addend2)
             {
                 sum.ForeColor = Color.Green;
@@ -170,27 +175,30 @@ namespace ColeenHull_MathQuiz
                 simpleSound.Play();
             }
         }
-
+        // when value in difference is changed check the answer
         private void difference_ValueChanged(object sender, EventArgs e)
         {
+            // if answer is correct change text color and make a sound
             if (difference.Value == minuend - subtrahend)
             {
                 difference.ForeColor = Color.Green; 
                 SystemSounds.Beep.Play();
             }
         }
-
+        // when value in product is changed check the answer
         private void product_ValueChanged(object sender, EventArgs e)
         {
+            // if answer is correct change text color and make a sound
             if (product.Value == multiplicand * multiplier)
             {
                 product.ForeColor = Color.Green;
                 SystemSounds.Beep.Play();
             }
         }
-
+        // when value in quorient is changed check the answer
         private void quotient_ValueChanged(object sender, EventArgs e)
         {
+            // if answer is correct change text color and make a sound
             if (quotient.Value == dividend / divisor)
             {
                 quotient.ForeColor = Color.Green;
