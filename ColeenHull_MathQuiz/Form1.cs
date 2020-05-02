@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace ColeenHull_MathQuiz
 {
@@ -165,6 +166,8 @@ namespace ColeenHull_MathQuiz
             if (sum.Value == addend1 + addend2)
             {
                 sum.ForeColor = Color.Green;
+                SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
+                simpleSound.Play();
             }
         }
 
@@ -172,7 +175,8 @@ namespace ColeenHull_MathQuiz
         {
             if (difference.Value == minuend - subtrahend)
             {
-                difference.ForeColor = Color.Green;
+                difference.ForeColor = Color.Green; 
+                SystemSounds.Beep.Play();
             }
         }
 
@@ -181,6 +185,7 @@ namespace ColeenHull_MathQuiz
             if (product.Value == multiplicand * multiplier)
             {
                 product.ForeColor = Color.Green;
+                SystemSounds.Beep.Play();
             }
         }
 
@@ -189,6 +194,7 @@ namespace ColeenHull_MathQuiz
             if (quotient.Value == dividend / divisor)
             {
                 quotient.ForeColor = Color.Green;
+                SystemSounds.Beep.Play();
             }
         }
     }
