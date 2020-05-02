@@ -37,14 +37,7 @@ namespace ColeenHull_MathQuiz
         int timeLeft;
         //method to set  
         public void StartTheQuiz()
-        {
-            //reset colors
-            timeLabel.BackColor = Color.White;
-            sum.ForeColor = Color.Black;
-            difference.ForeColor = Color.Black;
-            quotient.ForeColor = Color.Black;
-            product.ForeColor = Color.Black;
-
+        { 
             // Fill in the addition problem.
             // Generate two random numbers to add.
             addend1 = randomizer.Next(51);
@@ -91,6 +84,12 @@ namespace ColeenHull_MathQuiz
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            //reset colors
+            timeLabel.BackColor = Color.White;
+            sum.ForeColor = Color.Black;
+            difference.ForeColor = Color.Black;
+            quotient.ForeColor = Color.Black;
+            product.ForeColor = Color.Black;
             StartTheQuiz();
             startButton.Enabled = false;
         }
