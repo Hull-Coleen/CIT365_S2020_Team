@@ -19,9 +19,14 @@ namespace MegaDesk_Hull
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             MainMenu mm = new MainMenu();
             mm.Show();
+           // Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
