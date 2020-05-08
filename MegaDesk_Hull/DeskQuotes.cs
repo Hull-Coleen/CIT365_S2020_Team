@@ -31,7 +31,9 @@ namespace MegaDesk_Hull
         }
         public double quotePrice() 
         {
-            return 3.3;
+            double price = 0;
+
+            return price;
         }
 
     }

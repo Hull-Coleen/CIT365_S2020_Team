@@ -19,11 +19,9 @@ namespace MegaDesk_Hull
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             MainMenu mm = new MainMenu();
             mm.Show();
-            //this.Hide();
-           // Close();
+            Close();
         }
 
         private void inputWidth_Validating(object sender, CancelEventArgs e)
@@ -36,10 +34,10 @@ namespace MegaDesk_Hull
             catch(Exception)
             { 
                 e.Cancel = true;
-                inputWidth.Text = "";
+               // inputWidth.Text = "";
                 MessageBox.Show("Please enter only numbers into the width field");
             }
-            if (!(width >= 24 && width <= 96))
+            if (width < 24 && width > 96)
             {
                 MessageBox.Show("Please enter numbers between 24 and 96");
             }
@@ -48,22 +46,20 @@ namespace MegaDesk_Hull
         private void inputDepth_KeyPress(object sender, KeyPressEventArgs e)
         {
             int input = 0;
-           // while (!(e.KeyChar == 13))
-            //{
-                if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == 13)))
-                {
-                    MessageBox.Show("please enter digits only");
-                    e.Handled = true;
-                }
-                else
-                {
-                    int.TryParse(inputDepth.Text, out input);
-                }
-           // }
-            if (!(input >= 12 && input <= 48))
-            {
-                MessageBox.Show("Please enter numbers between 12 and 48");
-            }
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == 13)))
+             {
+                MessageBox.Show("please enter digits only");
+                e.Handled = true;
+             }
+             else
+             {
+                 int.TryParse(inputDepth.Text, out input);
+                 if (input < 12 || input > 48)
+                 {
+                      MessageBox.Show("Please enter numbers between 12 and 48");
+                 }
+             }
+                
         }
     }
 }

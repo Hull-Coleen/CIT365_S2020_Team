@@ -16,33 +16,36 @@ namespace MegaDesk_Hull
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        
+        private void viewQuotes_Click(object sender, EventArgs e)
         {
             
             viewAllQuotes viewQ = new viewAllQuotes();
             viewQ.Show();
-            //this.Hide();
+            //Close();
+            this.Hide();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+       
+        private void searchQuotes_Click(object sender, EventArgs e)
         {
             
             searchQuotes searchQ = new searchQuotes();
             searchQ.Show();
-            //this.Hide();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Close();
+            //Close();
+            this.Hide();
         }
 
         private void addQuote_Click(object sender, EventArgs e)
         {
             AddQuotes addQ = new AddQuotes();
             addQ.Show();
-           // this.Hide();
+            //this.Close();
+            this.Hide();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -54,12 +54,6 @@
     </Compile>
     <Compile Include="Desk.cs" />
     <Compile Include="DeskQuotes.cs" />
-    <Compile Include="displayQuotes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="displayQuotes.Designer.cs">
-      <DependentUpon>displayQuotes.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,9 +76,6 @@
     </Compile>
     <EmbeddedResource Include="AddQuotes.resx">
       <DependentUpon>AddQuotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="displayQuotes.resx">
-      <DependentUpon>displayQuotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
