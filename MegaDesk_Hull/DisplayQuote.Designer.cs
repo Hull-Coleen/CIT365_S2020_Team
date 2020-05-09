@@ -190,6 +190,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "DisplayQuote";
             this.Text = "DisplayQuote";
             this.groupBox3.ResumeLayout(false);

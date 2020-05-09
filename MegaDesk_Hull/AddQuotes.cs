@@ -19,7 +19,7 @@ namespace MegaDesk_Hull
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu();
+            MainMenu mm = (MainMenu)Tag;
             mm.Show();
             Close();
         }
@@ -64,7 +64,8 @@ namespace MegaDesk_Hull
         private void SaveButton_Click(object sender, EventArgs e)
         {
             DisplayQuote disQuote = new DisplayQuote();
-            disQuote.Show();
+            disQuote.Tag = this;
+            disQuote.Show(this);
             Close();
         }
     }
