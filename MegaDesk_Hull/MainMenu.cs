@@ -23,7 +23,8 @@ namespace MegaDesk_Hull
             viewAllQuotes viewQ = new viewAllQuotes();
             viewQ.Show();
             //Close();
-            this.Hide();
+            //Close();
+            //this.Hide();
         }
        
         private void searchQuotes_Click(object sender, EventArgs e)
@@ -32,15 +33,16 @@ namespace MegaDesk_Hull
             searchQuotes searchQ = new searchQuotes();
             searchQ.Show();
             //Close();
-            this.Hide();
+            //this.Hide();
         }
 
         private void addQuote_Click(object sender, EventArgs e)
         {
             AddQuotes addQ = new AddQuotes();
+            this.Hide();
             addQ.Show();
             //this.Close();
-            this.Hide();
+            
         }
 
         private void exit_Click(object sender, EventArgs e)

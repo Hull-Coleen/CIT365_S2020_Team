@@ -34,7 +34,6 @@ namespace MegaDesk_Hull
             catch(Exception)
             { 
                 e.Cancel = true;
-               // inputWidth.Text = "";
                 MessageBox.Show("Please enter only numbers into the width field");
             }
             if (width < 24 && width > 96)
@@ -60,6 +59,13 @@ namespace MegaDesk_Hull
                  }
              }
                 
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            DisplayQuote disQuote = new DisplayQuote();
+            disQuote.Show();
+            Close();
         }
     }
 }
