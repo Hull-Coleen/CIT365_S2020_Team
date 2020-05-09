@@ -66,7 +66,7 @@ namespace MegaDesk_Hull
             DisplayQuote disQuote = new DisplayQuote();
             disQuote.Tag = this;
             disQuote.Show(this);
-            Close();
+            Hide();
         }
     }
 }

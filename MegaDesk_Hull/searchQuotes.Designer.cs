@@ -52,7 +52,6 @@
             this.material.Size = new System.Drawing.Size(154, 25);
             this.material.TabIndex = 1;
             this.material.Text = "Surface Material";
-            this.material.Click += new System.EventHandler(this.label1_Click);
             // 
             // inputMaterial
             // 
@@ -76,6 +75,7 @@
             this.Controls.Add(this.inputMaterial);
             this.Controls.Add(this.material);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "searchQuotes";
             this.Text = "searchQuotes";
             this.ResumeLayout(false);

@@ -12,6 +12,11 @@ namespace MegaDesk_Hull
 {
     public partial class DisplayQuote : Form
     {
-        
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            AddQuotes AddQ = (AddQuotes)Tag;
+            AddQ.Show();
+            Close();
+        }
     }
 }

@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,11 +183,22 @@
             this.label17.TabIndex = 36;
             this.label17.Text = "Quote Date";
             // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(18, 408);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 37;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 453);
+            this.ClientSize = new System.Drawing.Size(828, 449);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
@@ -215,5 +227,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button backButton;
     }
 }
