@@ -185,9 +185,10 @@
             // 
             // backButton
             // 
+            this.backButton.Font = new System.Drawing.Font("Garamond", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.Location = new System.Drawing.Point(18, 408);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.Size = new System.Drawing.Size(75, 30);
             this.backButton.TabIndex = 37;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
