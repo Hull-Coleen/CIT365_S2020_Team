@@ -1,6 +1,6 @@
 ﻿namespace MegaDesk_Hull
 {
-    partial class DisplayQuote
+    partial class DisplayQuotes
     {
         /// <summary>
         /// Required designer variable.
@@ -36,11 +36,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.totalCostLabel = new System.Windows.Forms.Label();
+            this.materialLabel = new System.Windows.Forms.Label();
+            this.drawerLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.customerLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -55,14 +55,14 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.totalCostLabel);
+            this.groupBox3.Controls.Add(this.materialLabel);
+            this.groupBox3.Controls.Add(this.drawerLabel);
             this.groupBox3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(431, 52);
+            this.groupBox3.Location = new System.Drawing.Point(383, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(371, 379);
-            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Fianlized Quote";
             // 
@@ -132,80 +132,79 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Cost over 1000";
             // 
-            // label8
+            // totalCostLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(24, 332);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 22);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Total Cost";
+            this.totalCostLabel.AutoSize = true;
+            this.totalCostLabel.ForeColor = System.Drawing.Color.Red;
+            this.totalCostLabel.Location = new System.Drawing.Point(24, 332);
+            this.totalCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalCostLabel.Name = "totalCostLabel";
+            this.totalCostLabel.Size = new System.Drawing.Size(99, 22);
+            this.totalCostLabel.TabIndex = 26;
+            this.totalCostLabel.Text = "Total Cost";
             // 
-            // label7
+            // materialLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 258);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 22);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Material Cost";
+            this.materialLabel.AutoSize = true;
+            this.materialLabel.Location = new System.Drawing.Point(24, 258);
+            this.materialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel.Name = "materialLabel";
+            this.materialLabel.Size = new System.Drawing.Size(125, 22);
+            this.materialLabel.TabIndex = 25;
+            this.materialLabel.Text = "Material Cost";
             // 
-            // label5
+            // drawerLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 199);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 22);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Total Drawer Cost";
+            this.drawerLabel.AutoSize = true;
+            this.drawerLabel.Location = new System.Drawing.Point(24, 199);
+            this.drawerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.drawerLabel.Name = "drawerLabel";
+            this.drawerLabel.Size = new System.Drawing.Size(167, 22);
+            this.drawerLabel.TabIndex = 23;
+            this.drawerLabel.Text = "Total Drawer Cost";
             // 
-            // label6
+            // dateLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(244, 34);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Customer\'s Name";
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(45, 109);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(163, 34);
+            this.dateLabel.TabIndex = 37;
+            this.dateLabel.Text = "Quote Date";
             // 
-            // label17
+            // customerLabel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 76);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(163, 34);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Quote Date";
+            this.customerLabel.AutoSize = true;
+            this.customerLabel.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerLabel.Location = new System.Drawing.Point(45, 60);
+            this.customerLabel.Name = "customerLabel";
+            this.customerLabel.Size = new System.Drawing.Size(244, 34);
+            this.customerLabel.TabIndex = 38;
+            this.customerLabel.Text = "Customer\'s Name";
             // 
             // backButton
             // 
             this.backButton.Font = new System.Drawing.Font("Garamond", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(18, 408);
+            this.backButton.Location = new System.Drawing.Point(38, 390);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 30);
-            this.backButton.TabIndex = 37;
+            this.backButton.TabIndex = 39;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // DisplayQuote
+            // DisplayQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 449);
+            this.ClientSize = new System.Drawing.Size(832, 453);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.customerLabel);
+            this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.groupBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "DisplayQuote";
-            this.Text = "DisplayQuote";
+            this.Name = "DisplayQuotes";
+            this.Text = "DisplayQuotes";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -223,11 +222,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label totalCostLabel;
+        private System.Windows.Forms.Label materialLabel;
+        private System.Windows.Forms.Label drawerLabel;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Label customerLabel;
         private System.Windows.Forms.Button backButton;
     }
 }

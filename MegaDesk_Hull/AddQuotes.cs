@@ -65,10 +65,10 @@ namespace MegaDesk_Hull
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            DisplayQuote disQuote = new DisplayQuote();
+            DisplayQuotes disQuote = new DisplayQuotes();
             disQuote.Tag = this;
             disQuote.Show(this);
-            //Hide();
+            Hide();
         }
     }
 }

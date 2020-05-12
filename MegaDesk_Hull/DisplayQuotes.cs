@@ -10,12 +10,17 @@ using System.Windows.Forms;
 
 namespace MegaDesk_Hull
 {
-    public partial class DisplayQuote : Form
+    public partial class DisplayQuotes : Form
     {
+        public DisplayQuotes()
+        {
+            InitializeComponent();
+        }
+
         private void backButton_Click(object sender, EventArgs e)
         {
-            AddQuotes AddQ = (AddQuotes)Tag;
-            AddQ.Show();
+            AddQuotes addQ= (AddQuotes)Tag;
+            addQ.Show();
             Close();
         }
     }
