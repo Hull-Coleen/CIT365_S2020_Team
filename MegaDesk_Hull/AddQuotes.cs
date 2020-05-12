@@ -49,14 +49,13 @@ namespace MegaDesk_Hull
                 MessageBox.Show("please enter digits only");
                 e.Handled = true;
              }
-            if (Char.IsDigit(e.KeyChar) || (e.KeyChar == 13))// && (int.Parse(inputDepth.Text) > 9))
+            if (Char.IsDigit(e.KeyChar) || (e.KeyChar == 13))
             {
                int.TryParse(inputDepth.Text, out int input);
                 if (input > 9)
                 {
                     if (input > 48 || input < 12)
                     {
-                        // e.Handled = true;
                         MessageBox.Show("Please enter numbers between 12 and 48");
                     }
                 }
