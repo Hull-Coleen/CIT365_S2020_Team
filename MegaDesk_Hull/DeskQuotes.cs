@@ -12,6 +12,7 @@ namespace MegaDesk_Hull
         private DateTime quoteDate;
         private string name;
         private int rushDays;
+        private int [,] rushOrders;
         public string getName() { return name; }
         public int getRushDays() { return rushDays; }
         public DateTime getQuoteDate() { return quoteDate; }
@@ -34,6 +35,20 @@ namespace MegaDesk_Hull
             double price = 0;
 
             return price;
+        }
+        public void getRushOrder(string [] dayPrice)
+        {
+            rushOrders = new int [3,3];
+            int count = 0;
+            
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    rushOrders[i, j] = Int32.Parse(dayPrice[count]);
+                    count++;
+                }
+            }
         }
 
     }

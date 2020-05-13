@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 enum Material
 {
-    Pine,
-    Laminate,
-    Veneer,
-    Oak,
-    Rosewood
+    Pine = 50,
+    Laminate = 100,
+    Veneer = 125,
+    Oak = 200,
+    Rosewood = 300
 }
 static class Constants
 {

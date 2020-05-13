@@ -183,17 +183,12 @@
             // inputMaterial
             // 
             this.inputMaterial.FormattingEnabled = true;
-            this.inputMaterial.Items.AddRange(new object[] {
-            "Pine",
-            "Laminate",
-            "Veneer",
-            "Oak",
-            "Rosewood"});
             this.inputMaterial.Location = new System.Drawing.Point(155, 69);
             this.inputMaterial.Margin = new System.Windows.Forms.Padding(4);
             this.inputMaterial.Name = "inputMaterial";
             this.inputMaterial.Size = new System.Drawing.Size(150, 28);
             this.inputMaterial.TabIndex = 17;
+            this.inputMaterial.ValueMemberChanged += new System.EventHandler(this.inputMaterial_ValueMemberChanged);
             // 
             // label1
             // 
@@ -440,6 +435,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddQuotes";
             this.Text = "AddQuotes";
+            this.Load += new System.EventHandler(this.AddQuotes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
