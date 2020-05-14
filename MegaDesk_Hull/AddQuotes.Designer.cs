@@ -53,7 +53,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.materialCostPrice = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -188,7 +188,7 @@
             this.inputMaterial.Name = "inputMaterial";
             this.inputMaterial.Size = new System.Drawing.Size(150, 28);
             this.inputMaterial.TabIndex = 17;
-            this.inputMaterial.ValueMemberChanged += new System.EventHandler(this.inputMaterial_ValueMemberChanged);
+            this.inputMaterial.SelectedIndexChanged += new System.EventHandler(this.inputMaterial_changed);
             // 
             // label1
             // 
@@ -300,7 +300,7 @@
             // 
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.materialCostPrice);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
@@ -338,14 +338,14 @@
             this.label15.TabIndex = 33;
             this.label15.Text = "$ 475";
             // 
-            // label14
+            // materialCostPrice
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(287, 287);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 20);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "$ 125";
+            this.materialCostPrice.AutoSize = true;
+            this.materialCostPrice.Location = new System.Drawing.Point(287, 287);
+            this.materialCostPrice.Name = "materialCostPrice";
+            this.materialCostPrice.Size = new System.Drawing.Size(50, 20);
+            this.materialCostPrice.TabIndex = 32;
+            this.materialCostPrice.Text = "$ 125";
             // 
             // label13
             // 
@@ -477,7 +477,7 @@
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label materialCostPrice;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;

@@ -102,21 +102,15 @@ namespace MegaDesk_Hull
         }
         private void AddQuotes_Load(object sender, EventArgs e)
         {
+            DeskQuotes deskQ = new DeskQuotes();
             Desk desk = new Desk();
-            List<Material> materialList = new List<Material>();
-            materialList.Add(Material.Laminate);
-            materialList.Add(Material.Pine);
-            materialList.Add(Material.Veneer);
-            materialList.Add(Material.Oak);
-            materialList.Add(Material.Rosewood);
-           // inputMaterial.DataSource = materialList;
-            //inputMaterial.DisplayMember = materialList.GetEnumerator().Current
-            //inputMaterial.ValueMember = materialList;
-            List<KeyValuePair<string, int>> list = GetEnumList<Material>();
-            inputMaterial.DataSource = list;
-           // inputMaterial.DisplayMember = list.Enum.GetValues;
-            //inputMaterial.DisplayMember = materialList.GetEnumerator().Current
-
+          
+            List<KeyValuePair<string, int>> materialList = GetEnumList<Material>();
+            
+            inputMaterial.DataSource = materialList;
+            inputMaterial.DisplayMember= "Key";
+            inputMaterial.ValueMember =  "Value";
+            materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
             // get the location of the file
             string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrderPrices.txt");
             // convert file to a string array
@@ -125,10 +119,9 @@ namespace MegaDesk_Hull
             //name.Text = materialList[0].ToString();
         }
 
-        private void inputMaterial_ValueMemberChanged(object sender, EventArgs e)
+        private void inputMaterial_changed(object sender, EventArgs e)
         {
-
+                materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
         }
-
     }
 }
