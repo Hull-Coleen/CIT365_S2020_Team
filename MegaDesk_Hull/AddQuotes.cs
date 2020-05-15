@@ -10,10 +10,14 @@ using System.Windows.Forms;
 using System.IO;
 
 
+
 namespace MegaDesk_Hull
 {
+    
     public partial class AddQuotes : Form
     {
+        //instaniate DeskQuote
+        DeskQuotes deskQ = new DeskQuotes();
         public AddQuotes()
         {
             InitializeComponent();
@@ -86,6 +90,7 @@ namespace MegaDesk_Hull
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            DateTime currentTime = DateTime.Now;
             DisplayQuotes disQuote = new DisplayQuotes();
             disQuote.Tag = this;
             disQuote.Show(this);
@@ -102,38 +107,40 @@ namespace MegaDesk_Hull
         }
         private void AddQuotes_Load(object sender, EventArgs e)
         {
-            DateTime currentTime = DateTime.Now;
-            DeskQuotes deskQ = new DeskQuotes();
+            //DateTime currentTime = DateTime.Now;
             
-            deskQ.getDesk().getWidth();
+           // deskQ.getDesk().getWidth();
             List<KeyValuePair<string, int>> materialList = GetEnumList<Material>();
             
             inputMaterial.DataSource = materialList;
             inputMaterial.DisplayMember= "Key";
             inputMaterial.ValueMember =  "Value";
+            overSizeCost.Text = deskQ.getSize().ToString(); 
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
             drawerNumPrice.Text = deskQ.getDesk().getDrawer().ToString();
             // get the location of the file
             string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrderPrices.txt");
             // convert file to a string array
             string [] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);
+            // populate the rushOrder variable
+            string [,] rushOrderPrice = deskQ.getRushOrder(rushOrderFile);
+           // name.Text = rushOrderPrice[0, 1].ToString();
+            
         }
 
         private void inputMaterial_changed(object sender, EventArgs e)
         {
-                materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
+            materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
         }
 
         private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
         {
-           int drawer =  Int32.Parse(inputDrawer.Text);
-            drawer *= 50;
-            drawerNumPrice.Text = drawer.ToString();
+            drawerNumPrice.Text = deskQ.drawerCost(inputDrawer.Text).ToString();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-
+            deskQ = new DeskQuotes();
         }
     }
 }

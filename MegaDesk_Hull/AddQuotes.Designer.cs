@@ -51,7 +51,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.overSizeCost = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.materialCostPrice = new System.Windows.Forms.Label();
             this.drawerNumPrice = new System.Windows.Forms.Label();
@@ -299,7 +299,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.overSizeCost);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.materialCostPrice);
             this.groupBox3.Controls.Add(this.drawerNumPrice);
@@ -321,14 +321,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cost Estimate";
             // 
-            // label16
+            // overSizeCost
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(287, 159);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 20);
-            this.label16.TabIndex = 34;
-            this.label16.Text = "$   0";
+            this.overSizeCost.AutoSize = true;
+            this.overSizeCost.Location = new System.Drawing.Point(287, 159);
+            this.overSizeCost.Name = "overSizeCost";
+            this.overSizeCost.Size = new System.Drawing.Size(42, 20);
+            this.overSizeCost.TabIndex = 34;
+            this.overSizeCost.Text = "$   0";
             // 
             // label15
             // 
@@ -477,7 +477,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label overSizeCost;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label materialCostPrice;
         private System.Windows.Forms.Label drawerNumPrice;

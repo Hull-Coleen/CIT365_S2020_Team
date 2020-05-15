@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_Hull
 {
@@ -12,7 +13,7 @@ namespace MegaDesk_Hull
         private DateTime quoteDate;
         private string name;
         private int rushDays;
-        private int [,] rushOrders;
+        private string [,] rushOrders;
         public DeskQuotes()
         {
             desk = new Desk();
@@ -20,6 +21,16 @@ namespace MegaDesk_Hull
             rushDays = 0;
 
         }
+
+        public DeskQuotes(Desk desk, DateTime quoteDate, string name, int rushDays, string[,] rushOrders)
+        {
+            this.desk = desk;
+            this.quoteDate = quoteDate;
+            this.name = name;
+            this.rushDays = rushDays;
+            this.rushOrders = rushOrders;
+        }
+
         public string getName() { return name; }
         public int getRushDays() { return rushDays; }
         public DateTime getQuoteDate() { return quoteDate; }
@@ -43,19 +54,46 @@ namespace MegaDesk_Hull
 
             return price;
         }
-        public void getRushOrder(string [] dayPrice)
+        public double getSize()
         {
-            rushOrders = new int [3,3];
+            double includedSize = 0;
+            double extraSize = (desk.getWidth() * desk.getDepth()) - 1000;
+            if (extraSize > 0)
+            {
+                return extraSize;
+            }
+            else
+            {
+                return includedSize;
+            }
+        }
+        public double drawerCost(string drawer)
+        {
+            int price = 0;
+            try
+            {
+                price = Int32.Parse(drawer);  
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("cannot convert string to int");
+            }
+            return price * 50;
+        }
+        public string[,] getRushOrder(string [] dayPrice)
+        {
+            rushOrders = new string [3,3];
             int count = 0;
             
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    rushOrders[i, j] = Int32.Parse(dayPrice[count]);
+                    rushOrders[i, j] = dayPrice[count];
                     count++;
                 }
             }
+            return rushOrders;
         }
 
     }
