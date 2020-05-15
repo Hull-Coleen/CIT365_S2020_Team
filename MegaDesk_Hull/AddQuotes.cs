@@ -19,7 +19,7 @@ namespace MegaDesk_Hull
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             MainMenu mm = (MainMenu)Tag;
             mm.Show();
@@ -102,26 +102,38 @@ namespace MegaDesk_Hull
         }
         private void AddQuotes_Load(object sender, EventArgs e)
         {
+            DateTime currentTime = DateTime.Now;
             DeskQuotes deskQ = new DeskQuotes();
-            Desk desk = new Desk();
-          
+            
+            deskQ.getDesk().getWidth();
             List<KeyValuePair<string, int>> materialList = GetEnumList<Material>();
             
             inputMaterial.DataSource = materialList;
             inputMaterial.DisplayMember= "Key";
             inputMaterial.ValueMember =  "Value";
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
+            drawerNumPrice.Text = deskQ.getDesk().getDrawer().ToString();
             // get the location of the file
             string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrderPrices.txt");
             // convert file to a string array
             string [] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);
-            // name.Text = content[0];
-            //name.Text = materialList[0].ToString();
         }
 
         private void inputMaterial_changed(object sender, EventArgs e)
         {
                 materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
+        }
+
+        private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           int drawer =  Int32.Parse(inputDrawer.Text);
+            drawer *= 50;
+            drawerNumPrice.Text = drawer.ToString();
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

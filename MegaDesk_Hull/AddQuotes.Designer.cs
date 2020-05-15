@@ -54,7 +54,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.materialCostPrice = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.drawerNumPrice = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.BackButton.TabIndex = 0;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.button1_Click);
+            this.BackButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // name
             // 
@@ -179,6 +179,7 @@
             this.inputDrawer.Name = "inputDrawer";
             this.inputDrawer.Size = new System.Drawing.Size(150, 28);
             this.inputDrawer.TabIndex = 16;
+            this.inputDrawer.SelectedIndexChanged += new System.EventHandler(this.inputDrawer_SelectedIndexChanged);
             // 
             // inputMaterial
             // 
@@ -301,7 +302,7 @@
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.materialCostPrice);
-            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.drawerNumPrice);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
@@ -347,14 +348,14 @@
             this.materialCostPrice.TabIndex = 32;
             this.materialCostPrice.Text = "$ 125";
             // 
-            // label13
+            // drawerNumPrice
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(287, 247);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 20);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "$ 150";
+            this.drawerNumPrice.AutoSize = true;
+            this.drawerNumPrice.Location = new System.Drawing.Point(287, 247);
+            this.drawerNumPrice.Name = "drawerNumPrice";
+            this.drawerNumPrice.Size = new System.Drawing.Size(50, 20);
+            this.drawerNumPrice.TabIndex = 31;
+            this.drawerNumPrice.Text = "$ 150";
             // 
             // label12
             // 
@@ -415,6 +416,7 @@
             this.resetButton.TabIndex = 31;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // AddQuotes
             // 
@@ -478,7 +480,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label materialCostPrice;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label drawerNumPrice;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

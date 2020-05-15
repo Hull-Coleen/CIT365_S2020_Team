@@ -15,7 +15,7 @@ enum Material
 }
 static class Constants
 {
-    public const int  SmallDepth = 12;
+    public const int SmallDepth = 12;
     public const int LargeDepth = 48;
     public const int SmallWidth = 24;
     public const int LargeWidth = 96;
@@ -29,6 +29,13 @@ namespace MegaDesk_Hull
         private int depth;
         private int drawer;
         private string material;
+        public Desk ()
+        {
+            width = 0;
+            depth = 0;
+            drawer = 0;
+            material = "";
+        }
         public int getWidth() {
             return width;
         }

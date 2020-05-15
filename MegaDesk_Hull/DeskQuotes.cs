@@ -13,6 +13,13 @@ namespace MegaDesk_Hull
         private string name;
         private int rushDays;
         private int [,] rushOrders;
+        public DeskQuotes()
+        {
+            desk = new Desk();
+            name = "";
+            rushDays = 0;
+
+        }
         public string getName() { return name; }
         public int getRushDays() { return rushDays; }
         public DateTime getQuoteDate() { return quoteDate; }
