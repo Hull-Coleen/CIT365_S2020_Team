@@ -97,7 +97,7 @@ namespace MegaDesk_Hull
             drawerNumPrice.Text = deskQ.getDesk().getDrawer().ToString();
         
             // get the location of the file
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrder.txt");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\rushOrder.txt");
             
             // convert file to a string array
             string [] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);

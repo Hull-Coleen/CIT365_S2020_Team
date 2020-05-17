@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaDesk_Hull", "MegaDesk_Hull.csproj", "{6EDEAA09-9C1B-4F8A-836A-16CFAC9FFEA4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85B3ED9A-05CD-44A8-BC7E-3A0FECB2FA81}"
+	ProjectSection(SolutionItems) = preProject
+		rushOrderPrice.txt = rushOrderPrice.txt
+		bin\Debug\Data\rushOrderPrices.txt = bin\Debug\Data\rushOrderPrices.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
