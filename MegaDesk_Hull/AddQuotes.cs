@@ -97,11 +97,11 @@ namespace MegaDesk_Hull
             drawerNumPrice.Text = deskQ.getDesk().getDrawer().ToString();
         
             // get the location of the file
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrderPrices.txt");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrder.txt");
             
             // convert file to a string array
-            //string [] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);
-            string[] rushOrderFile = File.ReadAllLines("rushOrder.txt", Encoding.UTF8);
+            string [] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);
+            //string[] rushOrderFile = File.ReadAllLines("rushOrder.txt", Encoding.UTF8);
             // populate the rushOrder variable
             string [,] rushOrderPrice = deskQ.getRushOrder(rushOrderFile);
             // name.Text = rushOrderPrice[0, 1].ToString();
