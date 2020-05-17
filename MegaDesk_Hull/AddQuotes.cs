@@ -90,26 +90,20 @@ namespace MegaDesk_Hull
             inputMaterial.DataSource = materialList;
             inputMaterial.DisplayMember= "Key";
             inputMaterial.ValueMember =  "Value";
+
             // set values to price labels
             overCostPrice.Text = deskQ.getSize().ToString(); 
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
-           // materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
             drawerNumPrice.Text = deskQ.getDesk().getDrawer().ToString();
         
             // get the location of the file
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\rushOrder.txt");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrderPrices.txt");
             
             // convert file to a string array
             string [] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);
-            //string[] rushOrderFile = File.ReadAllLines("rushOrder.txt", Encoding.UTF8);
+           
             // populate the rushOrder variable
             string [,] rushOrderPrice = deskQ.getRushOrder(rushOrderFile);
-            // name.Text = rushOrderPrice[0, 1].ToString();
-
-            //string path = Path.Combine(Directory.GetCurrentDirectory(), @"MegaDesk_Hull\rushOrder.txt");
-            //string path = Environment.CurrentDirectory + @"\Data\rushOrderPrices.txt";
-            //string path = Directory.GetCurrentDirectory() + "\\Data\rushOrderPrices.txt";
-            // string path = @"\Data\rushOrderPrices.txt";
 
         }
 
