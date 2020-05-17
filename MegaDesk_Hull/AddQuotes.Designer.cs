@@ -47,12 +47,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.overCost = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.overSizeCost = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.overCostPrice = new System.Windows.Forms.Label();
+            this.totalCostPrice = new System.Windows.Forms.Label();
             this.materialCostPrice = new System.Windows.Forms.Label();
             this.drawerNumPrice = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -161,6 +161,7 @@
             this.inputDepth.Name = "inputDepth";
             this.inputDepth.Size = new System.Drawing.Size(124, 27);
             this.inputDepth.TabIndex = 11;
+            this.inputDepth.TextChanged += new System.EventHandler(this.inputDepth_TextChanged);
             this.inputDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputDepth_KeyPress);
             // 
             // inputDrawer
@@ -261,15 +262,15 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Total Cost";
             // 
-            // label9
+            // overCost
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 159);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 20);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Cost over 1000";
+            this.overCost.AutoSize = true;
+            this.overCost.Location = new System.Drawing.Point(13, 159);
+            this.overCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.overCost.Name = "overCost";
+            this.overCost.Size = new System.Drawing.Size(122, 20);
+            this.overCost.TabIndex = 27;
+            this.overCost.Text = "Cost over 1000";
             // 
             // groupBox1
             // 
@@ -299,15 +300,15 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.overSizeCost);
-            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.overCostPrice);
+            this.groupBox3.Controls.Add(this.totalCostPrice);
             this.groupBox3.Controls.Add(this.materialCostPrice);
             this.groupBox3.Controls.Add(this.drawerNumPrice);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.overCost);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label4);
@@ -321,23 +322,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cost Estimate";
             // 
-            // overSizeCost
+            // overCostPrice
             // 
-            this.overSizeCost.AutoSize = true;
-            this.overSizeCost.Location = new System.Drawing.Point(287, 159);
-            this.overSizeCost.Name = "overSizeCost";
-            this.overSizeCost.Size = new System.Drawing.Size(42, 20);
-            this.overSizeCost.TabIndex = 34;
-            this.overSizeCost.Text = "$   0";
+            this.overCostPrice.AutoSize = true;
+            this.overCostPrice.Location = new System.Drawing.Point(287, 159);
+            this.overCostPrice.Name = "overCostPrice";
+            this.overCostPrice.Size = new System.Drawing.Size(42, 20);
+            this.overCostPrice.TabIndex = 34;
+            this.overCostPrice.Text = "$   0";
             // 
-            // label15
+            // totalCostPrice
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(287, 332);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 20);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "$ 475";
+            this.totalCostPrice.AutoSize = true;
+            this.totalCostPrice.Location = new System.Drawing.Point(287, 332);
+            this.totalCostPrice.Name = "totalCostPrice";
+            this.totalCostPrice.Size = new System.Drawing.Size(18, 20);
+            this.totalCostPrice.TabIndex = 33;
+            this.totalCostPrice.Text = "0";
             // 
             // materialCostPrice
             // 
@@ -470,15 +471,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label overCost;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Label overSizeCost;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label overCostPrice;
+        private System.Windows.Forms.Label totalCostPrice;
         private System.Windows.Forms.Label materialCostPrice;
         private System.Windows.Forms.Label drawerNumPrice;
         private System.Windows.Forms.Label label12;

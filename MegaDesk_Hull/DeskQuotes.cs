@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +59,7 @@ namespace MegaDesk_Hull
         {
             double includedSize = 0;
             double extraSize = (desk.getWidth() * desk.getDepth()) - 1000;
+           // MessageBox.Show("get size" + desk.getWidth().ToString() + " depth" + desk.getDepth().ToString());
             if (extraSize > 0)
             {
                 return extraSize;
@@ -67,18 +69,29 @@ namespace MegaDesk_Hull
                 return includedSize;
             }
         }
+        
         public double drawerCost(string drawer)
         {
             int price = 0;
-            try
+            if (drawer != string.Empty)
             {
-                price = Int32.Parse(drawer);  
+                try
+                {
+                    price = Int32.Parse(drawer);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("cannot convert string to int");
+                }
+                return price * 50;
             }
-            catch(Exception)
-            {
-                MessageBox.Show("cannot convert string to int");
-            }
-            return price * 50;
+            return 0;
+        }
+        public double getQuotePrice(string drawer, int material)
+        {
+            
+            return 200 + drawerCost(drawer) + getSize() + material;
+            //return 200 + drawerCost(drawer) + getSize() + materialCost(material);
         }
         public string[,] getRushOrder(string [] dayPrice)
         {
