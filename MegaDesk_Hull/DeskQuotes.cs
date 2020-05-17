@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.Linq;
@@ -23,13 +24,13 @@ namespace MegaDesk_Hull
 
         }
 
-        public DeskQuotes(Desk desk, DateTime quoteDate, string name, int rushDays, string[,] rushOrders)
+        public DeskQuotes(Desk desk, DateTime quoteDate, string name, int rushDays)
         {
             this.desk = desk;
             this.quoteDate = quoteDate;
             this.name = name;
             this.rushDays = rushDays;
-            this.rushOrders = rushOrders;
+
         }
 
         public string getName() { return name; }
@@ -59,17 +60,10 @@ namespace MegaDesk_Hull
         {
             double includedSize = 0;
             double extraSize = (desk.getWidth() * desk.getDepth()) - 1000;
-           // MessageBox.Show("get size" + desk.getWidth().ToString() + " depth" + desk.getDepth().ToString());
-            if (extraSize > 0)
-            {
-                return extraSize;
-            }
-            else
-            {
-                return includedSize;
-            }
+
+            return extraSize > 0 ? extraSize : includedSize;
         }
-        
+
         public double drawerCost(string drawer)
         {
             int price = 0;
@@ -87,11 +81,10 @@ namespace MegaDesk_Hull
             }
             return 0;
         }
-        public double getQuotePrice(string drawer, int material)
+        public double getQuotePrice(string drawer, int material, string day)
         {
             
-            return 200 + drawerCost(drawer) + getSize() + material;
-            //return 200 + drawerCost(drawer) + getSize() + materialCost(material);
+            return 200 + drawerCost(drawer) + getSize() + material + getShippingPrice(day);
         }
         public string[,] getRushOrder(string [] dayPrice)
         {
@@ -108,6 +101,59 @@ namespace MegaDesk_Hull
             }
             return rushOrders;
         }
+        public double getRushPrice()
+        {
+            return 0;
+        }
+        
+        public int getShippingPrice(string day)
+        {
+            switch (day)
+            {
+                case "Rush 3 Days":
+                     if(getSize()  <= 0)
+                    {
+                        return int.Parse(rushOrders[0,0]);
+                    }
+                    else if (getSize() <= 1000)
+                    {
+                        return int.Parse(rushOrders[0, 1]);
+                    }
+                    else 
+                        return int.Parse(rushOrders[0, 2]);
+                   // break;
+                case "Rush 5 Days":
+                     if (getSize() <= 0)
+                    {
+                        return int.Parse(rushOrders[1, 0]);
+                    }
+                    else if (getSize() <= 1000)
+                    {
+                        return int.Parse(rushOrders[1, 1]);
+                    }
+                    else
+                        return int.Parse(rushOrders[1, 2]);
+                    //break;
+                case "Rush 7 Days":
+                    if (getSize() <= 0)
+                    {
+                        return int.Parse(rushOrders[2, 0]);
+                    }
+                    else if (getSize() <= 1000)
+                    {
+                        return int.Parse(rushOrders[2, 1]);
+                    }
+                    else
+                        return int.Parse(rushOrders[2, 2]);
+                    //break;
+                default:
+                    return 0;
+                    //break;
+
+            }
+            
+        }
+
 
     }
 }

@@ -59,7 +59,7 @@
             this.groupBox3.Controls.Add(this.materialLabel);
             this.groupBox3.Controls.Add(this.drawerLabel);
             this.groupBox3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(383, 28);
+            this.groupBox3.Location = new System.Drawing.Point(410, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(371, 379);
             this.groupBox3.TabIndex = 14;
@@ -69,7 +69,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(269, 132);
+            this.label16.Location = new System.Drawing.Point(284, 115);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 22);
             this.label16.TabIndex = 34;
@@ -79,7 +79,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(269, 332);
+            this.label15.Location = new System.Drawing.Point(276, 277);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 22);
             this.label15.TabIndex = 33;
@@ -88,7 +88,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(269, 258);
+            this.label14.Location = new System.Drawing.Point(277, 223);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 22);
             this.label14.TabIndex = 32;
@@ -97,7 +97,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(269, 199);
+            this.label13.Location = new System.Drawing.Point(277, 169);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 22);
             this.label13.TabIndex = 31;
@@ -106,7 +106,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(269, 61);
+            this.label10.Location = new System.Drawing.Point(276, 61);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 22);
             this.label10.TabIndex = 28;
@@ -115,7 +115,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 61);
+            this.label1.Location = new System.Drawing.Point(51, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 22);
@@ -125,7 +125,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 132);
+            this.label9.Location = new System.Drawing.Point(51, 115);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 22);
@@ -136,7 +136,7 @@
             // 
             this.totalCostLabel.AutoSize = true;
             this.totalCostLabel.ForeColor = System.Drawing.Color.Red;
-            this.totalCostLabel.Location = new System.Drawing.Point(24, 332);
+            this.totalCostLabel.Location = new System.Drawing.Point(51, 277);
             this.totalCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalCostLabel.Name = "totalCostLabel";
             this.totalCostLabel.Size = new System.Drawing.Size(99, 22);
@@ -146,7 +146,7 @@
             // materialLabel
             // 
             this.materialLabel.AutoSize = true;
-            this.materialLabel.Location = new System.Drawing.Point(24, 258);
+            this.materialLabel.Location = new System.Drawing.Point(51, 223);
             this.materialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel.Name = "materialLabel";
             this.materialLabel.Size = new System.Drawing.Size(125, 22);
@@ -156,7 +156,7 @@
             // drawerLabel
             // 
             this.drawerLabel.AutoSize = true;
-            this.drawerLabel.Location = new System.Drawing.Point(24, 199);
+            this.drawerLabel.Location = new System.Drawing.Point(51, 169);
             this.drawerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.drawerLabel.Name = "drawerLabel";
             this.drawerLabel.Size = new System.Drawing.Size(167, 22);

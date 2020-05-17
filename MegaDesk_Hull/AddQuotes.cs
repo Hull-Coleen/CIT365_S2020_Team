@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
-
+using System.Security.Cryptography;
 
 namespace MegaDesk_Hull
 {
@@ -19,9 +18,12 @@ namespace MegaDesk_Hull
         //instaniate DeskQuote
         DeskQuotes deskQ = new DeskQuotes();
         int selectedKey = 0;
+
         public AddQuotes()
         {
             InitializeComponent();
+            //Set button2 to be non-validating.
+            this.saveButton.CausesValidation = false;
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -31,43 +33,28 @@ namespace MegaDesk_Hull
             Close();
         }
 
-        private void inputWidth_Validating(object sender, CancelEventArgs e)
+        private void costUpdate()
         {
-            int width = 0;
-            try
-            {
-                width = Int32.Parse(inputWidth.Text);
-                deskQ.getDesk().setWidth(width);
-                totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
-                         selectedKey).ToString();
-               // MessageBox.Show("width val"  + deskQ.getSize().ToString());
-            }
-            catch (Exception)
-            {
-                e.Cancel = true;
-                if (width < 24 || width > 96)
-                {
-                    MessageBox.Show("Please enter numbers between 24 and 96");
-                }
-                else
-                {
-                    MessageBox.Show("Please enter only numbers into the width field");
-                }
-            }
+            totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
+                  selectedKey, shippingInput.Text).ToString();
         }
-        
-        private void inputDepth_KeyPress(object sender, KeyPressEventArgs e)
+        public void keyPressFunction(KeyPressEventArgs e)
         {
-             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
-             {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            {
                 MessageBox.Show("please enter digits only");
                 e.Handled = true;
-             }
+            }
         }
+        private void inputDepth_KeyPress(object sender, KeyPressEventArgs e) => keyPressFunction(e);
+
+        private void inputWidth_KeyPress(object sender, KeyPressEventArgs e) => keyPressFunction(e);
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
             DateTime currentTime = DateTime.Now;
+            deskQ.setName(inputName.Text);
+            deskQ.setQuoteDate(currentTime);
             DisplayQuotes disQuote = new DisplayQuotes();
             disQuote.Tag = this;
             disQuote.Show(this);
@@ -91,20 +78,8 @@ namespace MegaDesk_Hull
             inputMaterial.DisplayMember= "Key";
             inputMaterial.ValueMember =  "Value";
 
-            // set values to price labels
-            overCostPrice.Text = deskQ.getSize().ToString(); 
+            // set values to price labels 
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
-            drawerNumPrice.Text = deskQ.getDesk().getDrawer().ToString();
-        
-            // get the location of the file
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrderPrices.txt");
-            
-            // convert file to a string array
-            string [] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);
-           
-            // populate the rushOrder variable
-            string [,] rushOrderPrice = deskQ.getRushOrder(rushOrderFile);
-
         }
 
         private void inputMaterial_changed(object sender, EventArgs e)
@@ -114,37 +89,147 @@ namespace MegaDesk_Hull
             KeyValuePair<string, int> selectedEntry
                  = (KeyValuePair<string, int>)inputMaterial.SelectedItem;
             selectedKey = selectedEntry.Value;
-            totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text, 
-                 selectedKey).ToString();
-
-
-
+            costUpdate();
         }
 
 
         private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
         {
             drawerNumPrice.Text = deskQ.drawerCost(inputDrawer.Text).ToString();
-            totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text, 
-               selectedKey).ToString();
+            costUpdate();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
+        {/*
+            DeskQuotes resetDesk = new DeskQuotes();
+            resetDesk.getQuotePrice(inputDrawer.Text,
+                  selectedKey, shippingInput.Text).ToString();*/
+             
+            //deskQ.setDeskQuotes(new Desk(), DateTime.Now, "", 14);
+            //    public DeskQuotes(Desk desk, DateTime quoteDate, string name, int rushDays)
+        }
+        public bool numberValid(int smallBound, int largeBound, int userInput, out string errMess)
         {
-            deskQ = new DeskQuotes();
-            //totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
-               // inputMaterial.SelectedValue.ToString()).ToString();
+            if(userInput < smallBound || userInput > largeBound)
+            {
+                errMess = $" please enter numbers between {smallBound} and {largeBound}";
+                return false;
+            }
+            errMess = "";
+            return true; 
         }
 
-        private void inputDepth_TextChanged(object sender, EventArgs e)
+        private void inputDepth_Validated(object sender, EventArgs e)
         {
+            errorProvider1.SetError(inputDepth, "");
+        }
 
-            int.TryParse(inputDepth.Text, out int input);
-            deskQ.getDesk().setDepth(input);
-            totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
-               selectedKey).ToString();
-           // MessageBox.Show("Key Press" + deskQ.getSize().ToString());
+        private void inputDepth_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg = "";
+            int depth = 0;
+            try
+            {
+                depth = Int32.Parse(inputDepth.Text);
+            }
+            catch (Exception)
+            {
+                errorMsg = "could not convert string to int";
+                errorProvider1.SetError(inputDepth, errorMsg);
+            }
+            if (!numberValid(Constants.SmallDepth, Constants.LargeDepth, depth, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                inputWidth.Select(0, inputDepth.Text.Length);
+
+                // Set the ErrorProvider error with the text to display. 
+                errorProvider1.SetError(inputDepth, errorMsg);
+
+            }
+            deskQ.getDesk().setDepth(depth);
+            costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
+        }
+        private void inputWidth_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg = "";
+            int width = 0;
+            try
+            {
+                width = Int32.Parse(inputWidth.Text);
+            }
+            catch (Exception)
+            {
+                errorMsg = "could not convert string to int";
+                errorProvider1.SetError(inputWidth, errorMsg);
+            }
+            if(!numberValid(Constants.SmallWidth, Constants.LargeWidth, width, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                inputWidth.Select(0, inputWidth.Text.Length);
+
+                // Set the ErrorProvider error with the text to display. 
+                errorProvider1.SetError(inputWidth, errorMsg);
+
+            }
+            deskQ.getDesk().setWidth(width);
+            costUpdate();
+            overCostPrice.Text = deskQ.getSize().ToString();
+        }
+
+        private void inputWidth_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(inputWidth, "");
+        }
+
+        private void inputName_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validName(inputName.Text, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                inputName.Select(0, inputName.Text.Length);
+
+                // Set the ErrorProvider error with the text to display. 
+                errorProvider1.SetError(inputName, errorMsg);
+            }
+
+        }
+
+        private void inputName_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(inputName, "");
+
+        }
+
+        public bool validName(string name, out string errorMessage)
+        {
+            // Confirm that the name string is not empty.
+            if (name.Length == 0)
+            {
+                errorMessage = "A name is required.";
+                return false;
+            }
+            errorMessage = "";
+            return true;
+        }
+
+        private void shippingInput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // get the location of the file
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\rushOrderPrices.txt");
+
+            // convert file to a string array
+            string[] rushOrderFile = File.ReadAllLines(path, Encoding.UTF8);
+
+            // populate the rushOrder variable
+            deskQ.getRushOrder(rushOrderFile);
+            shippingCostPrice.Text = deskQ.getShippingPrice(shippingInput.Text).ToString();
+            
+            costUpdate();
         }
     }
 }

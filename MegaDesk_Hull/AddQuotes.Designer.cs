@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BackButton = new System.Windows.Forms.Button();
             this.name = new System.Windows.Forms.Label();
             this.width = new System.Windows.Forms.Label();
@@ -58,16 +59,29 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.shippingInput = new System.Windows.Forms.ComboBox();
+            this.saveButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.shippingCostLabel = new System.Windows.Forms.Label();
+            this.shippingCostPrice = new System.Windows.Forms.Label();
+            this.dollarSign = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // BackButton
             // 
+            this.BackButton.CausesValidation = false;
             this.BackButton.Location = new System.Drawing.Point(17, 411);
             this.BackButton.Margin = new System.Windows.Forms.Padding(4);
             this.BackButton.Name = "BackButton";
@@ -144,6 +158,8 @@
             this.inputName.Name = "inputName";
             this.inputName.Size = new System.Drawing.Size(218, 27);
             this.inputName.TabIndex = 8;
+            this.inputName.Validating += new System.ComponentModel.CancelEventHandler(this.inputName_Validating);
+            this.inputName.Validated += new System.EventHandler(this.inputName_Validated);
             // 
             // inputWidth
             // 
@@ -152,7 +168,9 @@
             this.inputWidth.Name = "inputWidth";
             this.inputWidth.Size = new System.Drawing.Size(124, 27);
             this.inputWidth.TabIndex = 10;
+            this.inputWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputWidth_KeyPress);
             this.inputWidth.Validating += new System.ComponentModel.CancelEventHandler(this.inputWidth_Validating);
+            this.inputWidth.Validated += new System.EventHandler(this.inputWidth_Validated);
             // 
             // inputDepth
             // 
@@ -161,8 +179,9 @@
             this.inputDepth.Name = "inputDepth";
             this.inputDepth.Size = new System.Drawing.Size(124, 27);
             this.inputDepth.TabIndex = 11;
-            this.inputDepth.TextChanged += new System.EventHandler(this.inputDepth_TextChanged);
             this.inputDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputDepth_KeyPress);
+            this.inputDepth.Validating += new System.ComponentModel.CancelEventHandler(this.inputDepth_Validating);
+            this.inputDepth.Validated += new System.EventHandler(this.inputDepth_Validated);
             // 
             // inputDrawer
             // 
@@ -205,7 +224,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 121);
+            this.label2.Location = new System.Drawing.Point(13, 104);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 20);
@@ -215,7 +234,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 78);
+            this.label3.Location = new System.Drawing.Point(13, 67);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 20);
@@ -225,7 +244,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 204);
+            this.label4.Location = new System.Drawing.Point(13, 178);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 20);
@@ -235,7 +254,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 247);
+            this.label5.Location = new System.Drawing.Point(13, 215);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 20);
@@ -245,7 +264,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 287);
+            this.label7.Location = new System.Drawing.Point(13, 252);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 20);
@@ -255,7 +274,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 332);
+            this.label8.Location = new System.Drawing.Point(13, 326);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 20);
@@ -265,7 +284,7 @@
             // overCost
             // 
             this.overCost.AutoSize = true;
-            this.overCost.Location = new System.Drawing.Point(13, 159);
+            this.overCost.Location = new System.Drawing.Point(13, 141);
             this.overCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.overCost.Name = "overCost";
             this.overCost.Size = new System.Drawing.Size(122, 20);
@@ -300,6 +319,16 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.dollarSign);
+            this.groupBox3.Controls.Add(this.shippingCostPrice);
+            this.groupBox3.Controls.Add(this.shippingCostLabel);
             this.groupBox3.Controls.Add(this.overCostPrice);
             this.groupBox3.Controls.Add(this.totalCostPrice);
             this.groupBox3.Controls.Add(this.materialCostPrice);
@@ -324,90 +353,91 @@
             // 
             // overCostPrice
             // 
-            this.overCostPrice.AutoSize = true;
-            this.overCostPrice.Location = new System.Drawing.Point(287, 159);
+            this.overCostPrice.Location = new System.Drawing.Point(300, 141);
             this.overCostPrice.Name = "overCostPrice";
-            this.overCostPrice.Size = new System.Drawing.Size(42, 20);
+            this.overCostPrice.Size = new System.Drawing.Size(45, 20);
             this.overCostPrice.TabIndex = 34;
-            this.overCostPrice.Text = "$   0";
+            this.overCostPrice.Text = "0";
+            this.overCostPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // totalCostPrice
             // 
-            this.totalCostPrice.AutoSize = true;
-            this.totalCostPrice.Location = new System.Drawing.Point(287, 332);
+            this.totalCostPrice.Location = new System.Drawing.Point(300, 332);
             this.totalCostPrice.Name = "totalCostPrice";
-            this.totalCostPrice.Size = new System.Drawing.Size(18, 20);
+            this.totalCostPrice.Size = new System.Drawing.Size(45, 20);
             this.totalCostPrice.TabIndex = 33;
             this.totalCostPrice.Text = "0";
+            this.totalCostPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // materialCostPrice
             // 
-            this.materialCostPrice.AutoSize = true;
-            this.materialCostPrice.Location = new System.Drawing.Point(287, 287);
+            this.materialCostPrice.Location = new System.Drawing.Point(300, 252);
             this.materialCostPrice.Name = "materialCostPrice";
-            this.materialCostPrice.Size = new System.Drawing.Size(50, 20);
+            this.materialCostPrice.Size = new System.Drawing.Size(45, 20);
             this.materialCostPrice.TabIndex = 32;
-            this.materialCostPrice.Text = "$ 125";
+            this.materialCostPrice.Text = "0";
+            this.materialCostPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // drawerNumPrice
             // 
-            this.drawerNumPrice.AutoSize = true;
-            this.drawerNumPrice.Location = new System.Drawing.Point(287, 247);
+            this.drawerNumPrice.Location = new System.Drawing.Point(300, 215);
             this.drawerNumPrice.Name = "drawerNumPrice";
-            this.drawerNumPrice.Size = new System.Drawing.Size(50, 20);
+            this.drawerNumPrice.Size = new System.Drawing.Size(45, 20);
             this.drawerNumPrice.TabIndex = 31;
-            this.drawerNumPrice.Text = "$ 150";
+            this.drawerNumPrice.Text = "0";
+            this.drawerNumPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(287, 204);
+            this.label12.Location = new System.Drawing.Point(300, 178);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 20);
+            this.label12.Size = new System.Drawing.Size(45, 20);
             this.label12.TabIndex = 30;
-            this.label12.Text = "$  50";
+            this.label12.Text = " 50";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(287, 121);
+            this.label11.Location = new System.Drawing.Point(300, 104);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 20);
+            this.label11.Size = new System.Drawing.Size(45, 20);
             this.label11.TabIndex = 29;
-            this.label11.Text = "$   1";
+            this.label11.Text = "  1";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(287, 35);
+            this.label10.Location = new System.Drawing.Point(300, 35);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 20);
+            this.label10.Size = new System.Drawing.Size(45, 20);
             this.label10.TabIndex = 28;
-            this.label10.Text = "$ 200";
+            this.label10.Text = " 200";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // comboBox1
+            // shippingInput
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.shippingInput.FormattingEnabled = true;
+            this.shippingInput.Items.AddRange(new object[] {
             "Normal 14 Days",
             "Rush 7 Days",
             "Rush 5 Days",
             "Rush 3 Days"});
-            this.comboBox1.Location = new System.Drawing.Point(172, 336);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 28);
-            this.comboBox1.TabIndex = 18;
+            this.shippingInput.Location = new System.Drawing.Point(172, 336);
+            this.shippingInput.Margin = new System.Windows.Forms.Padding(4);
+            this.shippingInput.Name = "shippingInput";
+            this.shippingInput.Size = new System.Drawing.Size(150, 28);
+            this.shippingInput.TabIndex = 18;
+            this.shippingInput.SelectedIndexChanged += new System.EventHandler(this.shippingInput_SelectedIndexChanged);
             // 
-            // SaveButton
+            // saveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(740, 411);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(80, 30);
-            this.SaveButton.TabIndex = 30;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            this.saveButton.Location = new System.Drawing.Point(740, 411);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(80, 30);
+            this.saveButton.TabIndex = 30;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // resetButton
             // 
@@ -419,14 +449,110 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // shippingCostLabel
+            // 
+            this.shippingCostLabel.AutoSize = true;
+            this.shippingCostLabel.Location = new System.Drawing.Point(13, 289);
+            this.shippingCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.shippingCostLabel.Name = "shippingCostLabel";
+            this.shippingCostLabel.Size = new System.Drawing.Size(113, 20);
+            this.shippingCostLabel.TabIndex = 35;
+            this.shippingCostLabel.Text = "Shipping Cost";
+            // 
+            // shippingCostPrice
+            // 
+            this.shippingCostPrice.Location = new System.Drawing.Point(300, 289);
+            this.shippingCostPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.shippingCostPrice.Name = "shippingCostPrice";
+            this.shippingCostPrice.Size = new System.Drawing.Size(45, 20);
+            this.shippingCostPrice.TabIndex = 36;
+            this.shippingCostPrice.Text = "0";
+            this.shippingCostPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // dollarSign
+            // 
+            this.dollarSign.AutoSize = true;
+            this.dollarSign.Location = new System.Drawing.Point(240, 35);
+            this.dollarSign.Name = "dollarSign";
+            this.dollarSign.Size = new System.Drawing.Size(23, 20);
+            this.dollarSign.TabIndex = 37;
+            this.dollarSign.Text = " $";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(240, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = " $";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(240, 215);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 20);
+            this.label9.TabIndex = 39;
+            this.label9.Text = " $";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(240, 178);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 20);
+            this.label13.TabIndex = 40;
+            this.label13.Text = " $";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(240, 141);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(23, 20);
+            this.label14.TabIndex = 41;
+            this.label14.Text = " $";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(240, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 20);
+            this.label15.TabIndex = 42;
+            this.label15.Text = " $";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(240, 332);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 20);
+            this.label16.TabIndex = 43;
+            this.label16.Text = " $";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(240, 287);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(23, 20);
+            this.label17.TabIndex = 44;
+            this.label17.Text = " $";
+            // 
             // AddQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 453);
             this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.shippingInput);
             this.Controls.Add(this.inputName);
             this.Controls.Add(this.rushOrder);
             this.Controls.Add(this.name);
@@ -445,6 +571,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,8 +602,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.ComboBox shippingInput;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Label overCostPrice;
         private System.Windows.Forms.Label totalCostPrice;
@@ -485,5 +612,16 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label shippingCostPrice;
+        private System.Windows.Forms.Label shippingCostLabel;
+        private System.Windows.Forms.Label dollarSign;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
     }
 }
