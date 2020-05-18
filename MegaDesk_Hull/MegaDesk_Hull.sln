@@ -7,7 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaDesk_Hull", "MegaDesk_H
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85B3ED9A-05CD-44A8-BC7E-3A0FECB2FA81}"
 	ProjectSection(SolutionItems) = preProject
-		quotes.json = quotes.json
 		bin\Debug\Data\quotes.json = bin\Debug\Data\quotes.json
 		bin\Debug\Data\rushOrderPrices.txt = bin\Debug\Data\rushOrderPrices.txt
 	EndProjectSection

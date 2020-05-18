@@ -68,7 +68,7 @@ namespace MegaDesk_Hull
             List<DeskQuotes> deskListQuotes = new List<DeskQuotes>();
 
             deskListQuotes.Add(deskQ);
-            string json = JsonConvert.SerializeObject(deskListQuotes);
+            string json = JsonConvert.SerializeObject(deskListQuotes, Formatting.Indented);
             jsonFile += json;
             File.WriteAllText(path, jsonFile);
             
