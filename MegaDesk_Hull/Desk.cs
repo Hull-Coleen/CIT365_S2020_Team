@@ -29,54 +29,22 @@ namespace MegaDesk_Hull
         private int depth;
         private int drawer;
         private string material;
+        private double materialCost;
         public Desk ()
         {
             width = 0;
             depth = 0;
             drawer = 0;
             material = "";
+            materialCost = 0;
         }
-        public int getWidth() {
-            return width;
-        }
-        public int getDepth()
-        {
-            return depth;
-        }
-        public int getDrawer()
-        {
-            return drawer;
-        }
-        public string getMaterial()
-        {
-            return material;
-        }
-        public void setWidth(int width) {
-            this.width = width;
+        public int Width { get => width; set => this.width = value; }
 
-        }
-        public void setDepth(int depth)
-        {
-            this.depth = depth;
+        public int Depth { get => depth; set => this.depth = value; }
 
-        }
-        public void setDrawer(int drawer)
-        {
-            this.drawer = drawer;
+        public int Drawer { get => drawer; set => this.drawer = value; }
 
-        }
-        public void setMaterial(string material)
-        {
-            this.material = material;
-        }
-        public bool isValid()
-        {
-            if (width >= 24 && width <= 96)
-            {
-                return true;
-            }
-            else
-                return false;
-        }
+        public string Material { get => material; set => this.material = value; }
+        public double MaterialCost { get => materialCost; set => materialCost = value; }
     }
 }

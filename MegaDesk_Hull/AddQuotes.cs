@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Security.Cryptography;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Hull
 {
@@ -18,6 +14,8 @@ namespace MegaDesk_Hull
         //instaniate DeskQuote
         DeskQuotes deskQ = new DeskQuotes();
         int selectedKey = 0;
+
+        internal DeskQuotes DeskQ { get => deskQ; set => deskQ = value; }
 
         public AddQuotes()
         {
@@ -53,13 +51,33 @@ namespace MegaDesk_Hull
         private void SaveButton_Click(object sender, EventArgs e)
         {
             DateTime currentTime = DateTime.Now;
-            deskQ.setName(inputName.Text);
-            deskQ.setQuoteDate(currentTime);
+           // DateTime currentTime = DateTime.Now.Date.ToString(" dd MMMM  yyyy");
+            currentTime.Date.ToString(" dd MMMM  yyyy");
+            deskQ.Name = inputName.Text;
+            deskQ.QuoteDate = currentTime;
+            deskQ.TotalPrice = deskQ.getQuotePrice(inputDrawer.Text,
+                  selectedKey, shippingInput.Text);
+            deskQ.Shipping = deskQ.getShippingPrice(shippingInput.Text);
+            
+            // get the location of the file
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\quotes.json");
+
+            // convert file to a string array
+            string jsonFile = File.ReadAllText(path);
+            
+            List<DeskQuotes> deskListQuotes = new List<DeskQuotes>();
+
+            deskListQuotes.Add(deskQ);
+            string json = JsonConvert.SerializeObject(deskListQuotes);
+            jsonFile += json;
+            File.WriteAllText(path, jsonFile);
+            
             DisplayQuotes disQuote = new DisplayQuotes();
             disQuote.Tag = this;
             disQuote.Show(this);
-            Hide();
+           // Hide();
         }
+        
         public List<KeyValuePair<string, int>> GetEnumList<T>()
         {
             var list = new List<KeyValuePair<string, int>>();
@@ -89,6 +107,9 @@ namespace MegaDesk_Hull
             KeyValuePair<string, int> selectedEntry
                  = (KeyValuePair<string, int>)inputMaterial.SelectedItem;
             selectedKey = selectedEntry.Value;
+            string selectedValue = selectedEntry.Key;
+            deskQ.Desk.Material = selectedValue;
+            deskQ.Desk.MaterialCost = selectedKey;
             costUpdate();
         }
 
@@ -96,11 +117,14 @@ namespace MegaDesk_Hull
         private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
         {
             drawerNumPrice.Text = deskQ.drawerCost(inputDrawer.Text).ToString();
+            deskQ.Desk.Drawer = int.Parse(inputDrawer.Text);
             costUpdate();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
-        {/*
+        {
+            deskQ = new DeskQuotes();
+            /*
             DeskQuotes resetDesk = new DeskQuotes();
             resetDesk.getQuotePrice(inputDrawer.Text,
                   selectedKey, shippingInput.Text).ToString();*/
@@ -147,13 +171,13 @@ namespace MegaDesk_Hull
                 errorProvider1.SetError(inputDepth, errorMsg);
 
             }
-            deskQ.getDesk().setDepth(depth);
+            deskQ.Desk.Depth = depth;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
         }
         private void inputWidth_Validating(object sender, CancelEventArgs e)
         {
-            string errorMsg = "";
+            string errorMsg;
             int width = 0;
             try
             {
@@ -174,7 +198,7 @@ namespace MegaDesk_Hull
                 errorProvider1.SetError(inputWidth, errorMsg);
 
             }
-            deskQ.getDesk().setWidth(width);
+            deskQ.Desk.Width = width;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
         }

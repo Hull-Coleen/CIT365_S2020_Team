@@ -14,52 +14,32 @@ namespace MegaDesk_Hull
         private Desk desk;
         private DateTime quoteDate;
         private string name;
-        private int rushDays;
+        private int shippingCost;
         private string [,] rushOrders;
+        private double totalPrice;
+
         public DeskQuotes()
         {
             desk = new Desk();
+            quoteDate= DateTime.Now;
             name = "";
-            rushDays = 0;
-
+            shippingCost = 0;
+            rushOrders = new string [3,3];
+            totalPrice = 0;
         }
 
-        public DeskQuotes(Desk desk, DateTime quoteDate, string name, int rushDays)
-        {
-            this.desk = desk;
-            this.quoteDate = quoteDate;
-            this.name = name;
-            this.rushDays = rushDays;
+        public string Name { get => name; set => this.name = value; }
 
-        }
+        public int Shipping { get => shippingCost; set => this.shippingCost = value; }
+        public DateTime QuoteDate { get => quoteDate; set => this.quoteDate = value; }
 
-        public string getName() { return name; }
-        public int getRushDays() { return rushDays; }
-        public DateTime getQuoteDate() { return quoteDate; }
-        public Desk getDesk() { return desk; }
-        public void setName(string name) {
-            this.name = name; 
-        }
-        public void setRushDays(int day) {
-            this.rushDays = day;
-        }
-        public void setQuoteDate(DateTime date)
-        {
-            this.quoteDate = date; 
-        }
-        public void setDesk(Desk desk) {
-            this.desk = desk; 
-        }
-        public double quotePrice() 
-        {
-            double price = 0;
+        public Desk Desk { get => desk; set => this.desk = value; }
+        public double TotalPrice { get => totalPrice; set => totalPrice = value; }
 
-            return price;
-        }
         public double getSize()
         {
             double includedSize = 0;
-            double extraSize = (desk.getWidth() * desk.getDepth()) - 1000;
+            double extraSize = (desk.Width * desk.Depth) - 1000;
 
             return extraSize > 0 ? extraSize : includedSize;
         }
@@ -90,20 +70,22 @@ namespace MegaDesk_Hull
         {
             rushOrders = new string [3,3];
             int count = 0;
-            
-            for (int i = 0; i < 3; i++)
+            try
             {
-                for (int j = 0; j < 3; j++)
+                for (int i = 0; i < 3; i++)
                 {
-                    rushOrders[i, j] = dayPrice[count];
-                    count++;
+                    for (int j = 0; j < 3; j++)
+                    {
+                        rushOrders[i, j] = dayPrice[count];
+                        count++;
+                    }
                 }
+                return rushOrders;
             }
-            return rushOrders;
-        }
-        public double getRushPrice()
-        {
-            return 0;
+            catch(Exception)
+            {
+                throw new Exception("could not populate 2d array with input from file"); 
+            }
         }
         
         public int getShippingPrice(string day)
@@ -121,7 +103,7 @@ namespace MegaDesk_Hull
                     }
                     else 
                         return int.Parse(rushOrders[0, 2]);
-                   // break;
+                // break;
                 case "Rush 5 Days":
                      if (getSize() <= 0)
                     {

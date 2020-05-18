@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.overSizeCostLabel = new System.Windows.Forms.Label();
+            this.totalPriceCostLabel = new System.Windows.Forms.Label();
+            this.materialCost = new System.Windows.Forms.Label();
+            this.drawerCostLabel = new System.Windows.Forms.Label();
+            this.shippingCostLabel = new System.Windows.Forms.Label();
+            this.shippingLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.totalCostLabel = new System.Windows.Forms.Label();
             this.materialLabel = new System.Windows.Forms.Label();
@@ -48,12 +48,12 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.overSizeCostLabel);
+            this.groupBox3.Controls.Add(this.totalPriceCostLabel);
+            this.groupBox3.Controls.Add(this.materialCost);
+            this.groupBox3.Controls.Add(this.drawerCostLabel);
+            this.groupBox3.Controls.Add(this.shippingCostLabel);
+            this.groupBox3.Controls.Add(this.shippingLabel);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.totalCostLabel);
             this.groupBox3.Controls.Add(this.materialLabel);
@@ -66,61 +66,61 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Fianlized Quote";
             // 
-            // label16
+            // overSizeCostLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(284, 115);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 22);
-            this.label16.TabIndex = 34;
-            this.label16.Text = "$   0";
+            this.overSizeCostLabel.AutoSize = true;
+            this.overSizeCostLabel.Location = new System.Drawing.Point(284, 115);
+            this.overSizeCostLabel.Name = "overSizeCostLabel";
+            this.overSizeCostLabel.Size = new System.Drawing.Size(43, 22);
+            this.overSizeCostLabel.TabIndex = 34;
+            this.overSizeCostLabel.Text = "$   0";
             // 
-            // label15
+            // totalPriceCostLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(276, 277);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 22);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "$ 475";
+            this.totalPriceCostLabel.AutoSize = true;
+            this.totalPriceCostLabel.ForeColor = System.Drawing.Color.Red;
+            this.totalPriceCostLabel.Location = new System.Drawing.Point(276, 277);
+            this.totalPriceCostLabel.Name = "totalPriceCostLabel";
+            this.totalPriceCostLabel.Size = new System.Drawing.Size(51, 22);
+            this.totalPriceCostLabel.TabIndex = 33;
+            this.totalPriceCostLabel.Text = "$ 475";
             // 
-            // label14
+            // materialCost
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(277, 223);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 22);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "$ 125";
+            this.materialCost.AutoSize = true;
+            this.materialCost.Location = new System.Drawing.Point(277, 223);
+            this.materialCost.Name = "materialCost";
+            this.materialCost.Size = new System.Drawing.Size(50, 22);
+            this.materialCost.TabIndex = 32;
+            this.materialCost.Text = "$ 125";
             // 
-            // label13
+            // drawerCostLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(277, 169);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 22);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "$ 150";
+            this.drawerCostLabel.AutoSize = true;
+            this.drawerCostLabel.Location = new System.Drawing.Point(277, 169);
+            this.drawerCostLabel.Name = "drawerCostLabel";
+            this.drawerCostLabel.Size = new System.Drawing.Size(50, 22);
+            this.drawerCostLabel.TabIndex = 31;
+            this.drawerCostLabel.Text = "$ 150";
             // 
-            // label10
+            // shippingCostLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(276, 61);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 22);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "$ 200";
+            this.shippingCostLabel.AutoSize = true;
+            this.shippingCostLabel.Location = new System.Drawing.Point(276, 61);
+            this.shippingCostLabel.Name = "shippingCostLabel";
+            this.shippingCostLabel.Size = new System.Drawing.Size(51, 22);
+            this.shippingCostLabel.TabIndex = 28;
+            this.shippingCostLabel.Text = "$ 200";
             // 
-            // label1
+            // shippingLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 22);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Base Price";
+            this.shippingLabel.AutoSize = true;
+            this.shippingLabel.Location = new System.Drawing.Point(51, 61);
+            this.shippingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.shippingLabel.Name = "shippingLabel";
+            this.shippingLabel.Size = new System.Drawing.Size(87, 22);
+            this.shippingLabel.TabIndex = 19;
+            this.shippingLabel.Text = "Shipping";
             // 
             // label9
             // 
@@ -159,9 +159,9 @@
             this.drawerLabel.Location = new System.Drawing.Point(51, 169);
             this.drawerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.drawerLabel.Name = "drawerLabel";
-            this.drawerLabel.Size = new System.Drawing.Size(167, 22);
+            this.drawerLabel.Size = new System.Drawing.Size(178, 22);
             this.drawerLabel.TabIndex = 23;
-            this.drawerLabel.Text = "Total Drawer Cost";
+            this.drawerLabel.Text = "Number of Drawers";
             // 
             // dateLabel
             // 
@@ -205,6 +205,7 @@
             this.Controls.Add(this.groupBox3);
             this.Name = "DisplayQuotes";
             this.Text = "DisplayQuotes";
+            this.Load += new System.EventHandler(this.DisplayQuotes_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -215,12 +216,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label overSizeCostLabel;
+        private System.Windows.Forms.Label totalPriceCostLabel;
+        private System.Windows.Forms.Label materialCost;
+        private System.Windows.Forms.Label drawerCostLabel;
+        private System.Windows.Forms.Label shippingCostLabel;
+        private System.Windows.Forms.Label shippingLabel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label totalCostLabel;
         private System.Windows.Forms.Label materialLabel;
