@@ -68,51 +68,46 @@
             // 
             // overSizeCostLabel
             // 
-            this.overSizeCostLabel.AutoSize = true;
             this.overSizeCostLabel.Location = new System.Drawing.Point(284, 115);
             this.overSizeCostLabel.Name = "overSizeCostLabel";
-            this.overSizeCostLabel.Size = new System.Drawing.Size(43, 22);
+            this.overSizeCostLabel.Size = new System.Drawing.Size(60, 22);
             this.overSizeCostLabel.TabIndex = 34;
             this.overSizeCostLabel.Text = "$   0";
             this.overSizeCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // totalPriceCostLabel
             // 
-            this.totalPriceCostLabel.AutoSize = true;
             this.totalPriceCostLabel.ForeColor = System.Drawing.Color.Red;
-            this.totalPriceCostLabel.Location = new System.Drawing.Point(276, 277);
+            this.totalPriceCostLabel.Location = new System.Drawing.Point(284, 277);
             this.totalPriceCostLabel.Name = "totalPriceCostLabel";
-            this.totalPriceCostLabel.Size = new System.Drawing.Size(51, 22);
+            this.totalPriceCostLabel.Size = new System.Drawing.Size(60, 22);
             this.totalPriceCostLabel.TabIndex = 33;
             this.totalPriceCostLabel.Text = "$ 475";
             this.totalPriceCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // materialCost
             // 
-            this.materialCost.AutoSize = true;
-            this.materialCost.Location = new System.Drawing.Point(277, 223);
+            this.materialCost.Location = new System.Drawing.Point(284, 223);
             this.materialCost.Name = "materialCost";
-            this.materialCost.Size = new System.Drawing.Size(50, 22);
+            this.materialCost.Size = new System.Drawing.Size(60, 22);
             this.materialCost.TabIndex = 32;
             this.materialCost.Text = "$ 125";
             this.materialCost.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // drawerCostLabel
             // 
-            this.drawerCostLabel.AutoSize = true;
-            this.drawerCostLabel.Location = new System.Drawing.Point(277, 169);
+            this.drawerCostLabel.Location = new System.Drawing.Point(284, 169);
             this.drawerCostLabel.Name = "drawerCostLabel";
-            this.drawerCostLabel.Size = new System.Drawing.Size(50, 22);
+            this.drawerCostLabel.Size = new System.Drawing.Size(60, 22);
             this.drawerCostLabel.TabIndex = 31;
             this.drawerCostLabel.Text = "$ 150";
             this.drawerCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // shippingCostLabel
             // 
-            this.shippingCostLabel.AutoSize = true;
-            this.shippingCostLabel.Location = new System.Drawing.Point(276, 61);
+            this.shippingCostLabel.Location = new System.Drawing.Point(284, 61);
             this.shippingCostLabel.Name = "shippingCostLabel";
-            this.shippingCostLabel.Size = new System.Drawing.Size(51, 22);
+            this.shippingCostLabel.Size = new System.Drawing.Size(60, 22);
             this.shippingCostLabel.TabIndex = 28;
             this.shippingCostLabel.Text = "$ 200";
             this.shippingCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;

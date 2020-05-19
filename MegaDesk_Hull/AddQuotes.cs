@@ -60,13 +60,15 @@ namespace MegaDesk_Hull
             // get the location of the file
             string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\quotes.json");
 
-            // convert file to a string array
+            // get all the text in the file
             string jsonFile = File.ReadAllText(path);
-
-            // convert desk object to json
-            string json = JsonConvert.SerializeObject(deskQ, Formatting.Indented);
-            jsonFile += json;
-            File.WriteAllText(path, jsonFile);
+           // deserialize json into list of DeskQuotes class and add new instance
+            List<DeskQuotes> desk = JsonConvert.DeserializeObject<List<DeskQuotes>>(jsonFile);
+            desk.Add(deskQ);
+            // convert back to json
+            var convertedJson = JsonConvert.SerializeObject(desk, Formatting.Indented);
+            // write updated json file to quotes.json
+            File.WriteAllText(path, convertedJson);
 
             DisplayQuotes disQuote = new DisplayQuotes
             {
@@ -92,7 +94,7 @@ namespace MegaDesk_Hull
             inputMaterial.DataSource = materialList;
             inputMaterial.DisplayMember= "Key";
             inputMaterial.ValueMember =  "Value";
-
+            //deskQ.Desk.set();
             // set values to price labels 
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
         }
@@ -106,6 +108,7 @@ namespace MegaDesk_Hull
             selectedKey = selectedEntry.Value;
             string selectedValue = selectedEntry.Key;
             deskQ.Desk.Material = selectedValue;
+            //deskQ.Desk.Material
             deskQ.Desk.MaterialCost = selectedKey;
             costUpdate();
         }
