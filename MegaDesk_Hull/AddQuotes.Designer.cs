@@ -52,6 +52,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dollarSign = new System.Windows.Forms.Label();
+            this.shippingCostPrice = new System.Windows.Forms.Label();
+            this.shippingCostLabel = new System.Windows.Forms.Label();
             this.overCostPrice = new System.Windows.Forms.Label();
             this.totalCostPrice = new System.Windows.Forms.Label();
             this.materialCostPrice = new System.Windows.Forms.Label();
@@ -63,16 +73,6 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.shippingCostLabel = new System.Windows.Forms.Label();
-            this.shippingCostPrice = new System.Windows.Forms.Label();
-            this.dollarSign = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -351,6 +351,98 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cost Estimate";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(240, 287);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(23, 20);
+            this.label17.TabIndex = 44;
+            this.label17.Text = " $";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(240, 332);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 20);
+            this.label16.TabIndex = 43;
+            this.label16.Text = " $";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(240, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 20);
+            this.label15.TabIndex = 42;
+            this.label15.Text = " $";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(240, 141);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(23, 20);
+            this.label14.TabIndex = 41;
+            this.label14.Text = " $";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(240, 178);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 20);
+            this.label13.TabIndex = 40;
+            this.label13.Text = " $";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(240, 215);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 20);
+            this.label9.TabIndex = 39;
+            this.label9.Text = " $";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(240, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = " $";
+            // 
+            // dollarSign
+            // 
+            this.dollarSign.AutoSize = true;
+            this.dollarSign.Location = new System.Drawing.Point(240, 35);
+            this.dollarSign.Name = "dollarSign";
+            this.dollarSign.Size = new System.Drawing.Size(23, 20);
+            this.dollarSign.TabIndex = 37;
+            this.dollarSign.Text = " $";
+            // 
+            // shippingCostPrice
+            // 
+            this.shippingCostPrice.Location = new System.Drawing.Point(300, 289);
+            this.shippingCostPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.shippingCostPrice.Name = "shippingCostPrice";
+            this.shippingCostPrice.Size = new System.Drawing.Size(45, 20);
+            this.shippingCostPrice.TabIndex = 36;
+            this.shippingCostPrice.Text = "0";
+            this.shippingCostPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // shippingCostLabel
+            // 
+            this.shippingCostLabel.AutoSize = true;
+            this.shippingCostLabel.Location = new System.Drawing.Point(13, 289);
+            this.shippingCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.shippingCostLabel.Name = "shippingCostLabel";
+            this.shippingCostLabel.Size = new System.Drawing.Size(113, 20);
+            this.shippingCostLabel.TabIndex = 35;
+            this.shippingCostLabel.Text = "Shipping Cost";
+            // 
             // overCostPrice
             // 
             this.overCostPrice.Location = new System.Drawing.Point(300, 141);
@@ -452,98 +544,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // shippingCostLabel
-            // 
-            this.shippingCostLabel.AutoSize = true;
-            this.shippingCostLabel.Location = new System.Drawing.Point(13, 289);
-            this.shippingCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.shippingCostLabel.Name = "shippingCostLabel";
-            this.shippingCostLabel.Size = new System.Drawing.Size(113, 20);
-            this.shippingCostLabel.TabIndex = 35;
-            this.shippingCostLabel.Text = "Shipping Cost";
-            // 
-            // shippingCostPrice
-            // 
-            this.shippingCostPrice.Location = new System.Drawing.Point(300, 289);
-            this.shippingCostPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.shippingCostPrice.Name = "shippingCostPrice";
-            this.shippingCostPrice.Size = new System.Drawing.Size(45, 20);
-            this.shippingCostPrice.TabIndex = 36;
-            this.shippingCostPrice.Text = "0";
-            this.shippingCostPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // dollarSign
-            // 
-            this.dollarSign.AutoSize = true;
-            this.dollarSign.Location = new System.Drawing.Point(240, 35);
-            this.dollarSign.Name = "dollarSign";
-            this.dollarSign.Size = new System.Drawing.Size(23, 20);
-            this.dollarSign.TabIndex = 37;
-            this.dollarSign.Text = " $";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(240, 252);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 20);
-            this.label6.TabIndex = 38;
-            this.label6.Text = " $";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(240, 215);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 20);
-            this.label9.TabIndex = 39;
-            this.label9.Text = " $";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(240, 178);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 20);
-            this.label13.TabIndex = 40;
-            this.label13.Text = " $";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(240, 141);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(23, 20);
-            this.label14.TabIndex = 41;
-            this.label14.Text = " $";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(240, 104);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 20);
-            this.label15.TabIndex = 42;
-            this.label15.Text = " $";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(240, 332);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(23, 20);
-            this.label16.TabIndex = 43;
-            this.label16.Text = " $";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(240, 287);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(23, 20);
-            this.label17.TabIndex = 44;
-            this.label17.Text = " $";
             // 
             // AddQuotes
             // 

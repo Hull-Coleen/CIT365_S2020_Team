@@ -78,6 +78,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "searchQuotes";
             this.Text = "searchQuotes";
+            this.Load += new System.EventHandler(this.searchQuotes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
