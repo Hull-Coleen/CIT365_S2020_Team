@@ -74,6 +74,7 @@
             this.overSizeCostLabel.Size = new System.Drawing.Size(43, 22);
             this.overSizeCostLabel.TabIndex = 34;
             this.overSizeCostLabel.Text = "$   0";
+            this.overSizeCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // totalPriceCostLabel
             // 
@@ -84,6 +85,7 @@
             this.totalPriceCostLabel.Size = new System.Drawing.Size(51, 22);
             this.totalPriceCostLabel.TabIndex = 33;
             this.totalPriceCostLabel.Text = "$ 475";
+            this.totalPriceCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // materialCost
             // 
@@ -93,6 +95,7 @@
             this.materialCost.Size = new System.Drawing.Size(50, 22);
             this.materialCost.TabIndex = 32;
             this.materialCost.Text = "$ 125";
+            this.materialCost.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // drawerCostLabel
             // 
@@ -102,6 +105,7 @@
             this.drawerCostLabel.Size = new System.Drawing.Size(50, 22);
             this.drawerCostLabel.TabIndex = 31;
             this.drawerCostLabel.Text = "$ 150";
+            this.drawerCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // shippingCostLabel
             // 
@@ -111,6 +115,7 @@
             this.shippingCostLabel.Size = new System.Drawing.Size(51, 22);
             this.shippingCostLabel.TabIndex = 28;
             this.shippingCostLabel.Text = "$ 200";
+            this.shippingCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // shippingLabel
             // 

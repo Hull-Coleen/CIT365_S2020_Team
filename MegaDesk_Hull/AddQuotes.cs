@@ -51,8 +51,6 @@ namespace MegaDesk_Hull
         private void SaveButton_Click(object sender, EventArgs e)
         {
             DateTime currentTime = DateTime.Now;
-           // DateTime currentTime = DateTime.Now.Date.ToString(" dd MMMM  yyyy");
-            currentTime.Date.ToString(" dd MMMM  yyyy");
             deskQ.Name = inputName.Text;
             deskQ.QuoteDate = currentTime;
             deskQ.TotalPrice = deskQ.getQuotePrice(inputDrawer.Text,
@@ -64,18 +62,17 @@ namespace MegaDesk_Hull
 
             // convert file to a string array
             string jsonFile = File.ReadAllText(path);
-            
-            List<DeskQuotes> deskListQuotes = new List<DeskQuotes>();
 
-            deskListQuotes.Add(deskQ);
-            string json = JsonConvert.SerializeObject(deskListQuotes, Formatting.Indented);
+            // convert desk object to json
+            string json = JsonConvert.SerializeObject(deskQ, Formatting.Indented);
             jsonFile += json;
             File.WriteAllText(path, jsonFile);
-            
-            DisplayQuotes disQuote = new DisplayQuotes();
-            disQuote.Tag = this;
+
+            DisplayQuotes disQuote = new DisplayQuotes
+            {
+                Tag = this
+            };
             disQuote.Show(this);
-           // Hide();
         }
         
         public List<KeyValuePair<string, int>> GetEnumList<T>()
@@ -123,7 +120,10 @@ namespace MegaDesk_Hull
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            deskQ = new DeskQuotes();
+           // (Reset)inputDrawer;
+            //costUpdate();
+            //deskQ = new DeskQuotes();
+            
             /*
             DeskQuotes resetDesk = new DeskQuotes();
             resetDesk.getQuotePrice(inputDrawer.Text,
@@ -150,7 +150,7 @@ namespace MegaDesk_Hull
 
         private void inputDepth_Validating(object sender, CancelEventArgs e)
         {
-            string errorMsg = "";
+            string errorMsg;
             int depth = 0;
             try
             {
@@ -210,8 +210,7 @@ namespace MegaDesk_Hull
 
         private void inputName_Validating(object sender, CancelEventArgs e)
         {
-            string errorMsg;
-            if (!validName(inputName.Text, out errorMsg))
+            if (!validName(inputName.Text, out string errorMsg))
             {
                 // Cancel the event and select the text to be corrected by the user.
                 e.Cancel = true;

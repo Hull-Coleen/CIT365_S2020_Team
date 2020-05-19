@@ -19,7 +19,7 @@ namespace MegaDesk_Hull
         private void DisplayQuotes_Load(object sender, EventArgs e)
         {
             customerLabel.Text = ((AddQuotes)Tag).DeskQ.Name;
-            dateLabel.Text = ((AddQuotes)Tag).DeskQ.QuoteDate.ToString();
+            dateLabel.Text = ((AddQuotes)Tag).DeskQ.QuoteDate.ToString(" dd MMMM  yyyy");
             materialLabel.Text = ((AddQuotes)Tag).DeskQ.Desk.Material;
             materialCost.Text = ((AddQuotes)Tag).DeskQ.Desk.MaterialCost.ToString();
             overSizeCostLabel.Text = ((AddQuotes)Tag).DeskQ.getSize().ToString();

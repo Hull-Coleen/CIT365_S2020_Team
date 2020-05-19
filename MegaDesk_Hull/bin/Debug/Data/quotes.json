@@ -12,4 +12,68 @@
     },
     "TotalPrice": 595.0
   }
-]
+][
+  {
+    "Name": "Doc",
+    "Shipping": 50,
+    "QuoteDate": "2020-05-18T22:43:10.3145798-04:00",
+    "Desk": {
+      "Width": 35,
+      "Depth": 47,
+      "Drawer": 2,
+      "Material": "Pine",
+      "MaterialCost": 50.0
+    },
+    "TotalPrice": 1045.0
+  }
+][
+  {
+    "Name": "Sneezy",
+    "Shipping": 30,
+    "QuoteDate": "2020-05-18T22:55:20.9251604-04:00",
+    "Desk": {
+      "Width": 25,
+      "Depth": 20,
+      "Drawer": 0,
+      "Material": "Pine",
+      "MaterialCost": 50.0
+    },
+    "TotalPrice": 280.0
+  }
+]{
+  "Name": "Dopey",
+  "Shipping": 70,
+  "QuoteDate": "2020-05-18T22:57:31.8225784-04:00",
+  "Desk": {
+    "Width": 80,
+    "Depth": 13,
+    "Drawer": 0,
+    "Material": "Pine",
+    "MaterialCost": 50.0
+  },
+  "TotalPrice": 360.0
+}{
+  "Name": "Sleepy",
+  "Shipping": 0,
+  "QuoteDate": "2020-05-18T23:59:29.9097064-04:00",
+  "Desk": {
+    "Width": 24,
+    "Depth": 12,
+    "Drawer": 0,
+    "Material": "Pine",
+    "MaterialCost": 50.0
+  },
+  "TotalPrice": 250.0
+}{
+  "Name": "",
+  "Shipping": 0,
+  "QuoteDate": "2020-05-19T00:01:30.4017614-04:00",
+  "Desk": {
+    "Width": 0,
+    "Depth": 0,
+    "Drawer": 0,
+    "Material": "Pine",
+    "MaterialCost": 50.0
+  },
+  "TotalPrice": 250.0
+}
