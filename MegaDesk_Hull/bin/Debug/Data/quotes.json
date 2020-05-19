@@ -12,4 +12,32 @@
     },
     "TotalPrice": 595.0
   }
+][
+  {
+    "Name": "Poozer",
+    "Shipping": 70,
+    "QuoteDate": "2020-05-18T19:20:37.2747686-07:00",
+    "Desk": {
+      "Width": 24,
+      "Depth": 48,
+      "Drawer": 2,
+      "Material": "Pine",
+      "MaterialCost": 50.0
+    },
+    "TotalPrice": 572.0
+  }
+][
+  {
+    "Name": "Quote 3",
+    "Shipping": 0,
+    "QuoteDate": "2020-05-18T19:54:09.5716764-07:00",
+    "Desk": {
+      "Width": 24,
+      "Depth": 40,
+      "Drawer": 2,
+      "Material": "Rosewood",
+      "MaterialCost": 300.0
+    },
+    "TotalPrice": 600.0
+  }
 ]
