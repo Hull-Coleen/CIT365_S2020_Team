@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="AddQuotes.Designer.cs">
       <DependentUpon>AddQuotes.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Desk.cs" />
     <Compile Include="DeskQuotes.cs" />
