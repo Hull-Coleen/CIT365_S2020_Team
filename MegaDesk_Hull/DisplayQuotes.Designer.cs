@@ -61,7 +61,7 @@
             this.groupBox3.Controls.Add(this.materialLabel);
             this.groupBox3.Controls.Add(this.drawerLabel);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(153, 2);
+            this.groupBox3.Location = new System.Drawing.Point(184, 50);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(371, 508);
             this.groupBox3.TabIndex = 14;
@@ -188,7 +188,7 @@
             // backButton
             // 
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(28, 480);
+            this.backButton.Location = new System.Drawing.Point(23, 528);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 30);
             this.backButton.TabIndex = 39;
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 549);
+            this.ClientSize = new System.Drawing.Size(579, 579);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox3);
             this.Name = "DisplayQuotes";

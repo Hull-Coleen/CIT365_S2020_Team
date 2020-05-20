@@ -20,7 +20,7 @@ namespace MegaDesk_Hull
         public AddQuotes()
         {
             InitializeComponent();
-            saveButton.Enabled = false;
+            //saveButton.Enabled = false;
         }
 
         public void keyPressFunction(KeyPressEventArgs e)
