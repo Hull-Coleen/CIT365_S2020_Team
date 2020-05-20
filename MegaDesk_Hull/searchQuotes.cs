@@ -50,7 +50,6 @@ namespace MegaDesk_Hull
 
         private void inputMaterial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             DataTable searchData = new DataTable();
             searchData.Columns.Add("Name");
             searchData.Columns.Add("Date");

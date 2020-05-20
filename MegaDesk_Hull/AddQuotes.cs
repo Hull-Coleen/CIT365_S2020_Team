@@ -20,22 +20,9 @@ namespace MegaDesk_Hull
         public AddQuotes()
         {
             InitializeComponent();
-            //Set button2 to be non-validating.
-            this.saveButton.CausesValidation = false;
+            saveButton.Enabled = false;
         }
 
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            MainMenu mm = (MainMenu)Tag;
-            mm.Show();
-            Close();
-        }
-
-        private void costUpdate()
-        {
-            totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
-                  selectedKey, shippingInput.Text).ToString();
-        }
         public void keyPressFunction(KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
@@ -70,11 +57,9 @@ namespace MegaDesk_Hull
             // write updated json file to quotes.json
             File.WriteAllText(path, convertedJson);
 
-            DisplayQuotes disQuote = new DisplayQuotes
-            {
-                Tag = this
-            };
-            disQuote.Show(this);
+            DisplayQuotes viewDisplayQuotes = new DisplayQuotes();
+            viewDisplayQuotes.Tag = this;
+            viewDisplayQuotes.Show(this);
         }
         
         public List<KeyValuePair<string, int>> GetEnumList<T>()
@@ -88,6 +73,7 @@ namespace MegaDesk_Hull
         }
         private void AddQuotes_Load(object sender, EventArgs e)
         {
+           // MessageBox.Show(shippingInput.Text);
             //assign the material enum 
             List<KeyValuePair<string, int>> materialList = GetEnumList<Material>();
             // make the meterailList(enum material) the datasource and assign key and value
@@ -97,6 +83,11 @@ namespace MegaDesk_Hull
           
             // set values to price labels 
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
+        }
+        private void costUpdate()
+        {
+            totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
+                  selectedKey, shippingInput.Text).ToString();
         }
 
         private void inputMaterial_changed(object sender, EventArgs e)
@@ -111,30 +102,9 @@ namespace MegaDesk_Hull
             //deskQ.Desk.Material
             deskQ.Desk.MaterialCost = selectedKey;
             costUpdate();
+
         }
 
-
-        private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            drawerNumPrice.Text = deskQ.drawerCost(inputDrawer.Text).ToString();
-            deskQ.Desk.Drawer = int.Parse(inputDrawer.Text);
-            costUpdate();
-        }
-
-        private void resetButton_Click(object sender, EventArgs e)
-        {
-           // (Reset)inputDrawer;
-            //costUpdate();
-            //deskQ = new DeskQuotes();
-            
-            /*
-            DeskQuotes resetDesk = new DeskQuotes();
-            resetDesk.getQuotePrice(inputDrawer.Text,
-                  selectedKey, shippingInput.Text).ToString();*/
-             
-            //deskQ.setDeskQuotes(new Desk(), DateTime.Now, "", 14);
-            //    public DeskQuotes(Desk desk, DateTime quoteDate, string name, int rushDays)
-        }
         public bool numberValid(int smallBound, int largeBound, int userInput, out string errMess)
         {
             if(userInput < smallBound || userInput > largeBound)
@@ -144,6 +114,14 @@ namespace MegaDesk_Hull
             }
             errMess = "";
             return true; 
+        }
+        public bool numberValid(int smallBound, int largeBound, int userInput)
+        {
+            if (userInput < smallBound || userInput > largeBound)
+            {
+                return false;
+            }
+            return true;
         }
 
         private void inputDepth_Validated(object sender, EventArgs e)
@@ -177,6 +155,7 @@ namespace MegaDesk_Hull
             deskQ.Desk.Depth = depth;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
+           // buttonEnable();
         }
         private void inputWidth_Validating(object sender, CancelEventArgs e)
         {
@@ -204,6 +183,7 @@ namespace MegaDesk_Hull
             deskQ.Desk.Width = width;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
+           // buttonEnable();
         }
 
         private void inputWidth_Validated(object sender, EventArgs e)
@@ -222,6 +202,7 @@ namespace MegaDesk_Hull
                 // Set the ErrorProvider error with the text to display. 
                 errorProvider1.SetError(inputName, errorMsg);
             }
+           // buttonEnable();
 
         }
 
@@ -231,7 +212,7 @@ namespace MegaDesk_Hull
 
         }
 
-        public bool validName(string name, out string errorMessage)
+        private bool validName(string name, out string errorMessage)
         {
             // Confirm that the name string is not empty.
             if (name.Length == 0)
@@ -242,7 +223,16 @@ namespace MegaDesk_Hull
             errorMessage = "";
             return true;
         }
-
+        public bool validName(string name)
+        {
+            // Confirm that the name string is not empty.
+            if (name.Length == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+        
         private void shippingInput_SelectedIndexChanged(object sender, EventArgs e)
         {
             // get the location of the file
@@ -254,8 +244,34 @@ namespace MegaDesk_Hull
             // populate the rushOrder variable
             deskQ.getRushOrder(rushOrderFile);
             shippingCostPrice.Text = deskQ.getShippingPrice(shippingInput.Text).ToString();
-            
+           // buttonEnable();
             costUpdate();
+        }
+        private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            drawerNumPrice.Text = deskQ.drawerCost(inputDrawer.Text).ToString();
+            deskQ.Desk.Drawer = int.Parse(inputDrawer.Text);
+            costUpdate();
+        }
+        private void buttonEnable()
+        { 
+            if (validName(inputName.Text) && (shippingInput.Text != null) && 
+                numberValid(Constants.SmallDepth, Constants.LargeDepth, int.Parse(inputDepth.Text))
+                && numberValid(Constants.SmallWidth, Constants.LargeWidth, int.Parse(inputWidth.Text)))
+                saveButton.Enabled = false;
+
+        }
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            inputName.Text = "";
+            inputWidth.Text = "";
+            inputDepth.Text = "";
+        }
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            MainMenu mm = (MainMenu)Tag;
+            mm.Show();
+            Close();
         }
     }
 }
