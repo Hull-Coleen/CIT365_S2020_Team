@@ -24,5 +24,70 @@
       "MaterialCost": 50.0
     },
     "TotalPrice": 250.0
+  },
+  {
+    "Name": "Doc",
+    "Shipping": 0,
+    "QuoteDate": "2020-05-19T22:45:44.9195138-04:00",
+    "Desk": {
+      "Width": 80,
+      "Depth": 40,
+      "Drawer": 1,
+      "Material": "Pine",
+      "MaterialCost": 50.0
+    },
+    "TotalPrice": 2500.0
+  },
+  {
+    "Name": "Sneezy",
+    "Shipping": 35,
+    "QuoteDate": "2020-05-20T16:19:24.4575413-04:00",
+    "Desk": {
+      "Width": 65,
+      "Depth": 20,
+      "Drawer": 5,
+      "Material": "Laminate",
+      "MaterialCost": 100.0
+    },
+    "TotalPrice": 885.0
+  },
+  {
+    "Name": "Sleepy",
+    "Shipping": 0,
+    "QuoteDate": "2020-05-20T16:19:52.4417976-04:00",
+    "Desk": {
+      "Width": 45,
+      "Depth": 20,
+      "Drawer": 1,
+      "Material": "Veneer",
+      "MaterialCost": 125.0
+    },
+    "TotalPrice": 375.0
+  },
+  {
+    "Name": "Dopey",
+    "Shipping": 0,
+    "QuoteDate": "2020-05-20T16:20:31.3828134-04:00",
+    "Desk": {
+      "Width": 30,
+      "Depth": 20,
+      "Drawer": 2,
+      "Material": "Oak",
+      "MaterialCost": 200.0
+    },
+    "TotalPrice": 500.0
+  },
+  {
+    "Name": "Happy",
+    "Shipping": 0,
+    "QuoteDate": "2020-05-20T16:20:59.7715158-04:00",
+    "Desk": {
+      "Width": 35,
+      "Depth": 23,
+      "Drawer": 3,
+      "Material": "Rosewood",
+      "MaterialCost": 300.0
+    },
+    "TotalPrice": 650.0
   }
 ]

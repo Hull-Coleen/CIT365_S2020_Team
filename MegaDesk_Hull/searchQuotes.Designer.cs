@@ -31,6 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.material = new System.Windows.Forms.Label();
             this.inputMaterial = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -66,12 +68,27 @@
             this.inputMaterial.Name = "inputMaterial";
             this.inputMaterial.Size = new System.Drawing.Size(121, 24);
             this.inputMaterial.TabIndex = 2;
+            this.inputMaterial.SelectedIndexChanged += new System.EventHandler(this.inputMaterial_SelectedIndexChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(803, 309);
+            this.dataGridView1.TabIndex = 3;
             // 
             // searchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 453);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.inputMaterial);
             this.Controls.Add(this.material);
             this.Controls.Add(this.button1);
@@ -79,6 +96,7 @@
             this.Name = "searchQuotes";
             this.Text = "searchQuotes";
             this.Load += new System.EventHandler(this.searchQuotes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,5 +107,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label material;
         private System.Windows.Forms.ComboBox inputMaterial;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

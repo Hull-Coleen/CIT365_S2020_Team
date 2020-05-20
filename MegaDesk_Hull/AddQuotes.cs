@@ -94,7 +94,7 @@ namespace MegaDesk_Hull
             inputMaterial.DataSource = materialList;
             inputMaterial.DisplayMember= "Key";
             inputMaterial.ValueMember =  "Value";
-            //deskQ.Desk.set();
+          
             // set values to price labels 
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
         }
