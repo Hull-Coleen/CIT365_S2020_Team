@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 402);
+            this.ClientSize = new System.Drawing.Size(728, 399);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.SearchQuote);
             this.Controls.Add(this.addQuote);
@@ -104,7 +104,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
-            this.Text = "TeamB MegaDesk";
+            this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

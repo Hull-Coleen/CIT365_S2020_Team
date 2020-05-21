@@ -132,7 +132,7 @@ namespace MegaDesk_Hull
         {
             errorProvider1.SetError(inputDepth, "");
         }
-
+        // validating input for the inputDepth text box
         private void inputDepth_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg;
@@ -156,11 +156,13 @@ namespace MegaDesk_Hull
                 errorProvider1.SetError(inputDepth, errorMsg);
 
             }
+            // update the values and check for udating save button enables true
             deskQ.Desk.Depth = depth;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
             buttonEnable();
         }
+        // chekcing the width text box and giving an error is there is a problem
         private void inputWidth_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg;
@@ -184,6 +186,7 @@ namespace MegaDesk_Hull
                 errorProvider1.SetError(inputWidth, errorMsg);
 
             }
+            // update the values and check for udating save button enables true
             deskQ.Desk.Width = width;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
@@ -194,7 +197,7 @@ namespace MegaDesk_Hull
         {
             errorProvider1.SetError(inputWidth, "");
         }
-
+        // checking name validating to ensure some text is entered
         private void inputName_Validating(object sender, CancelEventArgs e)
         {
             if (!validName(inputName.Text, out string errorMsg))
@@ -207,7 +210,6 @@ namespace MegaDesk_Hull
                 errorProvider1.SetError(inputName, errorMsg);
             }
             buttonEnable();
-
         }
 
         private void inputName_Validated(object sender, EventArgs e)
@@ -215,7 +217,7 @@ namespace MegaDesk_Hull
             errorProvider1.SetError(inputName, "");
 
         }
-
+        // checking inputName to verify it is not empty
         private bool validName(string name, out string errorMessage)
         {
             // Confirm that the name string is not empty.
@@ -227,6 +229,7 @@ namespace MegaDesk_Hull
             errorMessage = "";
             return true;
         }
+        // checking inputName to verify it is not empty
         public bool validName(string name)
         {
             // Confirm that the name string is not empty.
@@ -236,7 +239,8 @@ namespace MegaDesk_Hull
             }
             return true;
         }
-        
+        // uses a file to populate a DeskQuote variable. Uses that variable to determine the cost of
+        // shipping a desk and updates the total cost of the desk
         private void shippingInput_SelectedIndexChanged(object sender, EventArgs e)
         {
             // get the location of the file
@@ -251,12 +255,14 @@ namespace MegaDesk_Hull
             buttonEnable();
             costUpdate();
         }
+        // sets the drawer vairable in the Desk class, calucaltes and shows the cost, and updates totalCostLabel
         private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
         {
             drawerNumPrice.Text = deskQ.drawerCost(inputDrawer.Text).ToString();
             deskQ.Desk.Drawer = int.Parse(inputDrawer.Text);
             costUpdate();
         }
+        // Checks conditions to determine whether to enable the saveButton
         private void buttonEnable()
         { 
             if (validName(inputName.Text) && (shippingInput.Text != "") && 
@@ -265,6 +271,7 @@ namespace MegaDesk_Hull
                 saveButton.Enabled = true;
 
         }
+        // setting variables back to empty strings.
         private void resetButton_Click(object sender, EventArgs e)
         {
             deskQ = new DeskQuotes();
@@ -272,6 +279,7 @@ namespace MegaDesk_Hull
             inputWidth.Text = "";
             inputDepth.Text = "";
         }
+        // back to main menu
         private void backButton_Click(object sender, EventArgs e)
         {
             MainMenu mm = (MainMenu)Tag;
