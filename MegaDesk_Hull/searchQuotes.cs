@@ -31,39 +31,44 @@ namespace MegaDesk_Hull
             // deserialize json into list of DeskQuotes class 
             desk = JsonConvert.DeserializeObject<List<DeskQuotes>>(jsonFile);
             // setup table and columns
-            DataTable quoteData = new DataTable();
-            quoteData.Columns.Add("Name");
-            quoteData.Columns.Add("Date");
-            quoteData.Columns.Add("Drawer Number");
-            quoteData.Columns.Add("Surface Material");
-            quoteData.Columns.Add("Total");
-            dataGridView1.DataSource = quoteData;
-            // add rows of data
+            var quoteData = table();
+            deskQuotesDisplay.DataSource = quoteData;
+            // enter items from json to data table
             for (int i = 0; i < desk.Count; i++)
             {
+                var size = "W: " + desk[i].Desk.Depth.ToString() + " D: " + desk[i].Desk.Width.ToString();
                 string[] row = new string[] { desk[i].Name, 
-                    desk[i].QuoteDate.ToString(" dd MMMM  yyyy"), desk[i].Desk.Drawer.ToString(),
-                    desk[i].Desk.Material, desk[i].TotalPrice.ToString()};
+                    desk[i].QuoteDate.ToString(" dd MMMM  yyyy"), size, desk[i].Desk.Drawer.ToString(),
+                    desk[i].Desk.Material, desk[i].TotalPrice.ToString("N0")};
                 quoteData.Rows.Add(row);
             }
         }
-
+        // creates a new table with columns and returns it
+        private DataTable table()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable .Columns.Add("Name");
+            dataTable.Columns.Add("Date");
+            dataTable.Columns.Add("Dimensions");
+            dataTable.Columns.Add("Drawer Number");
+            dataTable.Columns.Add("Surface Material");
+            dataTable.Columns.Add("Total");
+            return dataTable;
+        }
         private void inputMaterial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable searchData = new DataTable();
-            searchData.Columns.Add("Name");
-            searchData.Columns.Add("Date");
-            searchData.Columns.Add("Drawer Number");
-            searchData.Columns.Add("Surface Material");
-            searchData.Columns.Add("Total");
-            dataGridView1.DataSource = searchData;
+            // assign new table 
+            var searchData = table();
+            deskQuotesDisplay.DataSource = searchData;
+            //enter only items that match the search inpput
             for (int i = 0; i < desk.Count; i++)
             {
+                var size = "W: " + desk[i].Desk.Depth.ToString() + " D: " + desk[i].Desk.Width.ToString();
                 if (desk[i].Desk.Material == inputMaterial.Text)
                 {
                     string[] row = new string[] { desk[i].Name,
-                    desk[i].QuoteDate.ToString(" dd MMMM  yyyy"), desk[i].Desk.Drawer.ToString(),
-                    desk[i].Desk.Material, desk[i].TotalPrice.ToString()};
+                    desk[i].QuoteDate.ToString(" dd MMMM  yyyy"), size, desk[i].Desk.Drawer.ToString(),
+                    desk[i].Desk.Material, desk[i].TotalPrice.ToString("N0")};
                     searchData.Rows.Add(row);
                 }
             }

@@ -20,9 +20,9 @@ namespace MegaDesk_Hull
         public AddQuotes()
         {
             InitializeComponent();
-            //saveButton.Enabled = false;
+            saveButton.Enabled = false;
         }
-
+        // only allows keys that are digits to be input into the textbox
         public void keyPressFunction(KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
@@ -31,15 +31,17 @@ namespace MegaDesk_Hull
                 e.Handled = true;
             }
         }
+        // key events calling KeyPressFunction
         private void inputDepth_KeyPress(object sender, KeyPressEventArgs e) => keyPressFunction(e);
-
+        // key events calling KeyPressFunction
         private void inputWidth_KeyPress(object sender, KeyPressEventArgs e) => keyPressFunction(e);
-
+        // gathers all the information needed to to display quote information in Display quotes form
+        // opens json file and adds new quote and writes back ot json file and calls displayquotes form
         private void SaveButton_Click(object sender, EventArgs e)
         {
             DateTime currentTime = DateTime.Now;
             deskQ.Name = inputName.Text;
-            deskQ.QuoteDate = currentTime;
+            //deskQ.QuoteDate = currentTime;
             deskQ.TotalPrice = deskQ.getQuotePrice(inputDrawer.Text,
                   selectedKey, shippingInput.Text);
             deskQ.Shipping = deskQ.getShippingPrice(shippingInput.Text);
@@ -61,7 +63,7 @@ namespace MegaDesk_Hull
             viewDisplayQuotes.Tag = this;
             viewDisplayQuotes.Show(this);
         }
-        
+        // converts enum into a Key pair list and returns the list
         public List<KeyValuePair<string, int>> GetEnumList<T>()
         {
             var list = new List<KeyValuePair<string, int>>();
@@ -71,9 +73,9 @@ namespace MegaDesk_Hull
             }
             return list;
         }
+        // assigns list of enum values to the inputMaterial combo box
         private void AddQuotes_Load(object sender, EventArgs e)
         {
-           // MessageBox.Show(shippingInput.Text);
             //assign the material enum 
             List<KeyValuePair<string, int>> materialList = GetEnumList<Material>();
             // make the meterailList(enum material) the datasource and assign key and value
@@ -84,12 +86,14 @@ namespace MegaDesk_Hull
             // set values to price labels 
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
         }
+        // assigns a value to totalCostPrice label
         private void costUpdate()
         {
             totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
                   selectedKey, shippingInput.Text).ToString();
         }
-
+        // takes the input from inputMaterial combo box and using the key pair list of enums and assigns text 
+        // to the materialCostPrice label and in Desk Class set the values for material and materialCost
         private void inputMaterial_changed(object sender, EventArgs e)
         {
             materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
@@ -99,12 +103,11 @@ namespace MegaDesk_Hull
             selectedKey = selectedEntry.Value;
             string selectedValue = selectedEntry.Key;
             deskQ.Desk.Material = selectedValue;
-            //deskQ.Desk.Material
             deskQ.Desk.MaterialCost = selectedKey;
             costUpdate();
 
         }
-
+        // checks to see if a number is valid
         public bool numberValid(int smallBound, int largeBound, int userInput, out string errMess)
         {
             if(userInput < smallBound || userInput > largeBound)
@@ -115,6 +118,7 @@ namespace MegaDesk_Hull
             errMess = "";
             return true; 
         }
+        // checks to see if a number is valid
         public bool numberValid(int smallBound, int largeBound, int userInput)
         {
             if (userInput < smallBound || userInput > largeBound)
@@ -123,7 +127,7 @@ namespace MegaDesk_Hull
             }
             return true;
         }
-
+        // sets error if input is in valid
         private void inputDepth_Validated(object sender, EventArgs e)
         {
             errorProvider1.SetError(inputDepth, "");
@@ -146,7 +150,7 @@ namespace MegaDesk_Hull
             {
                 // Cancel the event and select the text to be corrected by the user.
                 e.Cancel = true;
-                inputWidth.Select(0, inputDepth.Text.Length);
+                inputDepth.Select(0, inputDepth.Text.Length);
 
                 // Set the ErrorProvider error with the text to display. 
                 errorProvider1.SetError(inputDepth, errorMsg);
@@ -155,7 +159,7 @@ namespace MegaDesk_Hull
             deskQ.Desk.Depth = depth;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
-           // buttonEnable();
+            buttonEnable();
         }
         private void inputWidth_Validating(object sender, CancelEventArgs e)
         {
@@ -183,7 +187,7 @@ namespace MegaDesk_Hull
             deskQ.Desk.Width = width;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
-           // buttonEnable();
+            buttonEnable();
         }
 
         private void inputWidth_Validated(object sender, EventArgs e)
@@ -202,7 +206,7 @@ namespace MegaDesk_Hull
                 // Set the ErrorProvider error with the text to display. 
                 errorProvider1.SetError(inputName, errorMsg);
             }
-           // buttonEnable();
+            buttonEnable();
 
         }
 
@@ -244,7 +248,7 @@ namespace MegaDesk_Hull
             // populate the rushOrder variable
             deskQ.getRushOrder(rushOrderFile);
             shippingCostPrice.Text = deskQ.getShippingPrice(shippingInput.Text).ToString();
-           // buttonEnable();
+            buttonEnable();
             costUpdate();
         }
         private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
@@ -255,14 +259,15 @@ namespace MegaDesk_Hull
         }
         private void buttonEnable()
         { 
-            if (validName(inputName.Text) && (shippingInput.Text != null) && 
+            if (validName(inputName.Text) && (shippingInput.Text != "") && 
                 numberValid(Constants.SmallDepth, Constants.LargeDepth, int.Parse(inputDepth.Text))
                 && numberValid(Constants.SmallWidth, Constants.LargeWidth, int.Parse(inputWidth.Text)))
-                saveButton.Enabled = false;
+                saveButton.Enabled = true;
 
         }
         private void resetButton_Click(object sender, EventArgs e)
         {
+            deskQ = new DeskQuotes();
             inputName.Text = "";
             inputWidth.Text = "";
             inputDepth.Text = "";
