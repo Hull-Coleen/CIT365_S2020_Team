@@ -89,5 +89,18 @@
       "MaterialCost": 300.0
     },
     "TotalPrice": 650.0
+  },
+  {
+    "Name": "Pineaple",
+    "Shipping": 30,
+    "QuoteDate": "2020-05-21T17:22:00.4813013-04:00",
+    "Desk": {
+      "Width": 25,
+      "Depth": 35,
+      "Drawer": 3,
+      "Material": "Veneer",
+      "MaterialCost": 125.0
+    },
+    "TotalPrice": 505.0
   }
 ]

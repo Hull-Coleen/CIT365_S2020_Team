@@ -16,15 +16,6 @@ namespace MegaDesk_Hull
         {
             InitializeComponent();
         }
-        
-        private void viewQuotes_Click(object sender, EventArgs e)
-        {
-            
-            viewAllQuotes viewQ = new viewAllQuotes();
-            viewQ.Tag = this;
-            viewQ.Show(this);
-            this.Hide();
-        }
        
         private void searchQuotes_Click(object sender, EventArgs e)
         {
@@ -46,6 +37,11 @@ namespace MegaDesk_Hull
         private void exit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
