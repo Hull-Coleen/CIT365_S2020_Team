@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.addQuote = new System.Windows.Forms.Button();
-            this.ViewQuotes = new System.Windows.Forms.Button();
             this.SearchQuote = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,7 +40,7 @@
             // 
             this.addQuote.BackColor = System.Drawing.Color.White;
             this.addQuote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addQuote.Location = new System.Drawing.Point(13, 36);
+            this.addQuote.Location = new System.Drawing.Point(29, 97);
             this.addQuote.Margin = new System.Windows.Forms.Padding(4);
             this.addQuote.Name = "addQuote";
             this.addQuote.Padding = new System.Windows.Forms.Padding(5);
@@ -51,27 +50,13 @@
             this.addQuote.UseVisualStyleBackColor = false;
             this.addQuote.Click += new System.EventHandler(this.addQuote_Click);
             // 
-            // ViewQuotes
-            // 
-            this.ViewQuotes.BackColor = System.Drawing.Color.White;
-            this.ViewQuotes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ViewQuotes.Location = new System.Drawing.Point(13, 84);
-            this.ViewQuotes.Margin = new System.Windows.Forms.Padding(4);
-            this.ViewQuotes.Name = "ViewQuotes";
-            this.ViewQuotes.Padding = new System.Windows.Forms.Padding(5);
-            this.ViewQuotes.Size = new System.Drawing.Size(172, 40);
-            this.ViewQuotes.TabIndex = 1;
-            this.ViewQuotes.Text = "View Quotes";
-            this.ViewQuotes.UseVisualStyleBackColor = false;
-            this.ViewQuotes.Click += new System.EventHandler(this.viewQuotes_Click);
-            // 
             // SearchQuote
             // 
             this.SearchQuote.BackColor = System.Drawing.Color.White;
             this.SearchQuote.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SearchQuote.FlatAppearance.BorderSize = 3;
             this.SearchQuote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SearchQuote.Location = new System.Drawing.Point(14, 133);
+            this.SearchQuote.Location = new System.Drawing.Point(29, 169);
             this.SearchQuote.Margin = new System.Windows.Forms.Padding(5);
             this.SearchQuote.Name = "SearchQuote";
             this.SearchQuote.Size = new System.Drawing.Size(172, 40);
@@ -86,7 +71,7 @@
             this.exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.exit.FlatAppearance.BorderSize = 2;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.exit.Location = new System.Drawing.Point(14, 183);
+            this.exit.Location = new System.Drawing.Point(29, 244);
             this.exit.Margin = new System.Windows.Forms.Padding(5);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(172, 40);
@@ -98,10 +83,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(298, 133);
+            this.pictureBox1.Location = new System.Drawing.Point(242, -2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(517, 309);
+            this.pictureBox1.Size = new System.Drawing.Size(487, 405);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -110,17 +95,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 449);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(726, 402);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.SearchQuote);
-            this.Controls.Add(this.ViewQuotes);
             this.Controls.Add(this.addQuote);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
-            this.Text = "Main Menu";
+            this.Text = "TeamB MegaDesk";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -129,7 +114,6 @@
         #endregion
 
         private System.Windows.Forms.Button addQuote;
-        private System.Windows.Forms.Button ViewQuotes;
         private System.Windows.Forms.Button SearchQuote;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.PictureBox pictureBox1;
