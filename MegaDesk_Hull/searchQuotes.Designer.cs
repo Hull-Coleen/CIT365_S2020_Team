@@ -31,8 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.material = new System.Windows.Forms.Label();
             this.inputMaterial = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.deskQuotesDisplay = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuotesDisplay)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -59,9 +59,9 @@
             // 
             this.inputMaterial.FormattingEnabled = true;
             this.inputMaterial.Items.AddRange(new object[] {
+            "Oak",
             "Laminate",
             "Rosewood",
-            "Oak ",
             "Pine",
             "Veneer"});
             this.inputMaterial.Location = new System.Drawing.Point(172, 40);
@@ -70,26 +70,27 @@
             this.inputMaterial.TabIndex = 2;
             this.inputMaterial.SelectedIndexChanged += new System.EventHandler(this.inputMaterial_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // deskQuotesDisplay
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 70;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(780, 300);
-            this.dataGridView1.TabIndex = 3;
+            this.deskQuotesDisplay.AllowUserToAddRows = false;
+            this.deskQuotesDisplay.AllowUserToDeleteRows = false;
+            this.deskQuotesDisplay.AllowUserToOrderColumns = true;
+            this.deskQuotesDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.deskQuotesDisplay.BackgroundColor = System.Drawing.Color.White;
+            this.deskQuotesDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.deskQuotesDisplay.Location = new System.Drawing.Point(26, 89);
+            this.deskQuotesDisplay.Name = "deskQuotesDisplay";
+            this.deskQuotesDisplay.RowHeadersWidth = 60;
+            this.deskQuotesDisplay.RowTemplate.Height = 24;
+            this.deskQuotesDisplay.Size = new System.Drawing.Size(880, 300);
+            this.deskQuotesDisplay.TabIndex = 3;
             // 
             // searchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 449);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(928, 449);
+            this.Controls.Add(this.deskQuotesDisplay);
             this.Controls.Add(this.inputMaterial);
             this.Controls.Add(this.material);
             this.Controls.Add(this.button1);
@@ -97,7 +98,7 @@
             this.Name = "searchQuotes";
             this.Text = "searchQuotes";
             this.Load += new System.EventHandler(this.searchQuotes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuotesDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +109,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label material;
         private System.Windows.Forms.ComboBox inputMaterial;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView deskQuotesDisplay;
     }
 }

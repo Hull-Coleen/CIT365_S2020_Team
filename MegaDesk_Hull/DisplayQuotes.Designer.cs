@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.overSizeCostLabel = new System.Windows.Forms.Label();
-            this.totalPriceCostLabel = new System.Windows.Forms.Label();
-            this.materialCost = new System.Windows.Forms.Label();
-            this.drawerCostLabel = new System.Windows.Forms.Label();
-            this.shippingCostLabel = new System.Windows.Forms.Label();
+            this.customerLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
             this.shippingLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.totalCostLabel = new System.Windows.Forms.Label();
             this.materialLabel = new System.Windows.Forms.Label();
             this.drawerLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.customerLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.shippingCostLabel = new System.Windows.Forms.Label();
+            this.drawerCostLabel = new System.Windows.Forms.Label();
+            this.materialCost = new System.Windows.Forms.Label();
+            this.totalPriceCostLabel = new System.Windows.Forms.Label();
+            this.overSizeCostLabel = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,71 +66,47 @@
             this.groupBox3.Size = new System.Drawing.Size(371, 508);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Fianlized Quote";
+            this.groupBox3.Text = "Desk Quote";
             // 
-            // overSizeCostLabel
+            // customerLabel
             // 
-            this.overSizeCostLabel.Location = new System.Drawing.Point(284, 250);
-            this.overSizeCostLabel.Name = "overSizeCostLabel";
-            this.overSizeCostLabel.Size = new System.Drawing.Size(60, 22);
-            this.overSizeCostLabel.TabIndex = 34;
-            this.overSizeCostLabel.Text = "$";
-            this.overSizeCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.customerLabel.AutoSize = true;
+            this.customerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerLabel.Location = new System.Drawing.Point(36, 58);
+            this.customerLabel.Name = "customerLabel";
+            this.customerLabel.Size = new System.Drawing.Size(168, 25);
+            this.customerLabel.TabIndex = 38;
+            this.customerLabel.Text = "Customer\'s Name";
             // 
-            // totalPriceCostLabel
+            // dateLabel
             // 
-            this.totalPriceCostLabel.ForeColor = System.Drawing.Color.Red;
-            this.totalPriceCostLabel.Location = new System.Drawing.Point(284, 445);
-            this.totalPriceCostLabel.Name = "totalPriceCostLabel";
-            this.totalPriceCostLabel.Size = new System.Drawing.Size(60, 22);
-            this.totalPriceCostLabel.TabIndex = 33;
-            this.totalPriceCostLabel.Text = "$ 475";
-            this.totalPriceCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // materialCost
-            // 
-            this.materialCost.Location = new System.Drawing.Point(284, 378);
-            this.materialCost.Name = "materialCost";
-            this.materialCost.Size = new System.Drawing.Size(60, 22);
-            this.materialCost.TabIndex = 32;
-            this.materialCost.Text = "$ 125";
-            this.materialCost.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // drawerCostLabel
-            // 
-            this.drawerCostLabel.Location = new System.Drawing.Point(284, 317);
-            this.drawerCostLabel.Name = "drawerCostLabel";
-            this.drawerCostLabel.Size = new System.Drawing.Size(60, 22);
-            this.drawerCostLabel.TabIndex = 31;
-            this.drawerCostLabel.Text = "$ 150";
-            this.drawerCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // shippingCostLabel
-            // 
-            this.shippingCostLabel.Location = new System.Drawing.Point(284, 189);
-            this.shippingCostLabel.Name = "shippingCostLabel";
-            this.shippingCostLabel.Size = new System.Drawing.Size(60, 22);
-            this.shippingCostLabel.TabIndex = 28;
-            this.shippingCostLabel.Text = "$ 200";
-            this.shippingCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(36, 120);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(112, 25);
+            this.dateLabel.TabIndex = 37;
+            this.dateLabel.Text = "Quote Date";
             // 
             // shippingLabel
             // 
             this.shippingLabel.AutoSize = true;
-            this.shippingLabel.Location = new System.Drawing.Point(36, 186);
+            this.shippingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shippingLabel.Location = new System.Drawing.Point(36, 181);
             this.shippingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.shippingLabel.Name = "shippingLabel";
-            this.shippingLabel.Size = new System.Drawing.Size(97, 25);
+            this.shippingLabel.Size = new System.Drawing.Size(89, 25);
             this.shippingLabel.TabIndex = 19;
             this.shippingLabel.Text = "Shipping";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 250);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(36, 244);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(159, 25);
+            this.label9.Size = new System.Drawing.Size(145, 25);
             this.label9.TabIndex = 27;
             this.label9.Text = "Cost over 1000";
             // 
@@ -138,7 +114,7 @@
             // 
             this.totalCostLabel.AutoSize = true;
             this.totalCostLabel.ForeColor = System.Drawing.Color.Red;
-            this.totalCostLabel.Location = new System.Drawing.Point(36, 442);
+            this.totalCostLabel.Location = new System.Drawing.Point(36, 428);
             this.totalCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalCostLabel.Name = "totalCostLabel";
             this.totalCostLabel.Size = new System.Drawing.Size(112, 25);
@@ -148,42 +124,24 @@
             // materialLabel
             // 
             this.materialLabel.AutoSize = true;
-            this.materialLabel.Location = new System.Drawing.Point(36, 378);
+            this.materialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel.Location = new System.Drawing.Point(36, 370);
             this.materialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel.Name = "materialLabel";
-            this.materialLabel.Size = new System.Drawing.Size(140, 25);
+            this.materialLabel.Size = new System.Drawing.Size(127, 25);
             this.materialLabel.TabIndex = 25;
             this.materialLabel.Text = "Material Cost";
             // 
             // drawerLabel
             // 
             this.drawerLabel.AutoSize = true;
-            this.drawerLabel.Location = new System.Drawing.Point(36, 314);
+            this.drawerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawerLabel.Location = new System.Drawing.Point(36, 307);
             this.drawerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.drawerLabel.Name = "drawerLabel";
-            this.drawerLabel.Size = new System.Drawing.Size(196, 25);
+            this.drawerLabel.Size = new System.Drawing.Size(179, 25);
             this.drawerLabel.TabIndex = 23;
             this.drawerLabel.Text = "Number of Drawers";
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(36, 122);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(122, 25);
-            this.dateLabel.TabIndex = 37;
-            this.dateLabel.Text = "Quote Date";
-            // 
-            // customerLabel
-            // 
-            this.customerLabel.AutoSize = true;
-            this.customerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerLabel.Location = new System.Drawing.Point(36, 58);
-            this.customerLabel.Name = "customerLabel";
-            this.customerLabel.Size = new System.Drawing.Size(183, 25);
-            this.customerLabel.TabIndex = 38;
-            this.customerLabel.Text = "Customer\'s Name";
             // 
             // backButton
             // 
@@ -196,11 +154,61 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // shippingCostLabel
+            // 
+            this.shippingCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shippingCostLabel.Location = new System.Drawing.Point(220, 183);
+            this.shippingCostLabel.Name = "shippingCostLabel";
+            this.shippingCostLabel.Size = new System.Drawing.Size(120, 22);
+            this.shippingCostLabel.TabIndex = 28;
+            this.shippingCostLabel.Text = "$ 200";
+            this.shippingCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // drawerCostLabel
+            // 
+            this.drawerCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawerCostLabel.Location = new System.Drawing.Point(220, 310);
+            this.drawerCostLabel.Name = "drawerCostLabel";
+            this.drawerCostLabel.Size = new System.Drawing.Size(120, 22);
+            this.drawerCostLabel.TabIndex = 31;
+            this.drawerCostLabel.Text = "$ 150";
+            this.drawerCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // materialCost
+            // 
+            this.materialCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialCost.Location = new System.Drawing.Point(220, 373);
+            this.materialCost.Name = "materialCost";
+            this.materialCost.Size = new System.Drawing.Size(120, 22);
+            this.materialCost.TabIndex = 32;
+            this.materialCost.Text = "$ 125";
+            this.materialCost.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // totalPriceCostLabel
+            // 
+            this.totalPriceCostLabel.ForeColor = System.Drawing.Color.Red;
+            this.totalPriceCostLabel.Location = new System.Drawing.Point(220, 431);
+            this.totalPriceCostLabel.Name = "totalPriceCostLabel";
+            this.totalPriceCostLabel.Size = new System.Drawing.Size(120, 22);
+            this.totalPriceCostLabel.TabIndex = 33;
+            this.totalPriceCostLabel.Text = "$ 475";
+            this.totalPriceCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // overSizeCostLabel
+            // 
+            this.overSizeCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overSizeCostLabel.Location = new System.Drawing.Point(220, 247);
+            this.overSizeCostLabel.Name = "overSizeCostLabel";
+            this.overSizeCostLabel.Size = new System.Drawing.Size(120, 22);
+            this.overSizeCostLabel.TabIndex = 34;
+            this.overSizeCostLabel.Text = "$";
+            this.overSizeCostLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // DisplayQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 579);
+            this.ClientSize = new System.Drawing.Size(582, 583);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox3);
             this.Name = "DisplayQuotes";
@@ -215,11 +223,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label overSizeCostLabel;
-        private System.Windows.Forms.Label totalPriceCostLabel;
-        private System.Windows.Forms.Label materialCost;
-        private System.Windows.Forms.Label drawerCostLabel;
-        private System.Windows.Forms.Label shippingCostLabel;
         private System.Windows.Forms.Label shippingLabel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label totalCostLabel;
@@ -228,5 +231,10 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label customerLabel;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label overSizeCostLabel;
+        private System.Windows.Forms.Label totalPriceCostLabel;
+        private System.Windows.Forms.Label materialCost;
+        private System.Windows.Forms.Label drawerCostLabel;
+        private System.Windows.Forms.Label shippingCostLabel;
     }
 }

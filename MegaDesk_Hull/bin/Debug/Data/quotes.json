@@ -102,5 +102,18 @@
       "MaterialCost": 125.0
     },
     "TotalPrice": 505.0
+  },
+  {
+    "Name": "hkl",
+    "Shipping": 80,
+    "QuoteDate": "2020-05-22T01:27:40.767256-04:00",
+    "Desk": {
+      "Width": 90,
+      "Depth": 47,
+      "Drawer": 7,
+      "Material": "Oak",
+      "MaterialCost": 200.0
+    },
+    "TotalPrice": 4060.0
   }
 ]
