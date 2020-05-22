@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
 
 namespace MegaDesk_Hull
 {
@@ -96,7 +97,7 @@ namespace MegaDesk_Hull
         // to the materialCostPrice label and in Desk Class set the values for material and materialCost
         private void inputMaterial_changed(object sender, EventArgs e)
         {
-            materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
+            
 
             KeyValuePair<string, int> selectedEntry
                  = (KeyValuePair<string, int>)inputMaterial.SelectedItem;
@@ -104,6 +105,7 @@ namespace MegaDesk_Hull
             string selectedValue = selectedEntry.Key;
             deskQ.Desk.Material = selectedValue;
             deskQ.Desk.MaterialCost = selectedKey;
+            materialCostPrice.Text = Convert.ToString(deskQ.Desk.MaterialCost);
             costUpdate();
 
         }
@@ -278,6 +280,16 @@ namespace MegaDesk_Hull
             inputName.Text = "";
             inputWidth.Text = "";
             inputDepth.Text = "";
+            inputDrawer.ResetText();
+            inputMaterial.ResetText();
+            shippingInput.ResetText();
+            overCostPrice.Text = "";
+            label11.Text = "1";
+            label12.Text = "50";
+            drawerNumPrice.Text = "0";
+            materialCostPrice.Text = "0";
+            shippingCostPrice.Text = "0";
+            totalCostPrice.Text = "250";
         }
         // back to main menu
         private void backButton_Click(object sender, EventArgs e)
