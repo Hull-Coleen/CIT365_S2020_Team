@@ -102,5 +102,44 @@
       "MaterialCost": 125.0
     },
     "TotalPrice": 505.0
+  },
+  {
+    "Name": "Ima Pigg",
+    "Shipping": 70,
+    "QuoteDate": "2020-05-21T21:31:36.675449-04:00",
+    "Desk": {
+      "Width": 50,
+      "Depth": 40,
+      "Drawer": 4,
+      "Material": "Rosewood",
+      "MaterialCost": 300.0
+    },
+    "TotalPrice": 1770.0
+  },
+  {
+    "Name": "Sneezy",
+    "Shipping": 0,
+    "QuoteDate": "2020-05-21T22:32:41.6597653-04:00",
+    "Desk": {
+      "Width": 80,
+      "Depth": 47,
+      "Drawer": 3,
+      "Material": "Pine",
+      "MaterialCost": 50.0
+    },
+    "TotalPrice": 3160.0
+  },
+  {
+    "Name": "Happy Go Lucky",
+    "Shipping": 80,
+    "QuoteDate": "2020-05-21T23:29:43.1414725-04:00",
+    "Desk": {
+      "Width": 96,
+      "Depth": 47,
+      "Drawer": 7,
+      "Material": "Pine",
+      "MaterialCost": 50.0
+    },
+    "TotalPrice": 4192.0
   }
 ]
