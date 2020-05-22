@@ -115,5 +115,31 @@
       "MaterialCost": 200.0
     },
     "TotalPrice": 4060.0
+  },
+  {
+    "Name": "Snow White",
+    "Shipping": 50,
+    "QuoteDate": "2020-05-22T11:34:40.6847214-04:00",
+    "Desk": {
+      "Width": 65,
+      "Depth": 30,
+      "Drawer": 4,
+      "Material": "Pine",
+      "MaterialCost": 50.0
+    },
+    "TotalPrice": 1450.0
+  },
+  {
+    "Name": "Evil Queen",
+    "Shipping": 50,
+    "QuoteDate": "2020-05-22T11:36:51.0208306-04:00",
+    "Desk": {
+      "Width": 50,
+      "Depth": 40,
+      "Drawer": 3,
+      "Material": "Rosewood",
+      "MaterialCost": 300.0
+    },
+    "TotalPrice": 1700.0
   }
 ]

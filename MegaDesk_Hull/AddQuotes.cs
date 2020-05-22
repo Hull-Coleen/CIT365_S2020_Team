@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
-using System.Security.Cryptography;
+
 
 namespace MegaDesk_Hull
 {
@@ -267,10 +267,10 @@ namespace MegaDesk_Hull
         // Checks conditions to determine whether to enable the saveButton
         private void buttonEnable()
         { 
-           /* if (validName(inputName.Text) && (shippingInput.Text != "") && 
+            if (validName(inputName.Text) && (shippingInput.Text != "") && 
                 numberValid(Constants.SmallDepth, Constants.LargeDepth, int.Parse(inputDepth.Text))
                 && numberValid(Constants.SmallWidth, Constants.LargeWidth, int.Parse(inputWidth.Text)))
-                saveButton.Enabled = true;*/
+                saveButton.Enabled = true;
 
         }
         // setting variables back to empty strings.
@@ -284,8 +284,6 @@ namespace MegaDesk_Hull
             inputMaterial.ResetText();
             shippingInput.ResetText();
             overCostPrice.Text = "";
-            label11.Text = "1";
-            label12.Text = "50";
             drawerNumPrice.Text = "0";
             materialCostPrice.Text = "0";
             shippingCostPrice.Text = "0";

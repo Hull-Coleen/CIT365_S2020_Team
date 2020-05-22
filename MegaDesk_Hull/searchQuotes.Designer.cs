@@ -49,7 +49,7 @@
             // 
             this.material.AutoSize = true;
             this.material.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.material.Location = new System.Drawing.Point(12, 40);
+            this.material.Location = new System.Drawing.Point(12, 39);
             this.material.Name = "material";
             this.material.Size = new System.Drawing.Size(154, 25);
             this.material.TabIndex = 1;
@@ -64,7 +64,7 @@
             "Rosewood",
             "Pine",
             "Veneer"});
-            this.inputMaterial.Location = new System.Drawing.Point(172, 40);
+            this.inputMaterial.Location = new System.Drawing.Point(181, 40);
             this.inputMaterial.Name = "inputMaterial";
             this.inputMaterial.Size = new System.Drawing.Size(121, 24);
             this.inputMaterial.TabIndex = 2;
