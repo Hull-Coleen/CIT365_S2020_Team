@@ -2,7 +2,7 @@
   {
     "Name": "Happy",
     "Shipping": 35,
-    "QuoteDate": "2020-05-19T10:48:01.46241-07:00",
+    "QuoteDate": "2020-05-19T13:48:01.46241-04:00",
     "Desk": {
       "Width": 76,
       "Depth": 23,
@@ -15,7 +15,7 @@
   {
     "Name": "",
     "Shipping": 0,
-    "QuoteDate": "2020-05-19T11:25:29.3235355-07:00",
+    "QuoteDate": "2020-05-19T14:25:29.3235355-04:00",
     "Desk": {
       "Width": 0,
       "Depth": 0,
@@ -28,7 +28,7 @@
   {
     "Name": "Doc",
     "Shipping": 0,
-    "QuoteDate": "2020-05-19T19:45:44.9195138-07:00",
+    "QuoteDate": "2020-05-19T22:45:44.9195138-04:00",
     "Desk": {
       "Width": 80,
       "Depth": 40,
@@ -41,7 +41,7 @@
   {
     "Name": "Sneezy",
     "Shipping": 35,
-    "QuoteDate": "2020-05-20T13:19:24.4575413-07:00",
+    "QuoteDate": "2020-05-20T16:19:24.4575413-04:00",
     "Desk": {
       "Width": 65,
       "Depth": 20,
@@ -54,7 +54,7 @@
   {
     "Name": "Sleepy",
     "Shipping": 0,
-    "QuoteDate": "2020-05-20T13:19:52.4417976-07:00",
+    "QuoteDate": "2020-05-20T16:19:52.4417976-04:00",
     "Desk": {
       "Width": 45,
       "Depth": 20,
@@ -67,7 +67,7 @@
   {
     "Name": "Dopey",
     "Shipping": 0,
-    "QuoteDate": "2020-05-20T13:20:31.3828134-07:00",
+    "QuoteDate": "2020-05-20T16:20:31.3828134-04:00",
     "Desk": {
       "Width": 30,
       "Depth": 20,
@@ -80,7 +80,7 @@
   {
     "Name": "Happy",
     "Shipping": 0,
-    "QuoteDate": "2020-05-20T13:20:59.7715158-07:00",
+    "QuoteDate": "2020-05-20T16:20:59.7715158-04:00",
     "Desk": {
       "Width": 35,
       "Depth": 23,
@@ -93,7 +93,7 @@
   {
     "Name": "Pineaple",
     "Shipping": 30,
-    "QuoteDate": "2020-05-21T14:22:00.4813013-07:00",
+    "QuoteDate": "2020-05-21T17:22:00.4813013-04:00",
     "Desk": {
       "Width": 25,
       "Depth": 35,
@@ -102,5 +102,18 @@
       "MaterialCost": 125.0
     },
     "TotalPrice": 505.0
+  },
+  {
+    "Name": "hkl",
+    "Shipping": 80,
+    "QuoteDate": "2020-05-22T01:27:40.767256-04:00",
+    "Desk": {
+      "Width": 90,
+      "Depth": 47,
+      "Drawer": 7,
+      "Material": "Oak",
+      "MaterialCost": 200.0
+    },
+    "TotalPrice": 4060.0
   }
 ]

@@ -59,9 +59,9 @@
             // 
             this.inputMaterial.FormattingEnabled = true;
             this.inputMaterial.Items.AddRange(new object[] {
+            "Oak",
             "Laminate",
             "Rosewood",
-            "Oak ",
             "Pine",
             "Veneer"});
             this.inputMaterial.Location = new System.Drawing.Point(172, 40);
