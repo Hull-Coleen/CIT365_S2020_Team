@@ -191,7 +191,7 @@ namespace MegaDesk_Hull
             // update the values and check for udating save button enables true
             deskQ.Desk.Width = width;
             costUpdate();
-            overCostPrice.Text = deskQ.getSize().ToString();
+            overCostPrice.Text = deskQ.getSize().ToString("N0");
             buttonEnable();
         }
 
