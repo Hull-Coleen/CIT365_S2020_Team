@@ -40,9 +40,9 @@ namespace MegaDesk_Hull
         // opens json file and adds new quote and writes back ot json file and calls displayquotes form
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            // set variables 
             DateTime currentTime = DateTime.Now;
             deskQ.Name = inputName.Text;
-            //deskQ.QuoteDate = currentTime;
             deskQ.TotalPrice = deskQ.getQuotePrice(inputDrawer.Text,
                   selectedKey, shippingInput.Text);
             deskQ.Shipping = deskQ.getShippingPrice(shippingInput.Text);
@@ -91,7 +91,7 @@ namespace MegaDesk_Hull
         private void costUpdate()
         {
             totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
-                  selectedKey, shippingInput.Text).ToString();
+                  selectedKey, shippingInput.Text).ToString("N0");
         }
         // takes the input from inputMaterial combo box and using the key pair list of enums and assigns text 
         // to the materialCostPrice label and in Desk Class set the values for material and materialCost
@@ -161,7 +161,7 @@ namespace MegaDesk_Hull
             // update the values and check for udating save button enables true
             deskQ.Desk.Depth = depth;
             costUpdate();
-            overCostPrice.Text = deskQ.getSize().ToString();
+            overCostPrice.Text = deskQ.getSize().ToString("N0");
             buttonEnable();
         }
         // chekcing the width text box and giving an error is there is a problem
@@ -253,7 +253,7 @@ namespace MegaDesk_Hull
 
             // populate the rushOrder variable
             deskQ.getRushOrder(rushOrderFile);
-            shippingCostPrice.Text = deskQ.getShippingPrice(shippingInput.Text).ToString();
+            shippingCostPrice.Text = deskQ.getShippingPrice(shippingInput.Text).ToString("N0");
             buttonEnable();
             costUpdate();
         }
