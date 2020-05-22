@@ -267,10 +267,10 @@ namespace MegaDesk_Hull
         // Checks conditions to determine whether to enable the saveButton
         private void buttonEnable()
         { 
-            if (validName(inputName.Text) && (shippingInput.Text != "") && 
+           /* if (validName(inputName.Text) && (shippingInput.Text != "") && 
                 numberValid(Constants.SmallDepth, Constants.LargeDepth, int.Parse(inputDepth.Text))
                 && numberValid(Constants.SmallWidth, Constants.LargeWidth, int.Parse(inputWidth.Text)))
-                saveButton.Enabled = true;
+                saveButton.Enabled = true;*/
 
         }
         // setting variables back to empty strings.
