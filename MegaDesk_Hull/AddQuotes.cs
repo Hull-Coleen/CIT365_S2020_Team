@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
 
 namespace MegaDesk_Hull
 {
@@ -41,6 +42,7 @@ namespace MegaDesk_Hull
         {
             DateTime currentTime = DateTime.Now;
             deskQ.Name = inputName.Text;
+            //deskQ.QuoteDate = currentTime;
             deskQ.TotalPrice = deskQ.getQuotePrice(inputDrawer.Text,
                   selectedKey, shippingInput.Text);
             deskQ.Shipping = deskQ.getShippingPrice(shippingInput.Text);
@@ -57,7 +59,7 @@ namespace MegaDesk_Hull
             var convertedJson = JsonConvert.SerializeObject(desk, Formatting.Indented);
             // write updated json file to quotes.json
             File.WriteAllText(path, convertedJson);
-         
+
             DisplayQuotes viewDisplayQuotes = new DisplayQuotes();
             viewDisplayQuotes.Tag = this;
             viewDisplayQuotes.Show(this);
@@ -89,13 +91,13 @@ namespace MegaDesk_Hull
         private void costUpdate()
         {
             totalCostPrice.Text = deskQ.getQuotePrice(inputDrawer.Text,
-                  selectedKey, shippingInput.Text).ToString("N0");
+                  selectedKey, shippingInput.Text).ToString();
         }
         // takes the input from inputMaterial combo box and using the key pair list of enums and assigns text 
         // to the materialCostPrice label and in Desk Class set the values for material and materialCost
         private void inputMaterial_changed(object sender, EventArgs e)
         {
-            materialCostPrice.Text = inputMaterial.SelectedValue.ToString();
+            
 
             KeyValuePair<string, int> selectedEntry
                  = (KeyValuePair<string, int>)inputMaterial.SelectedItem;
@@ -103,6 +105,7 @@ namespace MegaDesk_Hull
             string selectedValue = selectedEntry.Key;
             deskQ.Desk.Material = selectedValue;
             deskQ.Desk.MaterialCost = selectedKey;
+            materialCostPrice.Text = Convert.ToString(deskQ.Desk.MaterialCost);
             costUpdate();
 
         }
@@ -158,7 +161,7 @@ namespace MegaDesk_Hull
             // update the values and check for udating save button enables true
             deskQ.Desk.Depth = depth;
             costUpdate();
-            overCostPrice.Text = deskQ.getSize().ToString("N0");
+            overCostPrice.Text = deskQ.getSize().ToString();
             buttonEnable();
         }
         // chekcing the width text box and giving an error is there is a problem
@@ -188,7 +191,7 @@ namespace MegaDesk_Hull
             // update the values and check for udating save button enables true
             deskQ.Desk.Width = width;
             costUpdate();
-            overCostPrice.Text = deskQ.getSize().ToString("N0");
+            overCostPrice.Text = deskQ.getSize().ToString();
             buttonEnable();
         }
 
@@ -273,7 +276,20 @@ namespace MegaDesk_Hull
         // setting variables back to empty strings.
         private void resetButton_Click(object sender, EventArgs e)
         {
-            
+            deskQ = new DeskQuotes();
+            inputName.Text = "";
+            inputWidth.Text = "";
+            inputDepth.Text = "";
+            inputDrawer.ResetText();
+            inputMaterial.ResetText();
+            shippingInput.ResetText();
+            overCostPrice.Text = "";
+            label11.Text = "1";
+            label12.Text = "50";
+            drawerNumPrice.Text = "0";
+            materialCostPrice.Text = "0";
+            shippingCostPrice.Text = "0";
+            totalCostPrice.Text = "250";
         }
         // back to main menu
         private void backButton_Click(object sender, EventArgs e)
