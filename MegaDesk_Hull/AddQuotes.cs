@@ -21,6 +21,8 @@ namespace MegaDesk_Hull
         {
             InitializeComponent();
             //saveButton.Enabled = false;
+            //buttonEnable();
+
         }
 
         public void keyPressFunction(KeyPressEventArgs e)
@@ -37,12 +39,14 @@ namespace MegaDesk_Hull
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
             DateTime currentTime = DateTime.Now;
             deskQ.Name = inputName.Text;
             deskQ.QuoteDate = currentTime;
             deskQ.TotalPrice = deskQ.getQuotePrice(inputDrawer.Text,
                   selectedKey, shippingInput.Text);
             deskQ.Shipping = deskQ.getShippingPrice(shippingInput.Text);
+
             
             // get the location of the file
             string path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\quotes.json");
@@ -73,7 +77,8 @@ namespace MegaDesk_Hull
         }
         private void AddQuotes_Load(object sender, EventArgs e)
         {
-           // MessageBox.Show(shippingInput.Text);
+           
+            // MessageBox.Show(shippingInput.Text);
             //assign the material enum 
             List<KeyValuePair<string, int>> materialList = GetEnumList<Material>();
             // make the meterailList(enum material) the datasource and assign key and value
@@ -155,7 +160,7 @@ namespace MegaDesk_Hull
             deskQ.Desk.Depth = depth;
             costUpdate();
             overCostPrice.Text = deskQ.getSize().ToString();
-           // buttonEnable();
+            //buttonEnable();
         }
         private void inputWidth_Validating(object sender, CancelEventArgs e)
         {
@@ -202,7 +207,7 @@ namespace MegaDesk_Hull
                 // Set the ErrorProvider error with the text to display. 
                 errorProvider1.SetError(inputName, errorMsg);
             }
-           // buttonEnable();
+            //buttonEnable();
 
         }
 
@@ -244,7 +249,7 @@ namespace MegaDesk_Hull
             // populate the rushOrder variable
             deskQ.getRushOrder(rushOrderFile);
             shippingCostPrice.Text = deskQ.getShippingPrice(shippingInput.Text).ToString();
-           // buttonEnable();
+            //buttonEnable();
             costUpdate();
         }
         private void inputDrawer_SelectedIndexChanged(object sender, EventArgs e)
@@ -254,11 +259,19 @@ namespace MegaDesk_Hull
             costUpdate();
         }
         private void buttonEnable()
-        { 
-            if (validName(inputName.Text) && (shippingInput.Text != null) && 
-                numberValid(Constants.SmallDepth, Constants.LargeDepth, int.Parse(inputDepth.Text))
-                && numberValid(Constants.SmallWidth, Constants.LargeWidth, int.Parse(inputWidth.Text)))
-                saveButton.Enabled = false;
+        {
+            saveButton.Enabled = false;
+
+             if (validName(inputName.Text) && (shippingInput.Text != null) &&
+             numberValid(Constants.SmallDepth, Constants.LargeDepth, int.Parse(inputDepth.Text))
+             && numberValid(Constants.SmallWidth, Constants.LargeWidth, int.Parse(inputWidth.Text)))
+             {
+              saveButton.Enabled = true;
+             }
+             else
+             {
+               saveButton.Enabled = false;
+             }
 
         }
         private void resetButton_Click(object sender, EventArgs e)
