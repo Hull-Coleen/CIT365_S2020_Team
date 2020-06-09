@@ -47,7 +47,7 @@ namespace MegaDesk_Hull
         private DataTable table()
         {
             DataTable dataTable = new DataTable();
-            dataTable .Columns.Add("Name");
+            dataTable.Columns.Add("Name");
             dataTable.Columns.Add("Date");
             dataTable.Columns.Add("Dimensions");
             dataTable.Columns.Add("Drawer Number");
