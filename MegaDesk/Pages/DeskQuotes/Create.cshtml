@@ -5,6 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
+
 <h1>Create</h1>
 
 <h4>DeskQuote</h4>
@@ -13,6 +14,7 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
@@ -31,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Width" class="control-label"></label>
-                <input asp-for="DeskQuote.Width" class="form-control" />
+                <input asp-for="DeskQuote.Width" class="form-control" id="test" />
                 <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -64,7 +66,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Cost" class="control-label"></label>
-                <label asp-for-items="DeskQuote.cost(DeskQuote.Material, DeskQuote.Width, DeskQuote.Depth, DeskQuote.DrawerNumber);" class="form-control" />
+                <input asp-for="DeskQuote.Cost"  class="form-control" ReadOnly="readonly" />
+
                 <span asp-validation-for="DeskQuote.Cost" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -80,4 +83,123 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('input[name$="DeskQuote.Width"]').change(function () {
+
+            var size = 0;
+            var cost = document.getElementsByName("DeskQuote.Cost")[0];
+            var drawer = document.getElementsByName("DeskQuote.DrawerNumber")[0].value;
+            var material = document.getElementsByName("DeskQuote.Material")[0].value;
+            var width = document.getElementsByName("DeskQuote.Width")[0].value;
+            var depth = document.getElementsByName("DeskQuote.Depth")[0].value;
+
+            if ((width * depth) > 1000) {
+                size = width * depth - 1000;
+            }
+            else
+                size = 0;
+            var materialCost = 0;
+            if (material == "Pine")
+                materialCost = 50;
+            else if (material == "Laminate")
+                materialCost = 100;
+            else if (material == "Veneer")
+                materialCost = 125;
+            else if (material == "Oak")
+                materialCost = 200;
+            else if (material == "Rosewood")
+                materialCost = 300;
+            cost.value = 200 + size + (drawer * 50) + materialCost;
+        });
+    });
+     $(document).ready(function () {
+            $('input[name$="DeskQuote.Depth"]').change(function () {
+
+                var size = 0;
+                var cost = document.getElementsByName("DeskQuote.Cost")[0];
+                var drawer = document.getElementsByName("DeskQuote.DrawerNumber")[0].value;
+                var material = document.getElementsByName("DeskQuote.Material")[0].value;
+                var width = document.getElementsByName("DeskQuote.Width")[0].value;
+                var depth = document.getElementsByName("DeskQuote.Depth")[0].value;
+
+                if ((width * depth) > 1000) {
+                    size = width * depth - 1000;
+                }
+                else
+                    size = 0;
+                var materialCost = 0;
+                if (material == "Pine")
+                    materialCost = 50;
+                else if (material == "Laminate")
+                    materialCost = 100;
+                else if (material == "Veneer")
+                    materialCost = 125;
+                else if (material == "Oak")
+                    materialCost = 200;
+                else if (material == "Rosewood")
+                    materialCost = 300;
+                cost.value = 200 + size + (drawer * 50) + materialCost;
+            });
+        });
+        $(document).ready(function () {
+            $('input[name$="DeskQuote.Material"]').select(function () {
+
+                var size = 0;
+                var cost = document.getElementsByName("DeskQuote.Cost")[0];
+                var drawer = document.getElementsByName("DeskQuote.DrawerNumber")[0].value;
+                var material = document.getElementsByName("DeskQuote.Material")[0].value;
+                var width = document.getElementsByName("DeskQuote.Width")[0].value;
+                var depth = document.getElementsByName("DeskQuote.Depth")[0].value;
+
+                if ((width * depth) > 1000) {
+                    size = width * depth - 1000;
+                }
+                else
+                    size = 0;
+                var materialCost = 0;
+                if (material == "Pine")
+                    materialCost = 50;
+                else if (material == "Laminate")
+                    materialCost = 100;
+                else if (material == "Veneer")
+                    materialCost = 125;
+                else if (material == "Oak")
+                    materialCost = 200;
+                else if (material == "Rosewood")
+                    materialCost = 300;
+                cost.value = 200 + size + (drawer * 50) + materialCost;
+            });
+        });
+    /* $(document).ready(function () {
+         $('input[name$="DeskQuote.DrawerNumber"]').change(function () {
+
+            var size = 0;
+            var cost = document.getElementsByName("DeskQuote.Cost")[0];
+            var drawer = document.getElementsByName("DeskQuote.DrawerNumber")[0].value;
+            var material = document.getElementsByName("DeskQuote.Material")[0].value;
+            var width = document.getElementsByName("DeskQuote.Width")[0].value;
+            var depth = document.getElementsByName("DeskQuote.Depth")[0].value;
+
+            if ((width * depth) > 1000) {
+                size = width * depth - 1000;
+            }
+            else
+                size = 0;
+            var materialCost = 0;
+            if (material == "Pine")
+                materialCost = 50;
+            else if (material == "Laminate")
+                materialCost = 100;
+            else if (material == "Veneer")
+                materialCost = 125;
+            else if (material == "Oak")
+                materialCost = 200;
+            else if (material == "Rosewood")
+                materialCost = 300;
+            cost.value = 200 + size + (drawer * 50) + materialCost;
+        });
+    });*/
+</script>
 }

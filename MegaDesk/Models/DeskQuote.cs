@@ -39,7 +39,7 @@ namespace MegaDesk.Models
                 MaterialCost = 175;
             else if(Material == "Rosewood")
                     MaterialCost = 300;
-            return 200 + (DrawerNumber * 50) + size + MaterialCost;
+            return 200.00 + (DrawerNumber * 50) + size + MaterialCost;
         }
         public double cost(string material, int width, int depth, int drawer)
         {
@@ -61,7 +61,7 @@ namespace MegaDesk.Models
                 MaterialCost = 175;
             else if (material == "Rosewood")
                 MaterialCost = 300;
-            return 200 + (drawer * 50) + size + MaterialCost;
+            return 200.00 + (drawer * 50) + size + MaterialCost;
         }
     }
 }
