@@ -35,6 +35,9 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Material)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Shipping)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Cost)
             </th>
             <th></th>
@@ -65,13 +68,15 @@
                 @Html.DisplayFor(modelItem => item.Material)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Shipping)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Cost)
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
             <td>
-                
             </td>
         </tr>
 }

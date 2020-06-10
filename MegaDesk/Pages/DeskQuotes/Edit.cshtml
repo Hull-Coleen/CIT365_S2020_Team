@@ -1,4 +1,4 @@
-﻿@page
+﻿@page  "{id:int?}"
 @model MegaDesk.Pages.DeskQuotes.EditModel
 
 @{
@@ -48,6 +48,11 @@
                 <label asp-for="DeskQuote.Material" class="control-label"></label>
                 <input asp-for="DeskQuote.Material" class="form-control" />
                 <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.Shipping" class="control-label"></label>
+                <input asp-for="DeskQuote.Shipping" class="form-control" />
+                <span asp-validation-for="DeskQuote.Shipping" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Cost" class="control-label"></label>

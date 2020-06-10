@@ -19,6 +19,8 @@ namespace MegaDesk.Models
         public int DrawerNumber { get; set; }
         public string Material { get; set; }
         public decimal Cost { get; set; }
+        public string Shipping { get; set; }
+
         public double cost()
         {
             int size = Width * Depth;

@@ -65,8 +65,18 @@
                 <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <select asp-for="DeskQuote.Shipping" class="form-control">
+                    <option value="">Shipping</option>
+                    <option value="14">14 Day</option>
+                    <option value="7">7 Day</option>
+                    <option value="5">5 Day</option>
+                    <option value="3">3 Day</option>
+                </select>
+                <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="DeskQuote.Cost" class="control-label"></label>
-                <input asp-for="DeskQuote.Cost"  class="form-control" ReadOnly="readonly" />
+                <input asp-for="DeskQuote.Cost" class="form-control" ReadOnly="readonly" />
 
                 <span asp-validation-for="DeskQuote.Cost" class="text-danger"></span>
             </div>

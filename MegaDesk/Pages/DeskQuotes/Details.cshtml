@@ -1,4 +1,4 @@
-﻿@page
+﻿@page  "{id:int?}"
 @model MegaDesk.Pages.DeskQuotes.DetailsModel
 
 @{
@@ -52,6 +52,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DeskQuote.Material)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskQuote.Shipping)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.Shipping)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DeskQuote.Cost)

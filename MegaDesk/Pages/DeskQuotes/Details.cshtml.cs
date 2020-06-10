@@ -17,7 +17,6 @@ namespace MegaDesk.Pages.DeskQuotes
         {
             _context = context;
         }
-
         public DeskQuote DeskQuote { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
