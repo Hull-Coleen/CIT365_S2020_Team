@@ -41,6 +41,7 @@
                 <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DeskQuote.DrawerNumber" class="control-label"></label>
                 <select asp-for="DeskQuote.DrawerNumber" id="drawer" class="form-control">
                     <option value="">Drawer number</option>
                     <option selected="selected" value="0">None</option>
@@ -54,6 +55,7 @@
                 <span asp-validation-for="DeskQuote.DrawerNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DeskQuote.Material" class="control-label"></label>
                 <select asp-for="DeskQuote.Material" id="material" class="form-control">
                     <option value="">Desk Material</option>
                     <option selected="selected" value="Veneer">Veneer</option>
@@ -65,6 +67,7 @@
                 <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DeskQuote.Shipping" class="control-label"></label>
                 <select asp-for="DeskQuote.Shipping" id="ship" class="form-control">
                     <option value="">Shipping</option>
                     <option selected="selected" value="14">14 Day</option>
