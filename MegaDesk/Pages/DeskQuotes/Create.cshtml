@@ -5,7 +5,6 @@
     ViewData["Title"] = "Create";
 }
 
-
 <h1>Create</h1>
 
 <h4>DeskQuote</h4>
@@ -42,7 +41,7 @@
                 <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <select asp-for="DeskQuote.DrawerNumber" id="drawer"class="form-control">
+                <select asp-for="DeskQuote.DrawerNumber" id="drawer" class="form-control">
                     <option value="">Drawer number</option>
                     <option selected="selected" value="0">None</option>
                     <option value="1">One</option>
@@ -52,7 +51,7 @@
                     <option value="5">Five</option>
                     <option value="6">Six</option>
                 </select>
-                <span asp-validation-for="DeskQuote.DrawerNumber"  class="text-danger"></span>
+                <span asp-validation-for="DeskQuote.DrawerNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <select asp-for="DeskQuote.Material" id="material" class="form-control">
@@ -85,101 +84,105 @@
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div> 
+    <div class="col-md-4">
+        <img src="~/images/Rosewood.jpg" asp-append-version="true">
+    </div>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-<script type="text/javascript">
-    function update() {
-        var size = 0;
-        var ship = 0;
-        var cost = document.getElementsByName("DeskQuote.Cost")[0];
-        var drawer = document.getElementsByName("DeskQuote.DrawerNumber")[0].value;
-        var material = document.getElementsByName("DeskQuote.Material")[0].value;
-        var width = document.getElementsByName("DeskQuote.Width")[0].value;
-        var depth = document.getElementsByName("DeskQuote.Depth")[0].value;
-        var shipping = document.getElementsByName("DeskQuote.Shipping")[0].value;
-        if (shipping == "7") {
-            if (width * depth > 2000)
-                ship = 40;
-            else if (width * depth <= 2000 && width * depth >= 1000)
-                ship = 35;
+    <script type="text/javascript">
+        function update() {
+            var size = 0;
+            var ship = 0;
+            var cost = document.getElementsByName("DeskQuote.Cost")[0];
+            var drawer = document.getElementsByName("DeskQuote.DrawerNumber")[0].value;
+            var material = document.getElementsByName("DeskQuote.Material")[0].value;
+            var width = document.getElementsByName("DeskQuote.Width")[0].value;
+            var depth = document.getElementsByName("DeskQuote.Depth")[0].value;
+            var shipping = document.getElementsByName("DeskQuote.Shipping")[0].value;
+            if (shipping == "7") {
+                if (width * depth > 2000)
+                    ship = 40;
+                else if (width * depth <= 2000 && width * depth >= 1000)
+                    ship = 35;
+                else
+                    ship = 30;
+            }
+            else if (shipping == "5") {
+                if (width * depth > 2000)
+                    ship = 60;
+                else if (width * depth <= 2000 && width * depth >= 1000)
+                    ship = 50;
+                else
+                    ship = 40;
+            }
+            else if (shipping == "3") {
+                if (width * depth > 2000)
+                    ship = 80;
+                else if (width * depth <= 2000 && width * depth >= 1000)
+                    ship = 70;
+                else
+                    ship = 60;
+            }
             else
-                ship = 30;
-        }
-        else if (shipping == "5") {
-            if (width * depth > 2000)
-                ship = 60;
-            else if (width * depth <= 2000 && width * depth >= 1000)
-                ship = 50;
+                ship = 0;
+
+            if ((width * depth) > 1000) {
+                size = width * depth - 1000;
+            }
             else
-                ship = 40;
+                size = 0;
+            var materialCost = 0;
+            if (material == "Pine")
+                materialCost = 50;
+            else if (material == "Laminate")
+                materialCost = 100;
+            else if (material == "Veneer")
+                materialCost = 125;
+            else if (material == "Oak")
+                materialCost = 200;
+            else if (material == "Rosewood")
+                materialCost = 300;
+            cost.value = 200 + size + (drawer * 50) + materialCost + ship;
+
         }
-        else if (shipping == "3") {
-            if (width * depth > 2000)
-                ship = 80;
-            else if (width * depth <= 2000 && width * depth >= 1000)
-                ship = 70;
-            else
-                ship = 60;
-        }
-        else
-            ship = 0;
 
-        if ((width * depth) > 1000) {
-            size = width * depth - 1000;
-        }
-        else
-            size = 0;
-        var materialCost = 0;
-        if (material == "Pine")
-            materialCost = 50;
-        else if (material == "Laminate")
-            materialCost = 100;
-        else if (material == "Veneer")
-            materialCost = 125;
-        else if (material == "Oak")
-            materialCost = 200;
-        else if (material == "Rosewood")
-            materialCost = 300;
-        cost.value = 200 + size + (drawer * 50) + materialCost + ship;
-        
-    }
-   
-    $(document).ready(function () {
-        $('input[name$="DeskQuote.Width"]').change(function () {
+        $(document).ready(function () {
+            $('input[name$="DeskQuote.Width"]').change(function () {
 
-            update();
+                update();
+            });
         });
-    });
-    $(document).ready(function () {
-        $('input[name$="DeskQuote.Depth"]').change(function () {
+        $(document).ready(function () {
+            $('input[name$="DeskQuote.Depth"]').change(function () {
 
-            update();
+                update();
+            });
         });
-    });
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        $("#material").change(function () {
-         
-            update();
+            $("#material").change(function () {
+
+                update();
+            });
         });
-    });
-    $(document).ready(function () {
-        $("#drawer").change(function () {
-       
-            update();
+        $(document).ready(function () {
+            $("#drawer").change(function () {
+
+                update();
+            });
         });
-    });
-    $(document).ready(function () {
-        $("#ship").change(function () {
-         
-            update();
+        $(document).ready(function () {
+            $("#ship").change(function () {
+
+                update();
+            });
         });
-    });
-</script>
+    </script>
 }
