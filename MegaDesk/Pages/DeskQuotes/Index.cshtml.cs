@@ -20,9 +20,59 @@ namespace MegaDesk.Pages.DeskQuotes
 
         public IList<DeskQuote> DeskQuote { get;set; }
 
-        public async Task OnGetAsync()
+        // This is for the sorting        
+        public string SortDate { get; set; }
+        public string SortName { get; set; }
+        public string CurrentFilter { get; set; }       
+
+        
+
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
-            DeskQuote = await _context.DeskQuote.ToListAsync();
+            //BookSelected = searchBook;
+            CurrentFilter = searchString;
+
+            // Use LINQ to get the search and sorting
+            IQueryable<DeskQuote> deskQuery = from s in _context.DeskQuote
+                                              orderby s.FirstName
+                                              select s;
+           
+
+            var desks = from s in _context.DeskQuote
+                             select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                desks = desks.Where(s => s.FirstName.Contains(searchString));
+            }                       
+
+            // Adding the sorting code
+            SortDate = sortOrder == "QuoteDate" ? "QuoteDate_desc" : "QuoteDate";
+            SortName = String.IsNullOrEmpty(sortOrder) ? "FirstName_desc" : "";
+
+
+
+            switch (sortOrder)
+            {
+                case "FirstName_desc":
+                    desks = desks.OrderByDescending(s => s.FirstName);
+                    break;
+                case "QuoteDate":
+                    desks = desks.OrderBy(s => s.QuoteDate);
+                    break;
+                case "QuoteDate_desc":
+                    desks = desks.OrderByDescending(s => s.QuoteDate);
+                    break;
+                default:
+                    desks = desks.OrderBy(s => s.FirstName);
+                    break;
+            }
+
+
+            DeskQuote = await deskQuery.AsNoTracking().ToListAsync();           
+            DeskQuote = await desks.ToListAsync();          
+        
+          
         }
     }
 }
