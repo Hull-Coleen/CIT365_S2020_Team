@@ -28,6 +28,7 @@
                         <label asp-for="DeskQuote.FirstName" class="control-label"></label>
                         <input asp-for="DeskQuote.FirstName" class="form-control" />
                         <span asp-validation-for="DeskQuote.FirstName" class="text-danger"></span>
+
                     </div>
                 </div>
                 <div class="row">
@@ -65,7 +66,7 @@
                         <label asp-for="DeskQuote.DrawerNumber" class="control-label"></label>
                         <select asp-for="DeskQuote.DrawerNumber" id="drawer" class="form-control">
                             <option value="">Drawer number</option>
-                            <option value="0">None</option>
+                            <option selected="selected" value="0">None</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -81,7 +82,7 @@
                         <label asp-for="DeskQuote.Material" class="control-label"></label>
                         <select asp-for="DeskQuote.Material" id="material" class="form-control">
                             <option value="">Desk Material</option>
-                            <option value="Veneer">Veneer</option>
+                            <option selected="selected" value="Veneer">Veneer</option>
                             <option value="Oak">Oak</option>
                             <option value="Laminate">Laminate</option>
                             <option value="Pine">Pine</option>
@@ -95,7 +96,7 @@
                         <label asp-for="DeskQuote.Shipping" class="control-label"></label>
                         <select asp-for="DeskQuote.Shipping" id="ship" class="form-control">
                             <option value="">Shipping</option>
-                            <option value="14">14 Day</option>
+                            <option selected="selected" value="14">14 Day</option>
                             <option value="7">7 Day</option>
                             <option value="5">5 Day</option>
                             <option value="3">3 Day</option>
@@ -112,26 +113,31 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <img id="myImg" src="~/images/pinejpg.jpg" asp-append-version="true"><br />
+                <img id="myImg" src="~/images/Rosewood.jpg" asp-append-version="true"><br />
                 <label>
+                    Rosewood<br />
                     <input type="radio" name="test" value="1" checked>
                     <img id="radioImg" src="~/images/Rosewood.jpg">
                 </label>
 
                 <label>
+                    Laminate<br />
                     <input type="radio" name="test" value="2">
                     <img id="radioImg" src="~/images/laminate.jpg">
                 </label>
                 <label>
+                    Oak<br />
                     <input type="radio" name="test" value="3">
                     <img id="radioImg" src="~/images/oak.jpg">
                 </label>
 
                 <label>
+                    Pine<br />
                     <input type="radio" name="test" value="4">
                     <img id="radioImg" src="~/images/pinejpg.jpg">
                 </label>
                 <label>
+                    Veneer<br />
                     <input type="radio" name="test" value="5">
                     <img id="radioImg" src="~/images/venner.jpg">
                 </label>

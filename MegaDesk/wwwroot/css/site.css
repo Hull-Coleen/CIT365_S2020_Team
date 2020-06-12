@@ -11,6 +11,9 @@ a.navbar-brand {
 a {
   color: #0366d6;
 }
+body {
+    background-color: #f0f5f5;
+}
 
 .btn-primary {
   color: #fff;

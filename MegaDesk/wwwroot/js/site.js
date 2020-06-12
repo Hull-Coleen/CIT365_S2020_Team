@@ -66,16 +66,26 @@ function update() {
     else
         size = 0;
     var materialCost = 0;
-    if (material == "Pine")
+    if (material == "Pine") {
+        document.getElementById("myImg").src = "/images/pinejpg.jpg";
         materialCost = 50;
-    else if (material == "Laminate")
+    }
+    else if (material == "Laminate") {
+        document.getElementById("myImg").src = "/images/laminate.jpg";
         materialCost = 100;
-    else if (material == "Veneer")
+    }
+    else if (material == "Veneer") {
+        document.getElementById("myImg").src = "/images/venner.jpg";
         materialCost = 125;
-    else if (material == "Oak")
+    }
+    else if (material == "Oak") {
+        document.getElementById("myImg").src = "/images/oak.jpg";
         materialCost = 200;
-    else if (material == "Rosewood")
+    }
+    else if (material == "Rosewood") {
+        document.getElementById("myImg").src = "/images/Rosewood.jpg";
         materialCost = 300;
+    }
     cost.value = 200 + size + (drawer * 50) + materialCost + ship;
 
 }

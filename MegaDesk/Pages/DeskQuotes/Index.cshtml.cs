@@ -43,7 +43,8 @@ namespace MegaDesk.Pages.DeskQuotes
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                desks = desks.Where(s => s.FirstName.Contains(searchString));
+                desks = desks.Where(s => s.FirstName.Contains(searchString) || 
+                s.LastName.Contains(searchString));
             }                       
 
             // Adding the sorting code
