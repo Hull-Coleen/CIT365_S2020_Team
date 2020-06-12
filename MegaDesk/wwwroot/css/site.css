@@ -6,6 +6,12 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+.bg-navbar {
+    background: -webkit-linear-gradient(110deg, #f0f5f5 60%, #0a0f0f 60%);
+    background: -o-linear-gradient(110deg, #f0f5f5 60%, #0a0f0f 60%);
+    background: -moz-linear-gradient(110deg, #f0f5f5 60%, #0a0f0f 60%);
+    background: linear-gradient(110deg, #f0f5f5 60%, #0a0f0f 60%);
+}
 
 /* Provide sufficient contrast against white background */
 a {
@@ -28,7 +34,7 @@ body {
 }
 img {
     height: 200px;
-    width: 200px;
+    width: 100%;
 }
 #radioImg {
     height: 30px;
@@ -41,9 +47,19 @@ img {
     width: 0;
     height: 0;
 }
-    [type=radio]:checked + img {
+[type=radio]:checked + img {
         outline: 2px solid #f00;
-    }
+        text-align: center;
+}
+.material3, .material4 {
+        padding-right: 30px;
+}
+.material1, .material2 {
+    padding-right: 7px;
+}
+.material1 {
+    padding-left: 3px;
+}
 
 
 /* Sticky footer styles

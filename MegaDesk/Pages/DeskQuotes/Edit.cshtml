@@ -13,7 +13,7 @@
     <form method="post">
         <div class="row">
             <div class="col-md-1"></div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="row">
                         <input type="hidden" asp-for="DeskQuote.ID" />
@@ -59,9 +59,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="row">
                         <div class="form-group">
+                            <br /><br />
                             <label asp-for="DeskQuote.DrawerNumber" class="control-label"></label>
                             <select asp-for="DeskQuote.DrawerNumber" id="drawer" class="form-control">
                                 <option value="">Drawer number</option>
@@ -112,26 +113,31 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <br /><br /><br /><br />
                     <img id="myImg" src="~/images/pinejpg.jpg" asp-append-version="true"><br /><br />
-                    <label>
+                    <label class="material1">Rosewood<br />
                         <input type="radio" name="test" value="1" checked>
                         <img id="radioImg" src="~/images/Rosewood.jpg">
                     </label>
 
-                    <label>
+                    <label class="material2">
+                        Laminate<br />
                         <input type="radio" name="test" value="2">
                         <img id="radioImg" src="~/images/laminate.jpg">
                     </label>
-                    <label>
+                    <label class="material3">
+                        Oak<br />
                         <input type="radio" name="test" value="3">
                         <img id="radioImg" src="~/images/oak.jpg">
                     </label>
 
-                    <label>
+                    <label class="material4">
+                        Pine<br />
                         <input type="radio" name="test" value="4">
                         <img id="radioImg" src="~/images/pinejpg.jpg">
                     </label>
                     <label>
+                        Veneer<br />
                         <input type="radio" name="test" value="5">
                         <img id="radioImg" src="~/images/venner.jpg">
                     </label>
