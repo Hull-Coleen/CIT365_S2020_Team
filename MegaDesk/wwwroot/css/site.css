@@ -14,11 +14,13 @@ a.navbar-brand {
 }
 
 /* Provide sufficient contrast against white background */
+
 a {
-  color: #0366d6;
+    color: #e6005c;
+    font-weight: bold;
 }
 body {
-    background-color: #f0f5f5;
+   background-color: #f0f5f5
 }
 
 .btn-primary {
@@ -28,9 +30,10 @@ body {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+
+    color: #e6005c;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 img {
     height: 50%;
