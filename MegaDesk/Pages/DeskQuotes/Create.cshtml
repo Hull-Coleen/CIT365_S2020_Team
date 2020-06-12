@@ -3,18 +3,7 @@
 
 @{
     ViewData["Title"] = "Create";
-
-   }
-
-    <head>
-        <link rel="stylesheet" href="~/css/Create.css" />
-        
-    </head>
-
-    <script src="~/js/Create.js">
-
-    </script>
-
+}
 
 <h1>Create</h1>
 
@@ -52,6 +41,7 @@
                 <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DeskQuote.DrawerNumber" class="control-label"></label>
                 <select asp-for="DeskQuote.DrawerNumber" id="drawer" class="form-control">
                     <option value="">Drawer number</option>
                     <option selected="selected" value="0">None</option>
@@ -65,6 +55,7 @@
                 <span asp-validation-for="DeskQuote.DrawerNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DeskQuote.Material" class="control-label"></label>
                 <select asp-for="DeskQuote.Material" id="material" class="form-control">
                     <option value="">Desk Material</option>
                     <option selected="selected" value="Veneer">Veneer</option>
@@ -76,6 +67,7 @@
                 <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DeskQuote.Shipping" class="control-label"></label>
                 <select asp-for="DeskQuote.Shipping" id="ship" class="form-control">
                     <option value="">Shipping</option>
                     <option selected="selected" value="14">14 Day</option>
@@ -91,122 +83,40 @@
                 <span asp-validation-for="DeskQuote.Cost" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" /> 
+                <a asp-page="Index">Back to List</a>
             </div>
         </form>
     </div>
 
+    <div class="col-md-4">
+        <img id="myImg"   src="~/images/pinejpg.jpg"  asp-append-version="true"><br />
+        <label>
+            <input type="radio" name="test" value="1" checked>
+            <img id="radioImg" src="~/images/Rosewood.jpg">
+        </label>
 
-    <div>
-        <a asp-page="Index">Back to List</a>
+        <label>
+            <input type="radio" name="test" value="2">
+            <img id="radioImg" src="~/images/laminate.jpg">
+        </label>
+        <label>
+            <input type="radio" name="test" value="3">
+            <img id="radioImg" src="~/images/oak.jpg">
+        </label>
+
+        <label>
+            <input type="radio" name="test" value="4">
+            <img id="radioImg" src="~/images/pinejpg.jpg">
+        </label>
+        <label>
+            <input type="radio" name="test" value="5">
+            <img id="radioImg" src="~/images/venner.jpg">
+        </label>
+
     </div>
-
-   <!-- <div class="col-md-4">
-        <img src="~/images/Rosewood.jpg" asp-append-version="true">
-    </div>-->
-
-    <div class="materialView" >
-       
-            <img src="~/images/Rosewood.jpg" asp-append-version="true">
-       
-    </div>
-
-   
-
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script type="text/javascript">
-        function update() {
-            var size = 0;
-            var ship = 0;
-            var cost = document.getElementsByName("DeskQuote.Cost")[0];
-            var drawer = document.getElementsByName("DeskQuote.DrawerNumber")[0].value;
-            var material = document.getElementsByName("DeskQuote.Material")[0].value;
-            var width = document.getElementsByName("DeskQuote.Width")[0].value;
-            var depth = document.getElementsByName("DeskQuote.Depth")[0].value;
-            var shipping = document.getElementsByName("DeskQuote.Shipping")[0].value;
-            if (shipping == "7") {
-                if (width * depth > 2000)
-                    ship = 40;
-                else if (width * depth <= 2000 && width * depth >= 1000)
-                    ship = 35;
-                else
-                    ship = 30;
-            }
-            else if (shipping == "5") {
-                if (width * depth > 2000)
-                    ship = 60;
-                else if (width * depth <= 2000 && width * depth >= 1000)
-                    ship = 50;
-                else
-                    ship = 40;
-            }
-            else if (shipping == "3") {
-                if (width * depth > 2000)
-                    ship = 80;
-                else if (width * depth <= 2000 && width * depth >= 1000)
-                    ship = 70;
-                else
-                    ship = 60;
-            }
-            else
-                ship = 0;
-
-            if ((width * depth) > 1000) {
-                size = width * depth - 1000;
-            }
-            else
-                size = 0;
-            var materialCost = 0;
-            if (material == "Pine")
-                materialCost = 50;
-            else if (material == "Laminate")
-                materialCost = 100;
-            else if (material == "Veneer")
-                materialCost = 125;
-            else if (material == "Oak")
-                materialCost = 200;
-            else if (material == "Rosewood")
-                materialCost = 300;
-            cost.value = 200 + size + (drawer * 50) + materialCost + ship;
-
-        }
-
-        $(document).ready(function () {
-            $('input[name$="DeskQuote.Width"]').change(function () {
-
-                update();
-            });
-        });
-        $(document).ready(function () {
-            $('input[name$="DeskQuote.Depth"]').change(function () {
-
-                update();
-            });
-        });
-        $(document).ready(function () {
-
-            $("#material").change(function () {
-
-                update();
-            });
-        });
-        $(document).ready(function () {
-            $("#drawer").change(function () {
-
-                update();
-            });
-        });
-        $(document).ready(function () {
-            $("#ship").change(function () {
-
-                update();
-            });
-        });
-    </script>
-
-
-
 }
