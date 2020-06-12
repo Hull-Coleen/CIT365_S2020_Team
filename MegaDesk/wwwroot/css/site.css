@@ -15,26 +15,23 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 
+a {
+    color: #0366d6;
+}
+
 body {
-    background-color: #f0f5f5;
+   background-color: #f0f5f5
 }
 
 .btn-primary {
-  color: #ffffff;
-  background-color: brown;
+  color: #fff;
+  background-color: #1b6ec2;
   border-color: #1861ac;
-  font-size: 20px;
-}
-
-.form, btnSearch {
-    color: #000000;
-    background-color:brown;
-
-
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
+
+    color: #e6005c;
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
@@ -76,8 +73,6 @@ a {
     font-size: 20px;
 }
 
-/* Quote List page table */
-
 .thead, td {
     color: #000000;
     font-size: large;
@@ -87,16 +82,14 @@ a {
     color: #ffffff;
     font-family: 'Rajdhani', sans-serif;
     font-style: italic;
-    background-color: #000000;
-    font-size: 20px;
+    background-color:#000000;
 }
 
-.thead, td {
+.thead, tr {
     color: #000000;
-    font-size: 22px;
+    font-size: 20px;
     border-bottom: double;
     border-width: thick;
-    font-family: 'Alegreya', serif;
 }
 
 .table {
@@ -109,23 +102,9 @@ p {
     font-size: 20px;
 }
 
-.material1, .material2, .material3, .material4, .material5 {
-    font-family: 'Alegreya', serif;
-    font-size: 17px;
-}
-
-.row, .form-control {
-    color: #000000;
-    font-family: 'Alegreya', serif;
-    font-size: 20px;
-}
-
-.row, label {
-    color: brown;
-}
-    /* Sticky footer styles
+/* Sticky footer styles
 -------------------------------------------------- */
-    html {
+html {
   font-size: 14px;
 }
 @media (min-width: 768px) {
