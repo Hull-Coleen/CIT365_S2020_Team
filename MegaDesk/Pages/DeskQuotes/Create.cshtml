@@ -5,6 +5,10 @@
     ViewData["Title"] = "Create";
 }
 
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+
 
 <h1>New Quote</h1>
 <p>
@@ -114,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="labelRadioB">
                 <br /><br />
                 <img id="myImg" src="~/images/Rosewood.jpg" asp-append-version="true"><br />
                 <label class="material1">
@@ -139,7 +143,7 @@
                     <input type="radio" name="test" value="4">
                     <img id="radioImg" src="~/images/pinejpg.jpg">
                 </label>
-                <label>
+                <label class="material5">
                     Veneer<br />
                     <input type="radio" id="material5" name="test" value="5">
                     <img id="radioImg" src="~/images/venner.jpg">
