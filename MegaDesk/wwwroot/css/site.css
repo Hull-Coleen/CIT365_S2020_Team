@@ -15,8 +15,9 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
+
 body {
     background-color: #f0f5f5;
 }
@@ -61,6 +62,43 @@ img {
     padding-left: 3px;
 }
 
+/* Changing fonts, table style and adding some colors*/ 
+
+a {
+    color: #0366d6;
+    color: brown;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.thead, td {
+    color: #000000;
+    font-size: large;
+}
+
+.thead, th {
+    color: #ffffff;
+    font-family: 'Rajdhani', sans-serif;
+    font-style: italic;
+    background-color:#000000;
+}
+
+.thead, tr {
+    color: #000000;
+    font-size: 20px;
+    border-bottom: double;
+    border-width: thick;
+}
+
+.table {
+    border-bottom: double;
+}
+
+p {
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
