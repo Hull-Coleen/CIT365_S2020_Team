@@ -23,12 +23,12 @@
     <thead>
         <tr>
             <th>
-                <a  asp-page="./Index" asp-route-sortOrder="@Model.SortDate">
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SortDate">
                     @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
                 </a>
             </th>
             <th>
-                <a  asp-page="./Index" asp-route-sortOrder="@Model.SortName">
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SortName">
                     @Html.DisplayNameFor(model => model.DeskQuote[0].FirstName)
                 </a>
             </th>
@@ -36,13 +36,14 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].DrawerNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Material)
+                <span></span>@Html.DisplayNameFor(model => model.DeskQuote[0].Material)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Shipping)
+                <span></span> @Html.DisplayNameFor(model => model.DeskQuote[0].Shipping)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Cost)
+
+                <span></span>@Html.DisplayNameFor(model => model.DeskQuote[0].Cost)
             </th>
             <th></th>
         </tr>
@@ -62,16 +63,20 @@
                     @Html.DisplayFor(modelItem => item.DrawerNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Material)
+                    <span></span>@Html.DisplayFor(modelItem => item.Material)
                 </td>
                 <td class="indexresult">
-                    @Html.DisplayFor(modelItem => item.Shipping)
+                    <span></span>@Html.DisplayFor(modelItem => item.Shipping) Days
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cost)<br />
-                    <span></span><span></span><a  asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a  asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a  asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    <div>
+                        <span></span> @Html.DisplayFor(modelItem => item.Cost)<br />
+                        <span></span><span></span>
+                        <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    </div>
+
                 </td>
                 <td>
                 </td>
