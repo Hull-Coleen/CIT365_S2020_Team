@@ -21,7 +21,7 @@ hr {
 #details {
     font-size: 30px;
     background-color: white;
-    
+    border: solid 1px #0a0f0f;
 }
 .rowD {
     
@@ -122,6 +122,9 @@ a {
     border-radius: 5px;
     padding: 4px;
 }
+    a:hover {
+        color: #0a0f0f;
+    }
 #navlink {
     border: none;
 }

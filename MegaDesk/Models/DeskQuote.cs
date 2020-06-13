@@ -21,6 +21,7 @@ namespace MegaDesk.Models
         [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
+        [Display(Name = "Last Name")] 
         public string LastName { get; set; }
         [Range(24, 96)]
         [Required]
