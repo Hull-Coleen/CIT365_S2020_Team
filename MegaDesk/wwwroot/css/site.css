@@ -15,6 +15,18 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 
+hr {
+    border: double 2px #cc0052;
+}
+#details {
+    font-size: 30px;
+    background-color: white;
+    
+}
+.rowD {
+    
+    padding: 2%;
+}
 
 body {
     font-style: Sans-Serif;
@@ -30,18 +42,37 @@ body {
 .indexSort {
     color: #ff0000;
 }
-
+.btn-danger {
+    background-color: #cc0052;
+    border-radius: 5px;
+    padding: 4px;
+    font-weight: bold;
+    font-size: 20px;
+}
 .btn-primary {
-    color: #fff;
-    background-color: brown;
-    border-color: #1861ac;
+    color: #cc0052;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #f0f5f5;
+    border: solid 1px #cc0052;
+    border-radius: 5px;
+    padding: 4px;
+}
+.btn-primary:hover {
+        color: white;
+        background-color: #cc0052;
+
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-
-    color: #e6005c;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        color: #e6005c;
+        background-color: #1b6ec2;
+        border-color: #1861ac;
+    }
+span:before {
+    content: " ";
+    display: inline-block;
+    width: 32px;
 }
 img {
     height: 50%;
@@ -75,21 +106,24 @@ img {
 .material1 {
     padding-left: 3px;
 }
-.indexlink {
-    padding-left: 20%;
-}
+
 #drawer, #material, #ship {
-    width:auto;
+    width: 200px;
 }
 
 /* Changing fonts, table style and adding some colors*/
 
 a {
-    // color: #0366d6;
-    // color: brown;
     color: #cc0052;
     font-weight: bold;
     font-size: 20px;
+    background-color: #f0f5f5;
+    border: solid 1px #cc0052;
+    border-radius: 5px;
+    padding: 4px;
+}
+#navlink {
+    border: none;
 }
 
 .thead, td {

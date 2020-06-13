@@ -5,7 +5,10 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+    <h1>
+        Edit: @Html.DisplayFor(model => model.DeskQuote.FirstName)
+        @Html.DisplayFor(model => model.DeskQuote.LastName)'s Quote
+    </h1>
 <p>
     <a asp-page="./Index">Back to List</a>
 </p>

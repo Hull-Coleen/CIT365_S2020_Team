@@ -15,8 +15,7 @@
         Find by Name:
 
         <input type="text" name="searchString" asp-for="@Model.CurrentFilter" />
-        <input type="submit" id="btnSearch" value="Search" />  
-        <br /><br /> <a asp-page="./Index">Back to List</a>
+        <input type="submit" id="btnSearch" value="Search" />
     </p>
 </form>
 
@@ -24,12 +23,12 @@
     <thead>
         <tr>
             <th>
-                <a class="indexSort" asp-page="./Index" asp-route-sortOrder="@Model.SortDate">
+                <a  asp-page="./Index" asp-route-sortOrder="@Model.SortDate">
                     @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
                 </a>
             </th>
             <th>
-                <a class="indexSort" asp-page="./Index" asp-route-sortOrder="@Model.SortName">
+                <a  asp-page="./Index" asp-route-sortOrder="@Model.SortName">
                     @Html.DisplayNameFor(model => model.DeskQuote[0].FirstName)
                 </a>
             </th>
@@ -70,7 +69,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cost)<br />
-                    <a class="indexlink" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <span></span><span></span><a  asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                     <a  asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                     <a  asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
                 </td>
