@@ -17,7 +17,8 @@ a.navbar-brand {
 
 
 body {
-   background-color: #f0f5f5
+    font-style: Sans-Serif;
+   background-color: #f0f5f5;
 }
 #WelcomeImage {
     max-height: 60%;
@@ -32,7 +33,7 @@ body {
 
 .btn-primary {
     color: #fff;
-    background-color: #1b6ec2;
+    background-color: brown;
     border-color: #1861ac;
 }
 
