@@ -17,7 +17,8 @@ a.navbar-brand {
 
 
 body {
-   background-color: #f0f5f5
+    font-style: Sans-Serif;
+   background-color: #f0f5f5;
 }
 #WelcomeImage {
     max-height: 60%;
