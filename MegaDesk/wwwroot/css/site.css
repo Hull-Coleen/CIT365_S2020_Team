@@ -30,8 +30,9 @@ hr {
 }
 
 body {
-    font-style: Sans-Serif;
+   font-family: 'Agency FB' ;
    background-color: #f0f5f5;
+   font-weight: bold;
 }
 #WelcomeImage {
     max-height: 60%;
@@ -46,10 +47,21 @@ body {
 .btn-danger {
     background-color: #cc0052;
     border-radius: 5px;
-    padding: 4px;
+    padding-top: 1px;
+    padding-bottom: 2px;
     font-weight: bold;
     font-size: 20px;
+    height: 35px;
 }
+#deleteLink {
+    height: 35px;
+    padding-bottom: 8px;
+}
+    .btn-danger:hover {
+        color: #cc0052;
+        background-color: white;
+        border: 1px solid #cc0052;
+    }
 .btn-primary {
     color: #cc0052;
     font-weight: bold;
@@ -99,13 +111,13 @@ img {
         text-align: center;
 }
 .material3, .material4 {
-        padding-right: 30px;
+        padding-right: 35px;
 }
 .material1, .material2 {
-    padding-right: 7px;
+    padding-right: 15px;
 }
 .material1 {
-    padding-left: 3px;
+    padding-left: 15px;
 }
 
 #drawer, #material, #ship {

@@ -9,15 +9,16 @@
     Details for @Html.DisplayFor(model => model.DeskQuote.FirstName)
     @Html.DisplayFor(model => model.DeskQuote.LastName)'s Quote
 </h1>
-<hr />
-<br />
 <div>
+    <hr />
+    <br />
+<div id="details"><br />
 
-    <div class="row" id="details">
+    <div class="row" >
         <div class="col-md-1"></div>
         <div class="col-md-5">
             <div class="rowD">
-                @Html.DisplayNameFor(model => model.DeskQuote.FirstName)  :&emsp;&ensp;&emsp;
+                @Html.DisplayNameFor(model => model.DeskQuote.FirstName)  :&emsp;&nbsp;&emsp;
 
                 @Html.DisplayFor(model => model.DeskQuote.FirstName)
             </div>
@@ -29,13 +30,13 @@
 
             </div>
             <div class="rowD">
-                @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)  :
+                @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate) :&ensp;
 
                 @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
 
             </div>
             <div class="rowD">
-                @Html.DisplayNameFor(model => model.DeskQuote.Cost)  :&emsp;&emsp;&emsp;
+                @Html.DisplayNameFor(model => model.DeskQuote.Cost)  :&emsp;&emsp;&ensp;
 
                 @Html.DisplayFor(model => model.DeskQuote.Cost)
             </div>
@@ -71,7 +72,7 @@
                 @Html.DisplayFor(model => model.DeskQuote.Shipping) Days
             </div>
         </div>
-
+    </div>
     </div>
 </div>
 <br />

@@ -32,7 +32,7 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label asp-for="DeskQuote.FirstName" class="control-label"></label>
+                        <label asp-for="DeskQuote.FirstName" class="control-label">First Name</label>
                         <input asp-for="DeskQuote.FirstName" class="form-control" />
                         <span asp-validation-for="DeskQuote.FirstName" class="text-danger"></span>
 
@@ -47,14 +47,14 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label asp-for="DeskQuote.Width" class="control-label"></label>
+                        <label asp-for="DeskQuote.Width" class="control-label">Width in inches</label>
                         <input asp-for="DeskQuote.Width" class="form-control" />
                         <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label asp-for="DeskQuote.Depth" class="control-label"></label>
+                        <label asp-for="DeskQuote.Depth" class="control-label">Depth in inches</label>
                         <input asp-for="DeskQuote.Depth" class="form-control" />
                         <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
                     </div>
@@ -63,7 +63,7 @@
             <div class="col-md-3">
                 <div class="row">
                     <div class="form-group">
-                        <label asp-for="DeskQuote.DrawerNumber" class="control-label"></label>
+                        <label asp-for="DeskQuote.DrawerNumber" class="control-label">Number of Drawers</label>
                         <select asp-for="DeskQuote.DrawerNumber" id="drawer" class="form-control">
                             <option value="">Drawer number</option>
                             <option selected="selected" value="0">None</option>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label asp-for="DeskQuote.Shipping" class="control-label"></label>
+                        <label asp-for="DeskQuote.Shipping" class="control-label">Shipping Time</label>
                         <select asp-for="DeskQuote.Shipping" id="ship" class="form-control">
                             <option value="">Shipping</option>
                             <option selected="selected" value="14">14 Day</option>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <br /><br />
+                        <br />
                         <input type="submit" value="Save Quote" class="btn btn-primary" />
                     </div>
                 </div>
