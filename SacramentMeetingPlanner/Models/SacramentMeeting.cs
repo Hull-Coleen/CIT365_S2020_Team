@@ -6,9 +6,9 @@ namespace SacramentMeetingPlanner.Models
 {
     public class SacramentMeeting
     {
-        public int SacramentId { get; set; }
-        [Required]
-        [DataType(DataType.Date)]
+        public int ID { get; set; }
+        [Required]        
+        [DataType(DataType.Date)]        
         [Display(Name = "Date")]
         public DateTime SacramentDate { get; set; }
 

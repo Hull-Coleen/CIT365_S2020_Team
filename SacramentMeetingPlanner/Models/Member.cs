@@ -12,7 +12,8 @@ namespace SacramentMeetingPlanner.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Calling { get; set; }
-        public PhoneAttribute PhoneNumber { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNumber { get; set; }      
 
 
     }

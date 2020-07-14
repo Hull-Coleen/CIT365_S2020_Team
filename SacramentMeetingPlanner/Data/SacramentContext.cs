@@ -14,8 +14,15 @@ namespace SacramentMeetingPlanner.Data
 
         }
 
-        public DbSet<SacramentMeeting> SacramentM { get; set; }
+        public DbSet<SacramentMeeting> SacramentMeetings { get; set; }
         public DbSet<Hymn> Hymns { get; set; }
         public DbSet<Member> Members { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<SacramentMeeting>().ToTable("SacramentMeeting");
+            modelBuilder.Entity<Hymn>().ToTable("Hymn");
+            modelBuilder.Entity<Member>().ToTable("Member");
+        }
     }
 }

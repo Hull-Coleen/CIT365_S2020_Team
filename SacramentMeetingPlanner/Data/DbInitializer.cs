@@ -1,6 +1,7 @@
 ﻿using SacramentMeetingPlanner.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,14 +21,13 @@ namespace SacramentMeetingPlanner.Data
 
             var members = new Member[]
             {
-            new Member{FirstName="Pilar",LastName="Pedrozo",Calling="Relief Society President"},
-            new Member{FirstName="Pablo",LastName="Almirante",Calling="Elders Quorum President"},
-            new Member{FirstName="Lazaro",LastName="Valdez",Calling="Bishop"},
-            new Member{FirstName="Elena",LastName="Mendoza",Calling="Ward Music Chairman"},
-            new Member{FirstName="Sulivan",LastName="Mendez",Calling="Ward Music Director"},
-            new Member{FirstName="Claudia",LastName="Velasquez",Calling="Ward Organist or Pianist"},
-            new Member{FirstName="Diego",LastName="Montenegro",Calling="Elders Quorum Teacher"},
-            new Member{FirstName="Amanda",LastName="Rocoso",Calling="Ward Relief Society Teacher"},
+            new Member{FirstName="Pilar",LastName="Pedrozo",Calling="Relief Society President",PhoneNumber="625-358-9856"},
+            new Member{FirstName="Pablo",LastName="Almirante",Calling="Elders Quorum President",PhoneNumber="625-548-8214"},
+            new Member{FirstName="Elena",LastName="Mendoza",Calling="Ward Music Chairman",PhoneNumber="625-254-8963"},
+            new Member{FirstName="Sulivan",LastName="Mendez",Calling="Ward Music Director",PhoneNumber="625-578-2354"},
+            new Member{FirstName="Claudia",LastName="Velasquez",Calling="Ward Organist or Pianist",PhoneNumber="625-546-2145"},
+            new Member{FirstName="Diego",LastName="Montenegro",Calling="Elders Quorum Teacher",PhoneNumber="625-754-7854"},
+            new Member{FirstName="Amanda",LastName="Rocoso",Calling="Ward Relief Society Teacher",PhoneNumber="625-658-5698"},
             };
 
             foreach (Member s in members)
