@@ -24,9 +24,33 @@
             </div>
             <div class="form-group">
                 <label asp-for="Calling" class="control-label"></label>
-                <input asp-for="Calling" class="form-control" />
+                <select asp-for="Calling" id="calling" class="form-control">
+                    <option value="">Calling</option>
+                    <option selected="selected" value="">Bishop</option>
+                    <option value="Bishopric Counsel">Bishopric Counsel</option>
+                    <option value="Ward Clerk">Ward Clerk</option>
+                    <option value="Elders Quorum President">Elders Quorum President</option>
+                    <option value="Elders Quorum Counselor">Elders Quorum Counselor</option>
+                    <option value="Elders Quorum Secretary">Elders Quorum Secretary</option>
+                    <option value="Elders Quorum Teacher">Elders Quorum Teacher</option>
+                    <option value="Relief Society President">Relief Society President</option>
+                    <option value="Relief Society Counselor">Relief Society Counselor</option>
+                    <option value="Relief Society Secretary">Relief Society Secretary</option>
+                    <option value="Ward Relief Society Teacher">Ward Relief Society Teacher</option>
+                    <option value="Ward Mission Leader">Ward Mission Leader</option>
+                    <option value="Ward Temple and Family History Leader">Ward Temple and Family History Leader</option>
+                    <option value="Ward Music Chairman">Ward Music Chairman</option>
+                    <option value="Ward Music Director">Ward Music Director</option>
+                    <option value="Ward Organist or Pianist">Ward Organist or Pianist</option>
+
+                </select>
                 <span asp-validation-for="Calling" class="text-danger"></span>
             </div>
+           <!-- <div class="form-group">
+                <label asp-for="Calling" class="control-label"></label>
+                <input asp-for="Calling" class="form-control" />
+                <span asp-validation-for="Calling" class="text-danger"></span>
+            </div>-->
             <div class="form-group">
                 <label asp-for="PhoneNumber" class="control-label"></label>
                 <input asp-for="PhoneNumber" class="form-control" />
