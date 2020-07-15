@@ -765,7 +765,7 @@ class Pidie {
     })
     setInterval(function(){
       plusSlides(1)
-    }, 6000)
+    }, 3000)
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
@@ -1293,7 +1293,7 @@ class Pidie {
     function autoPlayIndex() {
       autoIndex = setInterval(function(){
         gotoIndex(currentIndex + 1);
-      }, 12000);
+      }, 6000);
     }
     function stopPlayIndex() {
       clearInterval(autoIndex);
