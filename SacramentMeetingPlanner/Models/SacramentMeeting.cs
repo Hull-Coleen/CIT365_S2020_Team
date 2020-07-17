@@ -30,7 +30,7 @@ namespace SacramentMeetingPlanner.Models
 
 
         [Display(Name = "Intermediate Hymn")]
-        public int? IntermediateHymn { get; set; }
+        public string IntermediateHymn { get; set; }
 
         [Required]
         [Display(Name = "Closing Hymn")]
