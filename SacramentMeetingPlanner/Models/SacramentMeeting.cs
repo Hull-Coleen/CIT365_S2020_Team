@@ -39,6 +39,7 @@ namespace SacramentMeetingPlanner.Models
         [Required]
         [Display(Name = "Closing Prayer")]
         public string ClosingPrayer { get; set; }
+       
         public ICollection<Member> Speaker { get; set; }
     }
 }
