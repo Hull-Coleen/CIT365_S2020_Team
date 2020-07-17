@@ -14,7 +14,7 @@ namespace SacramentMeetingPlanner.Models
 
         [Required]
         [Display(Name = "Conduncting")]
-        public int ConductingBishopric { get; set; }
+        public string ConductingBishopric { get; set; }
 
         [Required]
         [Display(Name = "Opening Prayer")]

@@ -57,14 +57,47 @@ namespace SacramentMeetingPlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,SacramentDate,ConductingBishopric,OpeningPrayer,OpeningHymn,SacramentHymn,IntermediateHymn,ClosingHymn,ClosingPrayer")] SacramentMeeting sacramentMeeting)
+        public async Task<IActionResult> Create([Bind("SacramentDate,ConductingBishopric,OpeningPrayer,OpeningHymn," +
+            "SacramentHymn,IntermediateHymn,ClosingHymn,ClosingPrayer")] SacramentMeeting sacramentMeeting)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(sacramentMeeting);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(sacramentMeeting);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
+            }
+            //IQueryable<string> MemberQuery = from m in _context.Members
+            //                               orderby m.LastName
+            //                             select new ViewModel { m.FirstName, m.LastName};
+            // var member = Select FirstName, LastName 
+
+            /*  var member = from m in _context.Members
+                             select m;
+              member = (m => s.LastName);
+
+
+              string query = "SELECT * FROM Department WHERE DepartmentID = {0}";
+              var department = await _context.Departments
+                  .FromSql(query, id)
+                  .Include(d => d.Administrator)
+                  .AsNoTracking()
+                  .FirstOrDefaultAsync();*/
+            string query = "SELECT FirstName, LastName FROM Members";
+            var member = await _context.Members
+                .FromSql(query)
+               // .Include(d => d.Administrator)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
             return View(sacramentMeeting);
         }
 
@@ -81,7 +114,14 @@ namespace SacramentMeetingPlanner.Controllers
             {
                 return NotFound();
             }
+           
             return View(sacramentMeeting);
+        }
+        
+
+        private object FromSql(string query)
+        {
+            throw new NotImplementedException();
         }
 
         // POST: SacramentMeetings/Edit/5
@@ -89,7 +129,8 @@ namespace SacramentMeetingPlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,SacramentDate,ConductingBishopric,OpeningPrayer,OpeningHymn,SacramentHymn,IntermediateHymn,ClosingHymn,ClosingPrayer")] SacramentMeeting sacramentMeeting)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,SacramentDate,ConductingBishopric,OpeningPrayer,OpeningHymn," +
+            "SacramentHymn,IntermediateHymn,ClosingHymn,ClosingPrayer")] SacramentMeeting sacramentMeeting)
         {
             if (id != sacramentMeeting.ID)
             {

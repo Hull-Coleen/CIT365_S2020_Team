@@ -52,9 +52,12 @@
                 <input asp-for="ClosingPrayer" class="form-control" />
                 <span asp-validation-for="ClosingPrayer" class="text-danger"></span>
             </div>
-           
-                <input asp-for="Speaker" class="form-control" />
-               
+            <div class="form-group">
+                <label asp-for="Speaker" class="control-label"></label>
+                <input asp-for="Speaker" class="form-control" id="speaker"/>
+                <span asp-validation-for="Speaker" class="text-danger"></span>
+            </div>
+            <input type="button" value="Add Speaker" class="AddSpeaker"  />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -65,6 +68,7 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
