@@ -32,9 +32,12 @@ namespace SacramentMeetingPlanner.Controllers
             {
                 return NotFound();
             }
-
             var sacramentMeeting = await _context.SacramentMeetings
-                .FirstOrDefaultAsync(m => m.ID == id);
+               .Include(s => s.Speaker)
+               .AsNoTracking()
+               .FirstOrDefaultAsync(m => m.ID == id);
+            //var sacramentMeeting = await _context.SacramentMeetings
+            //  .FirstOrDefaultAsync(m => m.ID == id);
             if (sacramentMeeting == null)
             {
                 return NotFound();
