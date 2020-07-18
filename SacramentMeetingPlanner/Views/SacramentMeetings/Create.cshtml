@@ -1,0 +1,94 @@
+﻿@model SacramentMeetingPlanner.Models.SacramentMeeting
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SacramentMeeting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SacramentDate" class="control-label"></label>
+                <input asp-for="SacramentDate" class="form-control" />
+                <span asp-validation-for="SacramentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Topic" class="control-label"></label>
+                <input asp-for="Topic" class="form-control" />
+                <span asp-validation-for="Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConductingBishopric" class="control-label"></label>
+                <select asp-for="ConductingBishopric" asp-items="ViewBag.bishID" class="form-control">
+                    <option value="">-- Select Conductor --</option>
+                </select>
+                <span asp-validation-for="ConductingBishopric" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpeningPrayer" class="control-label"></label>
+                <select asp-for="OpeningPrayer" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Member --</option>
+                </select>
+                <span asp-validation-for="OpeningPrayer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpeningHymn" class="control-label"></label>
+                <select asp-for="OpeningHymn" asp-items="ViewBag.HymnID" class="form-control">
+                    <option value="">-- Select Song --</option>
+                </select>
+                <span asp-validation-for="OpeningHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SacramentHymn" class="control-label"></label>
+                <select asp-for="SacramentHymn" asp-items="ViewBag.SacramentID" class="form-control">
+                    <option value="">-- Select Song --</option>
+                </select>
+                <span asp-validation-for="SacramentHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntermediateHymn" class="control-label"></label>
+                <input asp-for="IntermediateHymn" class="form-control" />
+                <span asp-validation-for="IntermediateHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingHymn" class="control-label"></label>
+                <select asp-for="ClosingHymn" asp-items="ViewBag.HymnID" class="form-control">
+                    <option value="">-- Select Song --</option>
+                </select>
+                <span asp-validation-for="ClosingHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingPrayer" class="control-label"></label>
+                <select asp-for="ClosingPrayer" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Prayer --</option>
+                </select>
+                <span asp-validation-for="ClosingPrayer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Speaker" class="control-label"></label>
+                <select asp-for="Speaker" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Prayer --</option>
+                </select>
+                <span asp-validation-for="Speaker" class="text-danger"></span>
+            </div>
+            <input type="button" value="Add Speaker" class="AddSpeaker" />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

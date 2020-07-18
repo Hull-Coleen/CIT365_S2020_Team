@@ -13,7 +13,7 @@ namespace SacramentMeetingPlanner.Models
         public DateTime SacramentDate { get; set; }
 
         [Required]
-        [Display(Name = "Conduncting")]
+        [Display(Name = "Conducting")]
         public string ConductingBishopric { get; set; }
 
         [Required]
@@ -30,7 +30,7 @@ namespace SacramentMeetingPlanner.Models
 
 
         [Display(Name = "Intermediate Hymn")]
-        public int? IntermediateHymn { get; set; }
+        public string IntermediateHymn { get; set; }
 
         [Required]
         [Display(Name = "Closing Hymn")]
@@ -39,6 +39,9 @@ namespace SacramentMeetingPlanner.Models
         [Required]
         [Display(Name = "Closing Prayer")]
         public string ClosingPrayer { get; set; }
+        [Required]
+        public string Topic { get; set; }
+
         public ICollection<Member> Speaker { get; set; }
     }
 }
