@@ -19,7 +19,15 @@ namespace SacramentMeetingPlanner.Models
         [Required]
         [Display(Name = "Phone Number")]
         [DataType(DataType.PhoneNumber)]
-        public string PhoneNumber { get; set; }      
+        public string PhoneNumber { get; set; }
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return LastName + ", " + FirstName;
+            }
+        }
 
 
     }

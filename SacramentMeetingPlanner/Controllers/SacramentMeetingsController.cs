@@ -49,9 +49,14 @@ namespace SacramentMeetingPlanner.Controllers
         // GET: SacramentMeetings/Create
         public IActionResult Create()
         {
+            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName");
+            ViewData["HymnID"] = new SelectList(_context.Hymns, "ID", "Title");
+            ViewData["BishID"] = new SelectList(_context.Members.
+                                             Where(p => p.Calling == "Bishopric").OrderBy(p => p.LastName), "ID", "FullName");
+
             return View();
         }
-
+       // public SelectList Member { get; set; }
         // POST: SacramentMeetings/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -76,28 +81,12 @@ namespace SacramentMeetingPlanner.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
-            //IQueryable<string> MemberQuery = from m in _context.Members
-            //                               orderby m.LastName
-            //                             select new ViewModel { m.FirstName, m.LastName};
-            // var member = Select FirstName, LastName 
+           /* IQueryable<string> memberQuery = from m in _context.Members
+                                            orderby m.LastName
+                                            select m.FullName;
+           */
+          //  Member = new SelectList(await memberQuery.Distinct().ToListAsync());
 
-            /*  var member = from m in _context.Members
-                             select m;
-              member = (m => s.LastName);
-
-
-              string query = "SELECT * FROM Department WHERE DepartmentID = {0}";
-              var department = await _context.Departments
-                  .FromSql(query, id)
-                  .Include(d => d.Administrator)
-                  .AsNoTracking()
-                  .FirstOrDefaultAsync();*/
-            string query = "SELECT FirstName, LastName FROM Members";
-            var member = await _context.Members
-                .FromSql(query)
-               // .Include(d => d.Administrator)
-                .AsNoTracking()
-                .FirstOrDefaultAsync();
             return View(sacramentMeeting);
         }
 
