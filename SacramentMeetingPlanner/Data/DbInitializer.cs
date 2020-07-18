@@ -16,7 +16,7 @@ namespace SacramentMeetingPlanner.Data
             // Look for any member
             if (context.Members.Any())
             {
-                return; // Db has been seeded
+                return; // Db has been seededx
             }
 
             var members = new Member[]
@@ -36,7 +36,29 @@ namespace SacramentMeetingPlanner.Data
             }
             context.SaveChanges();
 
-            
+
+            if (context.Hymns.Any())
+            {
+                return;
+            }
+
+            var hymns = new Hymn[]
+            {
+            new Hymn{Title="Come, Listen to a Prophet's Voice",PageNumber=21},
+            new Hymn{Title="Joseph Smith's First Prayer",PageNumber=26},
+            new Hymn{Title="Praise to the Man",PageNumber=27},
+            new Hymn{Title="A Poor Wayfaring Man of Grief",PageNumber=29},
+            new Hymn{Title="Come, Come, Ye Saints",PageNumber=30},
+            new Hymn{Title="Battle Hymn of the Republic",PageNumber=60},
+            new Hymn{Title="Press Forward, Saints",PageNumber=81},
+            new Hymn{Title="How Firm a Foundation",PageNumber=85}
+            };
+
+            foreach (Hymn h in hymns)
+            {
+                context.Hymns.Add(h);
+            }
+            context.SaveChanges();
 
         }
         }
