@@ -68,14 +68,39 @@
                     <option value="">-- Select Prayer --</option>
                 </select>
                 <span asp-validation-for="ClosingPrayer" class="text-danger"></span>
-            </div>
+            </div> 
+            <!-- trying to add multiple speakers first intent
+
             <div class="form-group">
-                <label asp-for="Speaker" class="control-label"></label>
-                <select asp-for="Speaker" asp-items="ViewBag.MemberID" class="form-control">
-                    <option value="">-- Select Prayer --</option>
-                </select>
-                <span asp-validation-for="Speaker" class="text-danger"></span>
+                    <label asp-for="Speaker" class="control-label"></label>
+                    @Html.DropDownList("Speaker", ViewBag.MemberID as SelectList)
+                    <span id=" span1"></span>
+                    <script src="~/Scripts/jquery-1.10.2.js"></script>
+                        <script>
+                            $(document).ready(function () {
+                            $("#Speaker").change(function () {
+                                var a = $("#Speaker Option:Selected").text();
+                                $("#span1").text($("#span1").text()+ a);
+                            })
+                        })
+                    </script>
+
             </div>
+                -->
+
+            <!-- trying to add multiple speakers second intent-->
+
+       
+
+                <div class="form-group">
+                    <label asp-for="Speaker" class="control-label"></label>
+                    <select asp-for="Speaker" asp-items="ViewBag.MemberID" class="form-control">
+                        <option value="">-- Select Speaker --</option>
+                    </select>
+                    <span asp-validation-for="Speaker" class="text-danger"></span>
+                </div>
+                  
+          
             <input type="button" value="Add Speaker" class="AddSpeaker" />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
