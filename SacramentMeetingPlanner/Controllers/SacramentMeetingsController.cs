@@ -60,6 +60,7 @@ namespace SacramentMeetingPlanner.Controllers
                                              Where(p => p.PageNumber > 99 && p.PageNumber < 151).
                                              OrderBy(p => p.Title), "Title", "Title");
 
+
             return View();
         }
      
@@ -114,10 +115,10 @@ namespace SacramentMeetingPlanner.Controllers
             {
                 return NotFound();
             }
-           
+
             return View(sacramentMeeting);
         }
-        
+
 
         private object FromSql(string query)
         {
@@ -193,5 +194,9 @@ namespace SacramentMeetingPlanner.Controllers
         {
             return _context.SacramentMeetings.Any(e => e.ID == id);
         }
+
+        // trying to add multiple speakers at the same time
+
+    
     }
 }

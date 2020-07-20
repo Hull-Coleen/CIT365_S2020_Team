@@ -1,6 +1,9 @@
 ﻿using SacramentMeetingPlanner.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-
+using System.Threading.Tasks;
 
 namespace SacramentMeetingPlanner.Data
 {
@@ -13,7 +16,7 @@ namespace SacramentMeetingPlanner.Data
             // Look for any member
             if (context.Members.Any())
             {
-                return; // Db has been seeded
+                return; // Db has been seededx
             }
 
             var members = new Member[]
@@ -34,28 +37,30 @@ namespace SacramentMeetingPlanner.Data
                 context.Members.Add(s);
             }
             context.SaveChanges();
+
+
+            if (context.Hymns.Any())
+            {
+                return;
+            }
+
             var hymns = new Hymn[]
             {
             new Hymn{Title="Prayer",PageNumber=1},
             new Hymn{Title="Faith",PageNumber=2},
-            new Hymn{Title="Sacrament",PageNumber=147},
-            new Hymn{Title="Sacrament 2",PageNumber=146},
+            new Hymn{Title="Sacrament",PageNumber=3},
+            new Hymn{Title="Sacrament 2",PageNumber=4},
             new Hymn{Title="Prayer 2",PageNumber=5},
             new Hymn{Title="Prayer 3",PageNumber=6},
             new Hymn{Title="Faith 3",PageNumber=7},
-            new Hymn{Title="Faith 4",PageNumber=8},
-             new Hymn{Title="Sacrament 3",PageNumber=100},
-            new Hymn{Title="Sacrament 4",PageNumber=149},
-            new Hymn{Title="Prayer 4",PageNumber=151},
-            new Hymn{Title="Faith 5",PageNumber=99}
+            new Hymn{Title="Faiath 3",PageNumber=8},
             };
+
             foreach (Hymn h in hymns)
             {
                 context.Hymns.Add(h);
             }
             context.SaveChanges();
-
-
 
         }
         }
