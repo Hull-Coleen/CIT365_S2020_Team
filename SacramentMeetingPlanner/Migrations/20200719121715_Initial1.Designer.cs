@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SacramentMeetingPlanner.Data;
 
 namespace SacramentMeetingPlanner.Migrations
 {
     [DbContext(typeof(SacramentContext))]
-    partial class SacramentContextModelSnapshot : ModelSnapshot
+    [Migration("20200719121715_Initial1")]
+    partial class Initial1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +53,11 @@ namespace SacramentMeetingPlanner.Migrations
                     b.Property<string>("PhoneNumber")
                         .IsRequired();
 
+                    b.Property<int?>("SacramentMeetingID");
+
                     b.HasKey("ID");
+
+                    b.HasIndex("SacramentMeetingID");
 
                     b.ToTable("Member");
                 });
@@ -84,51 +90,16 @@ namespace SacramentMeetingPlanner.Migrations
                     b.Property<string>("SacramentHymn")
                         .IsRequired();
 
-                    b.Property<string>("Speaker1");
-
-                    b.Property<string>("Speaker2");
-
-                    b.Property<string>("Speaker3");
-
-                    b.Property<string>("Speaker4");
-
-                    b.Property<string>("Speaker5");
-
-                    b.Property<string>("Speaker6");
-
-                    b.Property<string>("Topic")
-                        .IsRequired();
+                    b.Property<string>("Topic");
 
                     b.HasKey("ID");
 
                     b.ToTable("SacramentMeeting");
                 });
 
-            modelBuilder.Entity("SacramentMeetingPlanner.Models.Speaker", b =>
+            modelBuilder.Entity("SacramentMeetingPlanner.Models.Member", b =>
                 {
-                    b.Property<int>("MeetingID");
-
-                    b.Property<int>("MemberID");
-
-                    b.Property<int?>("SacramentMeetingID");
-
-                    b.HasKey("MeetingID", "MemberID");
-
-                    b.HasIndex("MemberID");
-
-                    b.HasIndex("SacramentMeetingID");
-
-                    b.ToTable("Speaker");
-                });
-
-            modelBuilder.Entity("SacramentMeetingPlanner.Models.Speaker", b =>
-                {
-                    b.HasOne("SacramentMeetingPlanner.Models.Member", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SacramentMeetingPlanner.Models.SacramentMeeting", "SacramentMeeting")
+                    b.HasOne("SacramentMeetingPlanner.Models.SacramentMeeting")
                         .WithMany("Speaker")
                         .HasForeignKey("SacramentMeetingID");
                 });

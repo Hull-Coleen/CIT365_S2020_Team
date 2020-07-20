@@ -25,7 +25,8 @@ namespace SacramentMeetingPlanner.Data
             new Member{FirstName="Claudia",LastName="Velasquez",Calling="Ward Organist or Pianist",PhoneNumber="625-546-2145"},
             new Member{FirstName="Diego",LastName="Montenegro",Calling="Elders Quorum Teacher",PhoneNumber="625-754-7854"},
             new Member{FirstName="Amanda",LastName="Rocoso",Calling="Ward Relief Society Teacher",PhoneNumber="625-658-5698"},
-            new Member{FirstName="Robert",LastName="Jones",Calling="Bishopric",PhoneNumber="111-658-5698"}
+            new Member{FirstName="Robert",LastName="Jones",Calling="Bishopric Counsel",PhoneNumber="111-658-5698"},
+            new Member{FirstName="John",LastName="Smith",Calling="Bishop",PhoneNumber="111-222-5698"}
             };
 
             foreach (Member s in members)
@@ -37,12 +38,16 @@ namespace SacramentMeetingPlanner.Data
             {
             new Hymn{Title="Prayer",PageNumber=1},
             new Hymn{Title="Faith",PageNumber=2},
-            new Hymn{Title="Sacrament",PageNumber=3},
-            new Hymn{Title="Sacrament 2",PageNumber=4},
+            new Hymn{Title="Sacrament",PageNumber=147},
+            new Hymn{Title="Sacrament 2",PageNumber=146},
             new Hymn{Title="Prayer 2",PageNumber=5},
             new Hymn{Title="Prayer 3",PageNumber=6},
             new Hymn{Title="Faith 3",PageNumber=7},
-            new Hymn{Title="Faiath 3",PageNumber=8},
+            new Hymn{Title="Faith 4",PageNumber=8},
+             new Hymn{Title="Sacrament 3",PageNumber=100},
+            new Hymn{Title="Sacrament 4",PageNumber=149},
+            new Hymn{Title="Prayer 4",PageNumber=151},
+            new Hymn{Title="Faith 5",PageNumber=99}
             };
             foreach (Hymn h in hymns)
             {

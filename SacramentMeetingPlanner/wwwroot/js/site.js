@@ -4,13 +4,7 @@
 // Write your JavaScript code.
 
     $(document).ready(function () {
-        $(".AddSpeaker").click(function () {
-
-            alert("in function");
-            var txt2 = $("<input></input>").text("add Speaker "); 
-            $("#speaker").after(txt2); 
-        });
+      
     });
-
 
 

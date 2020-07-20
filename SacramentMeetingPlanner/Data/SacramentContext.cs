@@ -17,12 +17,16 @@ namespace SacramentMeetingPlanner.Data
         public DbSet<SacramentMeeting> SacramentMeetings { get; set; }
         public DbSet<Hymn> Hymns { get; set; }
         public DbSet<Member> Members { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SacramentMeeting>().ToTable("SacramentMeeting");
             modelBuilder.Entity<Hymn>().ToTable("Hymn");
             modelBuilder.Entity<Member>().ToTable("Member");
+            modelBuilder.Entity<Speaker>().ToTable("Speaker");
+            modelBuilder.Entity<Speaker>()
+                .HasKey(c => new { c.MeetingID, c.MemberID });
         }
     }
 }

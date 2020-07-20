@@ -22,6 +22,7 @@
                 <input asp-for="Topic" class="form-control" />
                 <span asp-validation-for="Topic" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="ConductingBishopric" class="control-label"></label>
                 <select asp-for="ConductingBishopric" asp-items="ViewBag.bishID" class="form-control">
@@ -69,12 +70,47 @@
                 </select>
                 <span asp-validation-for="ClosingPrayer" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Speaker" class="control-label"></label>
-                <select asp-for="Speaker" asp-items="ViewBag.MemberID" class="form-control">
-                    <option value="">-- Select Prayer --</option>
+            <div id="speaker1" class="form-group">
+                <label asp-for="Speaker1" class="control-label"></label>
+                <select asp-for="Speaker1" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Speaker --</option>
                 </select>
-                <span asp-validation-for="Speaker" class="text-danger"></span>
+                <span asp-validation-for="Speaker1" class="text-danger"></span>
+            </div>
+            <div id="speaker2" class="form-group">
+                <label asp-for="Speaker2" class="control-label"></label>
+                <select asp-for="Speaker2" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker2" class="text-danger"></span>
+            </div>
+            <div id="speaker3" class="form-group">
+                <label asp-for="Speaker3" class="control-label"></label>
+                <select asp-for="Speaker3" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker3" class="text-danger"></span>
+            </div>
+            <div id="speaker4" class="form-group">
+                <label asp-for="Speaker4" class="control-label"></label>
+                <select asp-for="Speaker4" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker4" class="text-danger"></span>
+            </div>
+            <div id="speaker5" class="form-group">
+                <label asp-for="Speaker5" class="control-label"></label>
+                <select asp-for="Speaker5" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker5" class="text-danger"></span>
+            </div>
+            <div id="speaker6" class="form-group">
+                <label asp-for="Speaker6" class="control-label"></label>
+                <select asp-for="Speaker6" asp-items="ViewBag.MemberID" class="form-control">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker6" class="text-danger"></span>
             </div>
             <input type="button" value="Add Speaker" class="AddSpeaker" />
             <div class="form-group">
@@ -87,7 +123,33 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var count = 1;
+  $(document).ready(function () {
+      $("#speaker2").hide();
+      $("#speaker3").hide();
+      $("#speaker4").hide();
+      $("#speaker5").hide();
+      $("#speaker6").hide();
+  });
+    $(document).ready(function () {
+        $(".AddSpeaker").click(function () {
+            if(count == 1)
+                $("#speaker2").show();
+            if (count == 2)
+                $("#speaker3").show();
+            if (count == 3)
+                $("#speaker4").show();
+            if (count == 4)
+                $("#speaker5").show();
+            if (count == 5)
+                $("#speaker6").show();
+            count++;
 
+        });
+    });
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

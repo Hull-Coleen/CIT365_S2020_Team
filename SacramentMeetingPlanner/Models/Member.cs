@@ -25,7 +25,7 @@ namespace SacramentMeetingPlanner.Models
         {
             get
             {
-                return LastName + ", " + FirstName;
+                return FirstName + "  " + LastName;
             }
         }
 
