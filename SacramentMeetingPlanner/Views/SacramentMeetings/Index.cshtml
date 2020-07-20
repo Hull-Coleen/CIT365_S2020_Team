@@ -23,13 +23,14 @@
             </th>
             <th>
                 Prayers
-                
+
             </th>
             <th>
-               Songs
+                Songs
             </th>
-            
-
+            <th>
+                Speakers
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -50,12 +51,45 @@
                 Closing:  @Html.DisplayFor(modelItem => item.ClosingPrayer)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OpeningHymn)<br />
-                @Html.DisplayFor(modelItem => item.SacramentHymn)<br />
-                @Html.DisplayFor(modelItem => item.IntermediateHymn)<br />
-                @Html.DisplayFor(modelItem => item.ClosingHymn)
+                Opening: @Html.DisplayFor(modelItem => item.OpeningHymn)<br />
+                Sacrament: @Html.DisplayFor(modelItem => item.SacramentHymn)<br />
+                @if (item.IntermediateHymn != null)
+                {
+                     <p>
+                      Intermediate:
+                      @Html.DisplayFor(modelItem => item.IntermediateHymn)
+                     </p><br />
+                }
+                Closing: @Html.DisplayFor(modelItem => item.ClosingHymn)
             </td>
 
+            <td>
+                @if (item.Speaker1 != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Speaker1)<br />
+                }
+                @if (item.Speaker2 != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Speaker2)<br />
+                }
+                @if (item.Speaker3 != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Speaker3)<br />
+                }
+                @if (item.Speaker4 != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Speaker4)<br />
+                }
+                @if (item.Speaker5 != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Speaker5)<br />
+                }
+                @if (item.Speaker6 != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Speaker6)<br />
+                }
+
+            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a><br />
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a><br />

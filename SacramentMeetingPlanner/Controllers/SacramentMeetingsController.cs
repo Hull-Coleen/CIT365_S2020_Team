@@ -50,7 +50,6 @@ namespace SacramentMeetingPlanner.Controllers
         public IActionResult Create()
         {
             ViewData["MemberID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "FullName", "FullName");
-           // ViewData["MemID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "ID", "FullName");
             ViewData["HymnID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber < 100 || p.PageNumber > 150).
                                              OrderBy(p => p.Title), "Title", "Title");
@@ -95,6 +94,16 @@ namespace SacramentMeetingPlanner.Controllers
         // GET: SacramentMeetings/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["MemberID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "FullName", "FullName");
+            ViewData["HymnID"] = new SelectList(_context.Hymns.
+                                             Where(p => p.PageNumber < 100 || p.PageNumber > 150).
+                                             OrderBy(p => p.Title), "Title", "Title");
+            ViewData["BishID"] = new SelectList(_context.Members.
+                                             Where(p => p.Calling == "Bishopric Counsel" || p.Calling == "Bishop").
+                                             OrderBy(p => p.LastName), "FullName", "FullName");
+            ViewData["SacramentID"] = new SelectList(_context.Hymns.
+                                             Where(p => p.PageNumber > 99 && p.PageNumber < 151).
+                                             OrderBy(p => p.Title), "Title", "Title");
             if (id == null)
             {
                 return NotFound();
