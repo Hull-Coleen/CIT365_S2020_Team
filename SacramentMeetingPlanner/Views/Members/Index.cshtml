@@ -4,10 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-    <head>
-        
-
-    </head>
+   
 
 <h1>Index</h1>
 
@@ -15,7 +12,7 @@
 
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn" Create">Create New</a>
 </p>
 
 <form asp-action="Index" method="get">
@@ -32,13 +29,13 @@
     <thead>
         <tr>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["FirstNameSortParm"]">@Html.DisplayNameFor(model => model.FirstName)</a>
+                <a class="btn1" Index" asp-route-sortOrder="@ViewData["FirstNameSortParm"]">@Html.DisplayNameFor(model => model.FirstName)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["CallingSortParm"]">@Html.DisplayNameFor(model => model.Calling)</a>
+                <a class="btn1" asp-action="Index" asp-route-sortOrder="@ViewData["CallingSortParm"]">@Html.DisplayNameFor(model => model.Calling)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PhoneNumber)

@@ -87,16 +87,21 @@ td {
     border-right: hidden;
     color: white;
 }
- .table th {
-    color: black;
-}
-
+ 
 a {
-    border: 2px;
+    
     color:black;
 }
 
-h1 {
+.btn {
+    border: 2px solid black;
+}
+
+.btn1 {
+    text-decoration:underline;
+}
+
+h1, th {
     color: black;
 }
 
