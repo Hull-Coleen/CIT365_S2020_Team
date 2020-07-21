@@ -69,13 +69,17 @@ form {
 }
 
 .table th {
-    font-family: 'Crimson Text', serif;
+    
     font-size: 20px;
 }
 
 .table {
     border-collapse: separate;
     border-spacing: 0 15px;
+}
+
+th, td, form {
+    background-color: cadetblue !important;
 }
 
 
@@ -103,5 +107,10 @@ a {
 
 h1, th {
     color: black;
+    font-family: 'Crimson Text', serif;
+}
+
+navbar {
+    background-color: cadetblue;
 }
 
