@@ -46,14 +46,14 @@ namespace SacramentMeetingPlanner.Data
 
             var hymns = new Hymn[]
             {
-            new Hymn{Title="Prayer",PageNumber=1},
-            new Hymn{Title="Faith",PageNumber=2},
-            new Hymn{Title="Sacrament",PageNumber=100},
-            new Hymn{Title="Sacrament 2",PageNumber=149},
-            new Hymn{Title="Prayer 2",PageNumber=5},
-            new Hymn{Title="Prayer 3",PageNumber=6},
-            new Hymn{Title="Faith 3",PageNumber=7},
-            new Hymn{Title="Faiath 3",PageNumber=8},
+            new Hymn{Title="The Morning Breaks",PageNumber=1},
+            new Hymn{Title="The Spirit of God",PageNumber=2},
+            new Hymn{Title="Nearer, My God, to Thee",PageNumber=100},
+            new Hymn{Title="Sabbath Day",PageNumber=148},
+            new Hymn{Title="Abide with Me!",PageNumber=166},
+            new Hymn{Title="In Humility, Our Savior",PageNumber=172},
+            new Hymn{Title="All Creatuers of Our God and King",PageNumber=62},
+            new Hymn{Title="With Songs of Praise",PageNumber=71},
             };
 
             foreach (Hymn h in hymns)
