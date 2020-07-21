@@ -57,3 +57,46 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/*Design of pages */
+form {
+    font-family: 'Red Rose', cursive;
+    color: black;
+}
+
+.table tr, h1 {
+    font-family: 'Red Rose', cursive;
+}
+
+.table th {
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+
+th, td {
+    padding: 5px;
+}
+
+td {
+    border-right: hidden;
+    color: white;
+}
+ .table th {
+    color: black;
+}
+
+a {
+    border: 2px;
+    color:black;
+}
+
+h1 {
+    color: black;
+}
+
