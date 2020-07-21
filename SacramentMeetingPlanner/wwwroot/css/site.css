@@ -15,6 +15,10 @@ html {
 .center {
     text-align: center;
 }
+.col-md-4. .col-md-2 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
 @media (min-width: 768px) {
   html {
     font-size: 16px;
