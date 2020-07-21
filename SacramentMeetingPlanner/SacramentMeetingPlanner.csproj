@@ -27,6 +27,12 @@
     <Compile Remove="Migrations\20200720222324_inital_1.Designer.cs" />
     <Compile Remove="Migrations\20200720235033_nav.cs" />
     <Compile Remove="Migrations\20200720235033_nav.Designer.cs" />
+    <Compile Remove="Migrations\20200721015601_initalize.cs" />
+    <Compile Remove="Migrations\20200721015601_initalize.Designer.cs" />
+    <Compile Remove="Migrations\20200721031037_test.cs" />
+    <Compile Remove="Migrations\20200721031037_test.Designer.cs" />
+    <Compile Remove="Migrations\20200721141145_SacramentMP.cs" />
+    <Compile Remove="Migrations\20200721141145_SacramentMP.Designer.cs" />
   </ItemGroup>
 
 

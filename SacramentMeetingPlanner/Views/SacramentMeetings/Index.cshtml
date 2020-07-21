@@ -9,11 +9,20 @@
 <p>
     <a class="btn "  asp-action="Create">Create New</a>
 </p>
+<form>
+    <div class="form-actions no-color">
+        <p>
+            Sort By Topic: <input type="text" name="SearchTopic" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.SacramentDate)
+                <a class="btn1" Index" asp-route-sortOrder="@ViewData["SacramentDateParm"]">@Html.DisplayNameFor(model => model.SacramentDate)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Topic)

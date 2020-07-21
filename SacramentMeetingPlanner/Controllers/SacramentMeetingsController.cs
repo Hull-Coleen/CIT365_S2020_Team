@@ -21,12 +21,40 @@ namespace SacramentMeetingPlanner.Controllers
         }
 
         // GET: SacramentMeetings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(
+            string sortOrder,
+            string searchTopic)
         {
-           
-            return View(await _context.SacramentMeetings.ToListAsync());
+            ViewData["SacramentDateParm"] = String.IsNullOrEmpty(sortOrder) ? "date_desc" : "";
+            ViewData["CurrentFilter"] = searchTopic;
+
+            var sort = from z in _context.SacramentMeetings
+                          select z;
+
+
+            // for the search
+            if (!String.IsNullOrEmpty(searchTopic))
+            {
+
+
+                sort = sort.Where(s => s.Topic.Contains(searchTopic));
+            }
+
+            // for the sorting
+            switch (sortOrder)
+            {
+                case "date_desc":
+                    sort = sort.OrderByDescending(z => z.SacramentDate);
+                    break;
+                default:
+                    sort = sort.OrderBy(z => z.SacramentDate);
+                    break;
+            }
+
+
+            return View(await sort.AsNoTracking().ToListAsync());
         }
-        
+
         // GET: SacramentMeetings/Details/5
         public async Task<IActionResult> Details(int? id)
         { 
