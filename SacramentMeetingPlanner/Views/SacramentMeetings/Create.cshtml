@@ -36,18 +36,18 @@
             </div>
             <p>Songs:</p>
             <div class="form-group">
-                <label asp-for="OpeningHymn" class="control-label"></label>
-                <select asp-for="OpeningHymn" asp-items="ViewBag.HymnID" class="form-control">
+                <label asp-for="OpeningHymnId" class="control-label"></label>
+                <select asp-for="OpeningHymnId" asp-items="ViewBag.HymnID" class="form-control">
                     <option value="">-- Select Song --</option>
                 </select>
-                <span asp-validation-for="OpeningHymn" class="text-danger"></span>
+                <span asp-validation-for="OpeningHymnId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SacramentHymn" class="control-label"></label>
-                <select asp-for="SacramentHymn" asp-items="ViewBag.SacramentID" class="form-control">
+                <label asp-for="SacramentHymnId" class="control-label"></label>
+                <select asp-for="SacramentHymnId" asp-items="ViewBag.SacramentID" class="form-control">
                     <option value="">-- Select Song --</option>
                 </select>
-                <span asp-validation-for="SacramentHymn" class="text-danger"></span>
+                <span asp-validation-for="SacramentHymnId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IntermediateHymn" class="control-label"></label>
@@ -55,11 +55,11 @@
                 <span asp-validation-for="IntermediateHymn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ClosingHymn" class="control-label"></label>
-                <select asp-for="ClosingHymn" asp-items="ViewBag.HymnID" class="form-control">
+                <label asp-for="ClosingHymnId" class="control-label"></label>
+                <select asp-for="ClosingHymnId" asp-items="ViewBag.HymnID" class="form-control">
                     <option value="">-- Select Song --</option>
                 </select>
-                <span asp-validation-for="ClosingHymn" class="text-danger"></span>
+                <span asp-validation-for="ClosingHymnId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" /><a asp-action="Index">Back to List</a>

@@ -10,8 +10,8 @@ using SacramentMeetingPlanner.Data;
 namespace SacramentMeetingPlanner.Migrations
 {
     [DbContext(typeof(SacramentContext))]
-    [Migration("20200718115234_Topic")]
-    partial class Topic
+    [Migration("20200721015601_initalize")]
+    partial class initalize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,11 +53,7 @@ namespace SacramentMeetingPlanner.Migrations
                     b.Property<string>("PhoneNumber")
                         .IsRequired();
 
-                    b.Property<int?>("SacramentMeetingID");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("SacramentMeetingID");
 
                     b.ToTable("Member");
                 });
@@ -68,8 +64,9 @@ namespace SacramentMeetingPlanner.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClosingHymn")
-                        .IsRequired();
+                    b.Property<int>("ClosingHymnId");
+
+                    b.Property<int?>("ClosingHymnNavigationID");
 
                     b.Property<string>("ClosingPrayer")
                         .IsRequired();
@@ -79,27 +76,85 @@ namespace SacramentMeetingPlanner.Migrations
 
                     b.Property<string>("IntermediateHymn");
 
-                    b.Property<string>("OpeningHymn")
-                        .IsRequired();
+                    b.Property<int>("OpeningHymnId");
+
+                    b.Property<int?>("OpeningHymnNavigationID");
 
                     b.Property<string>("OpeningPrayer")
                         .IsRequired();
 
                     b.Property<DateTime>("SacramentDate");
 
-                    b.Property<string>("SacramentHymn")
+                    b.Property<int>("SacramentHymnId");
+
+                    b.Property<int?>("SacramentHymnNavigationID");
+
+                    b.Property<string>("Speaker1");
+
+                    b.Property<string>("Speaker2");
+
+                    b.Property<string>("Speaker3");
+
+                    b.Property<string>("Speaker4");
+
+                    b.Property<string>("Speaker5");
+
+                    b.Property<string>("Speaker6");
+
+                    b.Property<string>("Topic")
                         .IsRequired();
 
-                    b.Property<string>("Topic");
-
                     b.HasKey("ID");
+
+                    b.HasIndex("ClosingHymnNavigationID");
+
+                    b.HasIndex("OpeningHymnNavigationID");
+
+                    b.HasIndex("SacramentHymnNavigationID");
 
                     b.ToTable("SacramentMeeting");
                 });
 
-            modelBuilder.Entity("SacramentMeetingPlanner.Models.Member", b =>
+            modelBuilder.Entity("SacramentMeetingPlanner.Models.Speaker", b =>
                 {
-                    b.HasOne("SacramentMeetingPlanner.Models.SacramentMeeting")
+                    b.Property<int>("MeetingID");
+
+                    b.Property<int>("MemberID");
+
+                    b.Property<int?>("SacramentMeetingID");
+
+                    b.HasKey("MeetingID", "MemberID");
+
+                    b.HasIndex("MemberID");
+
+                    b.HasIndex("SacramentMeetingID");
+
+                    b.ToTable("Speaker");
+                });
+
+            modelBuilder.Entity("SacramentMeetingPlanner.Models.SacramentMeeting", b =>
+                {
+                    b.HasOne("SacramentMeetingPlanner.Models.Hymn", "ClosingHymnNavigation")
+                        .WithMany()
+                        .HasForeignKey("ClosingHymnNavigationID");
+
+                    b.HasOne("SacramentMeetingPlanner.Models.Hymn", "OpeningHymnNavigation")
+                        .WithMany()
+                        .HasForeignKey("OpeningHymnNavigationID");
+
+                    b.HasOne("SacramentMeetingPlanner.Models.Hymn", "SacramentHymnNavigation")
+                        .WithMany()
+                        .HasForeignKey("SacramentHymnNavigationID");
+                });
+
+            modelBuilder.Entity("SacramentMeetingPlanner.Models.Speaker", b =>
+                {
+                    b.HasOne("SacramentMeetingPlanner.Models.Member", "Member")
+                        .WithMany()
+                        .HasForeignKey("MemberID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SacramentMeetingPlanner.Models.SacramentMeeting", "SacramentMeeting")
                         .WithMany("Speaker")
                         .HasForeignKey("SacramentMeetingID");
                 });

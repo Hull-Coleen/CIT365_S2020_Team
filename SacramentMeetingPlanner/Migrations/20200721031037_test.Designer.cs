@@ -10,8 +10,8 @@ using SacramentMeetingPlanner.Data;
 namespace SacramentMeetingPlanner.Migrations
 {
     [DbContext(typeof(SacramentContext))]
-    [Migration("20200719183847_initial2")]
-    partial class initial2
+    [Migration("20200721031037_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,7 +64,7 @@ namespace SacramentMeetingPlanner.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClosingHymn")
+                    b.Property<string>("ClosingHymnId")
                         .IsRequired();
 
                     b.Property<string>("ClosingPrayer")
@@ -75,7 +75,7 @@ namespace SacramentMeetingPlanner.Migrations
 
                     b.Property<string>("IntermediateHymn");
 
-                    b.Property<string>("OpeningHymn")
+                    b.Property<string>("OpeningHymnId")
                         .IsRequired();
 
                     b.Property<string>("OpeningPrayer")
@@ -83,8 +83,20 @@ namespace SacramentMeetingPlanner.Migrations
 
                     b.Property<DateTime>("SacramentDate");
 
-                    b.Property<string>("SacramentHymn")
+                    b.Property<string>("SacramentHymnId")
                         .IsRequired();
+
+                    b.Property<string>("Speaker1");
+
+                    b.Property<string>("Speaker2");
+
+                    b.Property<string>("Speaker3");
+
+                    b.Property<string>("Speaker4");
+
+                    b.Property<string>("Speaker5");
+
+                    b.Property<string>("Speaker6");
 
                     b.Property<string>("Topic")
                         .IsRequired();

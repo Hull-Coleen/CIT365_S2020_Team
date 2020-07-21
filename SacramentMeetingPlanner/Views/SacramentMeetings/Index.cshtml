@@ -54,17 +54,17 @@
             </td>
             <td>
                  <label>Opening:  </label>
-                @Html.DisplayFor(modelItem => item.OpeningHymn)<br />
+                @Html.DisplayFor(modelItem => item.OpeningHymnId)<br />
                  <label>Sacrament: </label>
-                @Html.DisplayFor(modelItem => item.SacramentHymn)<br />
+                @Html.DisplayFor(modelItem => item.SacramentHymnId)<br />
                 @if (item.IntermediateHymn != null)
                 {
                     <label>Intermediate Hynm: </label>
                     @Html.DisplayFor(modelItem => item.IntermediateHymn)<br />
 
                 }
-                   <label>Closing: </label>
-                   @Html.DisplayFor(modelItem => item.ClosingHymn)
+                   <label>Closing: </label>.
+                   @Html.DisplayFor(modelItem => item.ClosingHymnId)
             </td>
 
             <td>

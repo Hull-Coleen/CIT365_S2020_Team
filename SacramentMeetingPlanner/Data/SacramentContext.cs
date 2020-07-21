@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlanner.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SacramentMeetingPlanner.Data
 {
@@ -26,7 +23,22 @@ namespace SacramentMeetingPlanner.Data
             modelBuilder.Entity<Member>().ToTable("Member");
             modelBuilder.Entity<Speaker>().ToTable("Speaker");
             modelBuilder.Entity<Speaker>()
-                .HasKey(c => new { c.MeetingID, c.MemberID });
+                .HasKey(c => new { c.MeetingID, c.MemberID 
+                });
+
+
+            
+                 
+                     
+            
+        
+
+            base.OnModelCreating(modelBuilder);
         }
+
+
+
+
     }
+    
 }

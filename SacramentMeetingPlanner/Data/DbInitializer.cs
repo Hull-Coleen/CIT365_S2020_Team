@@ -48,8 +48,8 @@ namespace SacramentMeetingPlanner.Data
             {
             new Hymn{Title="Prayer",PageNumber=1},
             new Hymn{Title="Faith",PageNumber=2},
-            new Hymn{Title="Sacrament",PageNumber=3},
-            new Hymn{Title="Sacrament 2",PageNumber=4},
+            new Hymn{Title="Sacrament",PageNumber=100},
+            new Hymn{Title="Sacrament 2",PageNumber=149},
             new Hymn{Title="Prayer 2",PageNumber=5},
             new Hymn{Title="Prayer 3",PageNumber=6},
             new Hymn{Title="Faith 3",PageNumber=7},

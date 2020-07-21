@@ -13,6 +13,7 @@ namespace SacramentMeetingPlanner.Controllers
     public class SacramentMeetingsController : Controller
     {
         private readonly SacramentContext _context;
+        private object db;
 
         public SacramentMeetingsController(SacramentContext context)
         {
@@ -22,12 +23,14 @@ namespace SacramentMeetingPlanner.Controllers
         // GET: SacramentMeetings
         public async Task<IActionResult> Index()
         {
+           
             return View(await _context.SacramentMeetings.ToListAsync());
         }
-
+        
         // GET: SacramentMeetings/Details/5
         public async Task<IActionResult> Details(int? id)
-        {
+        { 
+            
             if (id == null)
             {
                 return NotFound();
@@ -52,13 +55,13 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["MemberID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["HymnID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber < 100 || p.PageNumber > 150).
-                                             OrderBy(p => p.Title), "Title", "Title");
+                                             OrderBy(p => p.Title), "FullHymn", "FullHymn");
             ViewData["BishID"] = new SelectList(_context.Members.
                                              Where(p => p.Calling == "Bishopric Counsel" || p.Calling == "Bishop").
                                              OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["SacramentID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber > 99 && p.PageNumber < 151).
-                                             OrderBy(p => p.Title), "Title", "Title");
+                                             OrderBy(p => p.Title), "FullHymn", "Title");
 
 
             return View();
@@ -69,8 +72,8 @@ namespace SacramentMeetingPlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SacramentDate,Topic,ConductingBishopric,OpeningPrayer,OpeningHymn," +
-            "SacramentHymn,IntermediateHymn,ClosingHymn,ClosingPrayer,Speaker1,Speaker2,Speaker3,Speaker4,Speaker5,Speaker6")] SacramentMeeting sacramentMeeting)
+        public async Task<IActionResult> Create([Bind("SacramentDate,Topic,ConductingBishopric,OpeningPrayer,OpeningHymnId," +
+            "SacramentHymnId,IntermediateHymn,ClosingHymnId,ClosingPrayer,Speaker1,Speaker2,Speaker3,Speaker4,Speaker5,Speaker6")] SacramentMeeting sacramentMeeting)
         {
             try
             {
@@ -98,13 +101,13 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["MemberID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["HymnID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber < 100 || p.PageNumber > 150).
-                                             OrderBy(p => p.Title), "Title", "Title");
+                                             OrderBy(p => p.Title), "FullHymn", "FullHymn");
             ViewData["BishID"] = new SelectList(_context.Members.
                                              Where(p => p.Calling == "Bishopric Counsel" || p.Calling == "Bishop").
                                              OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["SacramentID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber > 99 && p.PageNumber < 151).
-                                             OrderBy(p => p.Title), "Title", "Title");
+                                             OrderBy(p => p.Title), "FullHymn", "Title");
             if (id == null)
             {
                 return NotFound();

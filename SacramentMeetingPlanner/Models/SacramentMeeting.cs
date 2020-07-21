@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentMeetingPlanner.Models
 {
@@ -17,16 +18,18 @@ namespace SacramentMeetingPlanner.Models
         public string ConductingBishopric { get; set; }
 
         [Required]
-        [Display(Name = "Opening Prayer")]
+        [Display(Name = "Invocation")]
         public string OpeningPrayer { get; set; }
 
         [Required]
         [Display(Name = "Opening Hymn")]
-        public string OpeningHymn { get; set; }
+       
+        public string OpeningHymnId { get; set; }
 
         [Required]
         [Display(Name = "Sacrament Hymn")]
-        public string SacramentHymn { get; set; }
+        
+        public string SacramentHymnId { get; set; }
 
 
         [Display(Name = "Intermediate Hymn")]
@@ -34,21 +37,33 @@ namespace SacramentMeetingPlanner.Models
 
         [Required]
         [Display(Name = "Closing Hymn")]
-        public string ClosingHymn { get; set; }
+        public string ClosingHymnId { get; set; }
 
         [Required]
-        [Display(Name = "Closing Prayer")]
+        [Display(Name = "Benediction")]
         public string ClosingPrayer { get; set; }
         [Required]
-        public string Topic { get; set; } 
+        public string Topic { get; set; }
+        [Display(Name = "Youth Speaker")]
         public string Speaker1 { get; set; }
+        [Display(Name = "Speaker")]
         public string Speaker2 { get; set; }
+        [Display(Name = "Speaker")]
         public string Speaker3 { get; set; }
+        [Display(Name = "Speaker")]
         public string Speaker4 { get; set; }
+        [Display(Name = "Speaker")]
         public string Speaker5 { get; set; }
+        [Display(Name = "Speaker")]
         public string Speaker6 { get; set; }
 
         public ICollection<Speaker> Speaker { get; set; }
+        // public virtual Hymn Hymn { get; set; }
+       // public virtual Hymn ClosingHymnNavigation { get; set; }
+
+       // public virtual Hymn OpeningHymnNavigation { get; set; }
+
+       // public virtual Hymn SacramentHymnNavigation { get; set; }
 
     }
 }

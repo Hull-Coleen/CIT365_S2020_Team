@@ -12,6 +12,23 @@
     <None Remove="wwwroot\NewFolder\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20200715211545_initialize.cs" />
+    <Compile Remove="Migrations\20200715211545_initialize.Designer.cs" />
+    <Compile Remove="Migrations\20200718115234_Topic.cs" />
+    <Compile Remove="Migrations\20200718115234_Topic.Designer.cs" />
+    <Compile Remove="Migrations\20200719121715_Initial1.cs" />
+    <Compile Remove="Migrations\20200719121715_Initial1.Designer.cs" />
+    <Compile Remove="Migrations\20200719183847_initial2.cs" />
+    <Compile Remove="Migrations\20200719183847_initial2.Designer.cs" />
+    <Compile Remove="Migrations\20200719230401_initial3.cs" />
+    <Compile Remove="Migrations\20200719230401_initial3.Designer.cs" />
+    <Compile Remove="Migrations\20200720222324_inital_1.cs" />
+    <Compile Remove="Migrations\20200720222324_inital_1.Designer.cs" />
+    <Compile Remove="Migrations\20200720235033_nav.cs" />
+    <Compile Remove="Migrations\20200720235033_nav.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

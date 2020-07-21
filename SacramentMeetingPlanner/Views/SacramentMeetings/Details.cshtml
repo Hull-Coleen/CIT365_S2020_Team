@@ -4,84 +4,103 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Sterling Park Ward</h1>
+<h2> @Html.DisplayFor(model => model.SacramentDate)</h2>
 
-<div>
-    <h4>SacramentMeeting</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SacramentDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Topic)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Topic)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ConductingBishopric)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ConductingBishopric)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OpeningPrayer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OpeningPrayer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OpeningHymn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OpeningHymn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentHymn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SacramentHymn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IntermediateHymn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IntermediateHymn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ClosingHymn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ClosingHymn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ClosingPrayer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ClosingPrayer)
-        </dd>
+<div class="row">
+    <div class="col-md-4"><p>President</p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+    <div class="col-md-4"> <p>BIshop Brent Spinner</p></div>
 
-        <dd class="col-sm-10">
-            <table class="table">
-                <tr>
-                    <th>Speakers</th>
-                </tr>
-                <td>
-                        @foreach (var item in Model.Speaker)
-                        { 
-                                @item.Member.FullName <br />
-                            
-                        }
-                    </td>
-               
-            </table>
-        </dd>
-    </dl>
 </div>
+<div class="row">
+    <div class="col-md-4"><p>Conducting </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+    <div class="col-md-4"> <p>@Html.DisplayFor(model => model.ConductingBishopric)</p></div>
+
+</div>
+<div class="row">
+    <div class="col-md-4"><p> @Html.DisplayNameFor(model => model.OpeningHymnId)</p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+    <div class="col-md-4"> <p>@Html.DisplayFor(model => model.OpeningHymnId)</p></div>
+
+</div>
+<div class="row">
+    <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.OpeningPrayer) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+    <div class="col-md-4"> <p>@Html.DisplayFor(model => model.OpeningPrayer)</p></div>
+
+</div>
+<div><p>Ward Business</p></div>
+<div class="row">
+    <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.SacramentHymnId)</p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+    <div class="col-md-4"> <p>@Html.DisplayFor(model => model.SacramentHymnId))</p></div>
+
+</div>
+<div><p>Passing of the Sacrament</p></div>
+@if(Model.Speaker1 == null)
+{
+    <div><p>Testimony Meeting</p></div>
+}
+@if (Model.Speaker1 != null)
+{
+    <div class="row">
+        <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.Speaker1) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+        <div class="col-md-4"> <p>@Html.DisplayFor(model => model.Speaker1)</p></div>
+
+    </div>
+}
+@if (Model.IntermediateHymn != null)
+{
+    <div class="row">
+        <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.IntermediateHymn) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+        <div class="col-md-4"> <p>@Html.DisplayFor(model => model.IntermediateHymn)</p></div>
+
+    </div>
+}
+@if (Model.Speaker1 != null)
+{
+    <div class="row">
+        <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.Speaker2) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+        <div class="col-md-4"> <p>@Html.DisplayFor(model => model.Speaker2)</p></div>
+
+    </div>
+}@if (Model.Speaker1 != null)
+{
+    <div class="row">
+        <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.Speaker3) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+        <div class="col-md-4"> <p>@Html.DisplayFor(model => model.Speaker3)</p></div>
+
+    </div>
+}@if (Model.Speaker1 != null)
+{
+    <div class="row">
+        <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.Speaker4) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+        <div class="col-md-4"> <p>@Html.DisplayFor(model => model.Speaker4)</p></div>
+
+    </div>
+}@if (Model.Speaker1 != null)
+{
+    <div class="row">
+        <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.Speaker5) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+        <div class="col-md-4"> <p>@Html.DisplayFor(model => model.Speaker5)</p></div>
+
+    </div>
+}@if (Model.Speaker1 != null)
+{
+    <div class="row">
+        <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.Speaker6) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+        <div class="col-md-4"> <p>@Html.DisplayFor(model => model.Speaker6)</p></div>
+
+    </div>
+}
+<div class="row">
+    <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.ClosingHymnId) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+    <div class="col-md-4"> <p>@Html.DisplayFor(model => model.ClosingHymnId)</p></div>
+
+</div>
+<div class="row">
+    <div class="col-md-4"><p>@Html.DisplayNameFor(model => model.ClosingPrayer) </p></div><div class="col-md-4"><p>. . . . . . . . . . . . . </p></div>
+    <div class="col-md-4"> <p>@Html.DisplayFor(model => model.ClosingPrayer)</p></div>
+
+</div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
     <a asp-action="Index">Back to List</a>
