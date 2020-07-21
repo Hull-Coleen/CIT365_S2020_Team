@@ -115,12 +115,13 @@ h1, th {
 .navbar {
     background-color: black !important;
     
+    
 }
 
 .nav-link {
-        color: white !important;
-        text-align:center !important;
-    }
+    color: white !important;
+    align-items: center;
+}
 
     .nav-link:hover {
         color: antiquewhite !important;

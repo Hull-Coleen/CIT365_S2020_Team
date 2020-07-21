@@ -4,89 +4,141 @@
 
     <head>
         <link href="~/css/Home.css" rel="stylesheet" />        
-        <link href="~/css/pidie-0.0.8.css" rel="stylesheet" />
-        <script src="~/js/pidie-0.0.8.js"></script>
+        <link href="~/css/SlideShow.css" rel="stylesheet" />
+        
     </head>
 
 <div class=" row1">
+    <div class="slideshow-container">
 
-<div class="pd-container">
-    <div class="pd-quotes">
-        <div class="pd-quotes-slideshow">
-            <div class="pd-quotes-slide">
+        <div class="mySlides">
+            <div class="slideImg">
                 <img src="~/images/gerritWGong.jpg" />
-                <p><q>"While we may be physically distant from each other, we do not have to be spiritually distant from Jesus Christ.
-                    You and I can use this unique time as an opportunity to “hear Him.”"</q></p>
-                <p class="pd-quotes-author">-Elder Gerrit W. Gong </p>
+                </div>
+                <q>
+                    "While we may be physically distant from each other, we do not have to be spiritually distant from Jesus Christ.
+                    You and I can use this unique time as an opportunity to “hear Him.”"
+                </q>
+                <p class="author">- Elder Gerrit W. Gong </p>
             </div>
-            <div class="pd-quotes-slide">
-                <img src="~/images/davidABednar.jpg" />
-                <p><q></q>"When I yearn for the companionship of the Holy Ghost by turning off distractions and making time for precious moments of spiritual subtleness,
-                I see with new eyes and hear with new ears."</p>
-                <p class="pd-quotes-author">-Elder David A. Bednar </p>
+
+            <div class="mySlides">
+                <div class="slideImg">
+                    <img src="~/images/davidABednar.jpg" />
+                </div>
+                <q>
+                    "When I yearn for the companionship of the Holy Ghost by turning off distractions and making time for precious moments of spiritual subtleness,
+                    I see with new eyes and hear with new ears."
+                </q>
+                <p class="author">- Elder David A. Bednar</p>
             </div>
-            <div class="pd-quotes-slide">
-                <img src="~/images/dieterFUchtdorf.png" />
-                <p><q>"The fires and tumults of mortal life may threaten and frighten, but those who incline their hearts to God will be encircled by His peace.
-                    Their joy will not be diminished. They will not be abandoned or forgotten."</q></p>
-                <p class="pd-quotes-author">-Dieter F. Uchtdorf </p>
+
+            <div class="mySlides">
+                <div class="slideImg">
+                    <img src="~/images/dieterFUchtdorf.png" />
+                    </div>
+                <div>
+                    <q>
+                        "The fires and tumults of mortal life may threaten and frighten, but those who incline their hearts to God will be encircled by His peace.
+                        Their joy will not be diminished. They will not be abandoned or forgotten."
+                    </q>
+                    <p class="author">- Dieter F. Uchtdorf </p>
+                </div>
+                </div>
+
+            <div class="mySlides">
+                <div class="slideImg">
+                    <img src="~/images/robertDHales.jpg" />
+                    </div>
+                    <q>
+                        "While mortality is only a small moment in eternity, learning throughhout our mortal lives is an essential part of our Eternal Education."
+                    </q>
+                    <p class="author">- Robert D. Hales </p>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
             </div>
-            <div class="pd-quotes-slide">
-                <img src="~/images/robertDHales.jpg" />
-                <p><q>While mortality is only a small moment in eternity, learning throughhout our mortal lives is an essential part of our Eternal Education."</q></p>
-                <p class="pd-quotes-author">-Robert D. Hales </p>
-            </div>
-        </div>
+
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
-    </div>
-
-    <script>
-        var pidie = new Pidie();
-        pidie.quotesSlideshow();
-    </script>
-    
-    
 </div>
 
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-    <!--
-    <div class="col-md-4" id="col2">
-        <p class="p1">
-            In this Website we present the Sacrament Meeting Planner of the TeamB Ward.
-            We added a link to the Church Website for those interested in learning more about it.
-            We are members of the Church and we would like to share some inspirational messages with you, than can lift your day up.
-        </p>
-        <p> <a href="https://www.churchofjesuschrist.org/?lang=eng">Click Here to Learn more about the Church</a></p>
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-    </div>
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-        -->
-<div  class="label">
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
+
+
+
+
+<!--
+<div class="col-md-4" id="col2">
+    <p class="p1">
+        In this Website we present the Sacrament Meeting Planner of the TeamB Ward.
+        We added a link to the Church Website for those interested in learning more about it.
+        We are members of the Church and we would like to share some inspirational messages with you, than can lift your day up.
+    </p>
+    <p> <a href="https://www.churchofjesuschrist.org/?lang=eng">Click Here to Learn more about the Church</a></p>
+
+</div>
+
+    -->
+<div class="label">
     <p>Inspirational Videos</p>
 </div>
 
 
-    <div class="col-md-4">
-        
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/tec8jgtyNEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <p>Stop Beating Upon Yourself</p>
-    </div>
-    <div class="col-md-4">
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/R5FxdCgD-qI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="col-md-4">
 
-        </div>
-        <p>Earthly Father, Heavenly Father</p>
+    <div class="iframe-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tec8jgtyNEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    <p>Stop Beating Upon Yourself</p>
+</div>
+<div class="col-md-4">
+    <div class="iframe-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/R5FxdCgD-qI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    <div class="col-md-4">
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/xdN8rfwW3SI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <p>Mountains to Climb</p>
     </div>
+    <p>Earthly Father, Heavenly Father</p>
+</div>
+
+<div class="col-md-4">
+    <div class="iframe-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xdN8rfwW3SI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p>Mountains to Climb</p>
+</div>
 
 
