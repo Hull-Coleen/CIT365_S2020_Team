@@ -63,6 +63,7 @@ body {
 form {
     font-family: 'Red Rose', cursive;
     color: black;
+    font-size:20px;
 }
 
 .table tr, h1 {
@@ -111,7 +112,17 @@ h1, th {
     font-family: 'Crimson Text', serif;
 }
 
-.header navbar {
-    background-color: cadetblue;
+.navbar {
+    background-color: black !important;
+    
 }
+
+.nav-link {
+        color: white !important;
+        text-align:center !important;
+    }
+
+    .nav-link:hover {
+        color: antiquewhite !important;
+    }
 
