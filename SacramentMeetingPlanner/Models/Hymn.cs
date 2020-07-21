@@ -15,7 +15,7 @@ namespace SacramentMeetingPlanner.Models
         {
             get
             {
-                return Title + "  .. Pg.  " + PageNumber;
+                return '"'+ Title + '"'  + "  Pg.  " + PageNumber;
             }
         }
 

@@ -55,7 +55,7 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["MemberID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["HymnID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber < 100 || p.PageNumber > 150).
-                                             OrderBy(p => p.Title), "FullHymn", "FullHymn");
+                                             OrderBy(p => p.Title), "FullHymn", "Title");
             ViewData["BishID"] = new SelectList(_context.Members.
                                              Where(p => p.Calling == "Bishopric Counsel" || p.Calling == "Bishop").
                                              OrderBy(p => p.LastName), "FullName", "FullName");
@@ -101,7 +101,7 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["MemberID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["HymnID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber < 100 || p.PageNumber > 150).
-                                             OrderBy(p => p.Title), "FullHymn", "FullHymn");
+                                             OrderBy(p => p.Title), "FullHymn", "Title");
             ViewData["BishID"] = new SelectList(_context.Members.
                                              Where(p => p.Calling == "Bishopric Counsel" || p.Calling == "Bishop").
                                              OrderBy(p => p.LastName), "FullName", "FullName");
