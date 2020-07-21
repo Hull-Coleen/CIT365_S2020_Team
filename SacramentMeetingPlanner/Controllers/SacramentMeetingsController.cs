@@ -13,7 +13,7 @@ namespace SacramentMeetingPlanner.Controllers
     public class SacramentMeetingsController : Controller
     {
         private readonly SacramentContext _context;
-        private object db;
+        
 
         public SacramentMeetingsController(SacramentContext context)
         {
@@ -39,8 +39,7 @@ namespace SacramentMeetingPlanner.Controllers
                .Include(s => s.Speaker)
                .AsNoTracking()
                .FirstOrDefaultAsync(m => m.ID == id);
-            //var sacramentMeeting = await _context.SacramentMeetings
-            //  .FirstOrDefaultAsync(m => m.ID == id);
+
             if (sacramentMeeting == null)
             {
                 return NotFound();
@@ -55,13 +54,13 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["MemberID"] = new SelectList(_context.Members.OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["HymnID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber < 100 || p.PageNumber > 150).
-                                             OrderBy(p => p.Title), "FullHymn", "Title");
+                                             OrderBy(p => p.Title), "FullHymn", "FullHymn");
             ViewData["BishID"] = new SelectList(_context.Members.
                                              Where(p => p.Calling == "Bishopric Counsel" || p.Calling == "Bishop").
                                              OrderBy(p => p.LastName), "FullName", "FullName");
             ViewData["SacramentID"] = new SelectList(_context.Hymns.
                                              Where(p => p.PageNumber > 99 && p.PageNumber < 151).
-                                             OrderBy(p => p.Title), "FullHymn", "Title");
+                                             OrderBy(p => p.Title), "FullHymn", "FullHymn");
 
 
             return View();
