@@ -15,14 +15,26 @@
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
-    
+
     <link rel="stylesheet" href="~/css/site.css" />
+    
+
 </head>
+
+
+
 <body>
-    <header>
+    <style>
+        body {
+            background-color:antiquewhite;
+            
+        }
+        
+    </style>
+    <header class="navb">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <div>Sacrament Meeting Planner</div>
+            <div class="container1">
+                <div></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,16 +42,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SacramentMeetings" asp-action="Index">Sacramant Meeting Planner</a>
+                            <a class="nav-link" asp-area="" asp-controller="SacramentMeetings" asp-action="Index">Sacrament Meeting Planner</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Index">Members</a>
+                            <a class="nav-link" asp-area="" asp-controller="Members" asp-action="Index">Members</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Hymns" asp-action="Index">Hymns</a>
+                            <a class="nav-link" asp-area="" asp-controller="Hymns" asp-action="Index">Hymns</a>
                         </li>
                     </ul>
                 </div>
@@ -54,7 +66,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Sacrament Meeting Planner 
+            &copy; 2020 - Sacrament Meeting Planner
         </div>
     </footer>
 

@@ -2,9 +2,10 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+   
 }
 
 /* Sticky footer styles
@@ -61,3 +62,81 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/*Design of pages */
+form {
+    font-family: 'Red Rose', cursive;
+    color: black;
+    font-size:20px;
+}
+
+.table tr, h1 {
+    font-family: 'Red Rose', cursive;
+}
+
+.table th {
+    
+    font-size: 20px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+th, td, form {
+    background-color: cadetblue !important;
+}
+
+
+th, td {
+    padding: 5px;
+}
+
+td {
+    border-right: hidden;
+    color: white;
+}
+ 
+a {
+    
+    color:black;
+}
+
+.btn {
+    border: 2px solid black;
+}
+
+.btn1 {
+    text-decoration:underline;
+}
+
+h1, th {
+    color: black;
+    font-family: 'Crimson Text', serif;
+}
+
+.navbar {
+    background-color: black !important;   
+    
+}
+
+.container1 navbar-nav {
+    text-align: center;
+}
+
+.nav-link {
+    color: white !important;   
+    
+}
+
+    .nav-link:hover {
+        color: antiquewhite !important;
+    }
+
+    .footer {
+        margin-top:10%;
+    }
+
+
+

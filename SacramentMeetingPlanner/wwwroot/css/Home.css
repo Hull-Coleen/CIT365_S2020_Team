@@ -34,10 +34,29 @@ col-md-4 {
 }
 
 .col-md-4 {
-    float: right;
-    margin-bottom:5%;
+    float:right;
+    margin-bottom:2%;
+}
+.mainCol {
+        margin-bottom: 10%;
+    }
+
+    .label {
+        position: center;
+    }
+
+.p1 p {
+    margin-top: 15%;
+    background-color:darkgray;
+    padding:15px;
 }
 
-.label {
-    position:center;
+.a homeLink{
+    color:white;
 }
+
+.plink a {
+    color:blue;
+    
+}
+
