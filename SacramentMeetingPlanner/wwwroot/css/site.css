@@ -113,17 +113,26 @@ h1, th {
 }
 
 .navbar {
-    background-color: black !important;
-    
+    background-color: black !important;   
     
 }
 
+.container1 navbar-nav {
+    text-align: center;
+}
+
 .nav-link {
-    color: white !important;
-    align-items: center;
+    color: white !important;   
+    
 }
 
     .nav-link:hover {
         color: antiquewhite !important;
     }
+
+    .footer {
+        margin-top:10%;
+    }
+
+
 
