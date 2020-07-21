@@ -47,46 +47,46 @@
                 @Html.DisplayFor(modelItem => item.ConductingBishopric)
             </td>
             <td>
-                <label>Opening: </label> 
-                @Html.DisplayFor(modelItem => item.OpeningPrayer)<br />
-                <label>Closing: </label>
+                @Html.DisplayNameFor(modelItem => item.OpeningPrayer)<br />
+                @Html.DisplayFor(modelItem => item.OpeningPrayer)<br /><br />
+                @Html.DisplayNameFor(modelItem => item.ClosingPrayer)<br />
                 @Html.DisplayFor(modelItem => item.ClosingPrayer)
             </td>
             <td>
-                 <label>Opening:  </label>
-                @Html.DisplayFor(modelItem => item.OpeningHymnId)<br />
-                 <label>Sacrament: </label>
-                @Html.DisplayFor(modelItem => item.SacramentHymnId)<br />
+                @Html.DisplayNameFor(modelItem => item.OpeningHymnId) <br />
+                @Html.DisplayFor(modelItem => item.OpeningHymnId)<br /><br />
+                @Html.DisplayNameFor(modelItem => item.SacramentHymnId)<br />
+                @Html.DisplayFor(modelItem => item.SacramentHymnId)<br /><br />
                 @if (item.IntermediateHymn != null)
                 {
-                    <label>Intermediate Hynm: </label>
-                    @Html.DisplayFor(modelItem => item.IntermediateHymn)<br />
+                    @Html.DisplayNameFor(modelItem => item.IntermediateHymn)<br />
+                    @Html.DisplayFor(modelItem => item.IntermediateHymn)<br /><br />
 
                 }
-                   <label>Closing: </label>.
-                   @Html.DisplayFor(modelItem => item.ClosingHymnId)
+                @Html.DisplayNameFor(modelItem => item.ClosingHymnId)<br />
+                @Html.DisplayFor(modelItem => item.ClosingHymnId)
             </td>
 
             <td>
                 @if (item.Speaker1 != null)
                 {
-                    @Html.DisplayFor(modelItem => item.Speaker1)<br />
+                    @Html.DisplayFor(modelItem => item.Speaker1)<br /><br />
                 }
                 @if (item.Speaker2 != null)
                 {
-                    @Html.DisplayFor(modelItem => item.Speaker2)<br />
+                    @Html.DisplayFor(modelItem => item.Speaker2)<br /><br />
                 }
                 @if (item.Speaker3 != null)
                 {
-                    @Html.DisplayFor(modelItem => item.Speaker3)<br />
+                    @Html.DisplayFor(modelItem => item.Speaker3)<br /><br />
                 }
                 @if (item.Speaker4 != null)
                 {
-                    @Html.DisplayFor(modelItem => item.Speaker4)<br />
+                    @Html.DisplayFor(modelItem => item.Speaker4)<br /><br />
                 }
                 @if (item.Speaker5 != null)
                 {
-                    @Html.DisplayFor(modelItem => item.Speaker5)<br />
+                    @Html.DisplayFor(modelItem => item.Speaker5)<br /><br />
                 }
                 @if (item.Speaker6 != null)
                 {
@@ -94,9 +94,9 @@
                 }
 
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a><br />
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a><br />
+            <td><br />
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a><br /><br />
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a><br /><br />
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
