@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SacramentMeetingPlanner.Migrations
 {
-    public partial class initalize : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,10 +47,10 @@ namespace SacramentMeetingPlanner.Migrations
                     SacramentDate = table.Column<DateTime>(nullable: false),
                     ConductingBishopric = table.Column<string>(nullable: false),
                     OpeningPrayer = table.Column<string>(nullable: false),
-                    OpeningHymnId = table.Column<int>(nullable: false),
-                    SacramentHymnId = table.Column<int>(nullable: false),
+                    OpeningHymnId = table.Column<string>(nullable: false),
+                    SacramentHymnId = table.Column<string>(nullable: false),
                     IntermediateHymn = table.Column<string>(nullable: true),
-                    ClosingHymnId = table.Column<int>(nullable: false),
+                    ClosingHymnId = table.Column<string>(nullable: false),
                     ClosingPrayer = table.Column<string>(nullable: false),
                     Topic = table.Column<string>(nullable: false),
                     Speaker1 = table.Column<string>(nullable: true),
@@ -58,32 +58,11 @@ namespace SacramentMeetingPlanner.Migrations
                     Speaker3 = table.Column<string>(nullable: true),
                     Speaker4 = table.Column<string>(nullable: true),
                     Speaker5 = table.Column<string>(nullable: true),
-                    Speaker6 = table.Column<string>(nullable: true),
-                    ClosingHymnNavigationID = table.Column<int>(nullable: true),
-                    OpeningHymnNavigationID = table.Column<int>(nullable: true),
-                    SacramentHymnNavigationID = table.Column<int>(nullable: true)
+                    Speaker6 = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SacramentMeeting", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_SacramentMeeting_Hymn_ClosingHymnNavigationID",
-                        column: x => x.ClosingHymnNavigationID,
-                        principalTable: "Hymn",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_SacramentMeeting_Hymn_OpeningHymnNavigationID",
-                        column: x => x.OpeningHymnNavigationID,
-                        principalTable: "Hymn",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_SacramentMeeting_Hymn_SacramentHymnNavigationID",
-                        column: x => x.SacramentHymnNavigationID,
-                        principalTable: "Hymn",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -112,21 +91,6 @@ namespace SacramentMeetingPlanner.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SacramentMeeting_ClosingHymnNavigationID",
-                table: "SacramentMeeting",
-                column: "ClosingHymnNavigationID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SacramentMeeting_OpeningHymnNavigationID",
-                table: "SacramentMeeting",
-                column: "OpeningHymnNavigationID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SacramentMeeting_SacramentHymnNavigationID",
-                table: "SacramentMeeting",
-                column: "SacramentHymnNavigationID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Speaker_MemberID",
                 table: "Speaker",
                 column: "MemberID");
@@ -140,6 +104,9 @@ namespace SacramentMeetingPlanner.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Hymn");
+
+            migrationBuilder.DropTable(
                 name: "Speaker");
 
             migrationBuilder.DropTable(
@@ -147,9 +114,6 @@ namespace SacramentMeetingPlanner.Migrations
 
             migrationBuilder.DropTable(
                 name: "SacramentMeeting");
-
-            migrationBuilder.DropTable(
-                name: "Hymn");
         }
     }
 }
