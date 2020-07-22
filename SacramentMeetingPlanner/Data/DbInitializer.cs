@@ -62,30 +62,26 @@ namespace SacramentMeetingPlanner.Data
             }
             context.SaveChanges();
 
-
             if (context.SacramentMeetings.Any())
             {
-                return; // Db has been seededx
+                return;
             }
 
-            var meeting = new SacramentMeeting[]
+            var Meeting = new SacramentMeeting[]
             {
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-09-01"),Topic="Fasting",OpeningHymnId="I Stand All Amazed  pg 300",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-08-01"),Topic="Prayer",OpeningHymnId="Sac Pg.  145",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-07-01"),Topic="Obedience",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-06-01"),Topic="Faith",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-05-01"),Topic="Trust in the Lord",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-04-01"),Topic="Covenants",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-03-01"),Topic="Prayer",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-02-01"),Topic="Fasting",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
-
+            new SacramentMeeting{SacramentDate = DateTime.Parse("2007-09-01") , Topic="Prayer", ConductingBishopric= "John Smith", OpeningPrayer="Pilar Pedrozo", ClosingPrayer="Pablo Almirante", OpeningHymnId="The Morning Breaks Pg 1", ClosingHymnId="The Spirit of God pg. 2", SacramentHymnId="Nearer, My God, to Thee pg 100", IntermediateHymn="Special Number", Speaker1="", Speaker2="Elena Mendoza",Speaker3="",Speaker4="",Speaker5="",Speaker6="" },
+            new SacramentMeeting{SacramentDate = DateTime.Parse("2007-08-01") , Topic="Sabbath Day", ConductingBishopric= "Robert Jones", OpeningPrayer="Sulivan Mendez", ClosingPrayer="Claudia Velasquez", OpeningHymnId="Abide with Me! Pg 166", ClosingHymnId="In Humility, Our Savior pg. 172", SacramentHymnId="Sabbath Day pg 148", IntermediateHymn="", Speaker1="Diego Montenegro", Speaker2="",Speaker3="",Speaker4="",Speaker5="",Speaker6="" },
+            new SacramentMeeting{SacramentDate = DateTime.Parse("2007-07-01") , Topic="Faith", ConductingBishopric= "John Smith", OpeningPrayer="Diego Montenegro", ClosingPrayer="Claudia Velasquez", OpeningHymnId="With Songs of Praise Pg 71", ClosingHymnId="The Spirit of God pg. 2", SacramentHymnId="Nearer, My God, to Thee pg 100", IntermediateHymn="Ward Choir", Speaker1="Elena Mendoza", Speaker2="Diego Montenegro",Speaker3="",Speaker4="",Speaker5="",Speaker6="" },
             };
 
-            foreach (SacramentMeeting s in meeting)
+            foreach (SacramentMeeting m in Meeting)
             {
-                context.SacramentMeetings.Add(s);
+                context.SacramentMeetings.Add(m);
             }
             context.SaveChanges();
+
+
+
 
         }
         }
