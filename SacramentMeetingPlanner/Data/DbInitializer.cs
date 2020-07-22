@@ -62,6 +62,31 @@ namespace SacramentMeetingPlanner.Data
             }
             context.SaveChanges();
 
+
+            if (context.SacramentMeetings.Any())
+            {
+                return; // Db has been seededx
+            }
+
+            var meeting = new SacramentMeeting[]
+            {
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-09-01"),Topic="Fasting",OpeningHymnId="I Stand All Amazed  pg 300",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-08-01"),Topic="Prayer",OpeningHymnId="Sac Pg.  145",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-07-01"),Topic="Obedience",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-06-01"),Topic="Faith",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-05-01"),Topic="Trust in the Lord",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-04-01"),Topic="Covenants",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-03-01"),Topic="Prayer",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+            new SacramentMeeting{SacramentDate=DateTime.Parse("2002-02-01"),Topic="Fasting",OpeningHymnId="I Stand All Amazed",OpeningPrayer="Charlie Brown",ClosingPrayer="Snoopy Dog",ClosingHymnId="",IntermediateHymn="", SacramentHymnId="Bless the Sacrament",ConductingBishopric="John Smith", Speaker1="Linus Linus",Speaker2="Lucy Lucy"},
+
+            };
+
+            foreach (SacramentMeeting s in meeting)
+            {
+                context.SacramentMeetings.Add(s);
+            }
+            context.SaveChanges();
+
         }
         }
     }
