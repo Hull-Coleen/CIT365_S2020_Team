@@ -33,6 +33,7 @@ namespace SacramentMeetingPlanner.Models
 
 
         [Display(Name = "Intermediate Hymn")]
+        [StringLength(50)]
         public string IntermediateHymn { get; set; }
 
         [Required]
@@ -43,6 +44,7 @@ namespace SacramentMeetingPlanner.Models
         [Display(Name = "Benediction")]
         public string ClosingPrayer { get; set; }
         [Required]
+        [StringLength(20)]
         public string Topic { get; set; }
         [Display(Name = "Youth Speaker")]
         public string Speaker1 { get; set; }
