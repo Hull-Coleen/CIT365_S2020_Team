@@ -61,11 +61,6 @@
                 </select>
                 <span asp-validation-for="ClosingHymnId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                
-                    <input type="submit" value="Save" class="btn btn-primary" />
-                <a asp-action="Index">Back to List</a>
-            </div>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-5">
@@ -148,7 +143,12 @@
                     <span asp-validation-for="Speaker6" class="text-danger"></span>
                 </div>
             }
-            
+            <div class="form-group">
+
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index">Back to List</a>
+            </div>
+
         </div>
     </div>
 </form>
