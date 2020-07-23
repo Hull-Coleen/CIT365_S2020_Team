@@ -11,52 +11,86 @@
 
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.SacramentDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SacramentDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ConductingBishopric)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ConductingBishopric)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OpeningPrayer)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OpeningPrayer)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OpeningHymnId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OpeningHymnId)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.SacramentHymnId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SacramentHymnId)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntermediateHymn)
+        @if (Model.IntermediateHymn != null)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IntermediateHymn)
+            </dt>
+
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IntermediateHymn)
+            </dd>
+        }
+        <dt class="col-sm-2">
+           Speakers
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntermediateHymn)
+        <dd class="col-sm-10">
+            @if (Model.Speaker1 != null)
+            {
+                @Html.DisplayFor(model => model.Speaker1)<br />
+            }
+            @if (Model.Speaker2 != null)
+            {
+                @Html.DisplayFor(model => model.Speaker2)<br />
+            }
+            @if (Model.Speaker3 != null)
+            {
+                @Html.DisplayFor(model=> model.Speaker3)<br />
+            }
+            @if (Model.Speaker4 != null)
+            {
+                @Html.DisplayFor(model => model.Speaker4)<br />
+            }
+            @if (Model.Speaker5 != null)
+            {
+                @Html.DisplayFor(model => model.Speaker5)<br />
+            }
+            @if (Model.Speaker6 != null)
+            {
+                @Html.DisplayFor(model => model.Speaker6)<br />
+            }
+
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ClosingHymnId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ClosingHymnId)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ClosingPrayer)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ClosingPrayer)
         </dd>
     </dl>
